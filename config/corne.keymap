@@ -87,8 +87,14 @@
 
         combo_f12 {
             timeout-ms = <50>;
-            key-positions = <13 25>;
+            key-positions = <10 11>;
             bindings = <&kp F12>;
+        };
+
+        combo_volmute {
+            timeout-ms = <50>;
+            key-positions = <13 25>;
+            bindings = <&kp C_MUTE>;
         };
 
         combo_voldn {
@@ -103,15 +109,27 @@
             bindings = <&kp C_VOL_UP>;
         };
 
-        combo_zoomout {
+        combo_pworkspace {
             timeout-ms = <50>;
             key-positions = <16 28>;
+            bindings = <&kp LC(LG(LEFT))>;
+        };
+
+        combo_nworkspace {
+            timeout-ms = <50>;
+            key-positions = <17 29>;
+            bindings = <&kp LC(LG(RIGHT))>;
+        };
+
+        combo_zoomout {
+            timeout-ms = <50>;
+            key-positions = <18 30>;
             bindings = <&kp LC(MINUS)>;
         };
 
         combo_zoomin {
             timeout-ms = <50>;
-            key-positions = <17 29>;
+            key-positions = <19 31>;
             bindings = <&kp LC(EQUAL)>;
         };
 
@@ -119,6 +137,12 @@
             timeout-ms = <50>;
             key-positions = <25 26>;
             bindings = <&kp LGUI>;
+        };
+
+        combo_lalt {
+            timeout-ms = <50>;
+            key-positions = <33 34>;
+            bindings = <&kp LALT>;
         };
     };
 
@@ -161,12 +185,12 @@
 // ------------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |   | home |  pg dn| pf up |  end   | PSCRN |       |
 // |OUT_TOG|LCTRL| LGUI| LALT | LSHFT|      |   |  <-  |   v   |  ^    |  ->    | INSERT|       |
-// |       |mute |V dn |V up  |      |      |   |LC(<-)|LC(pgdn)|LC(pgup)|LC(->)|       |       |
+// |       |mute |V dn |V up  |      |      |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| MENU  |       |
 //                     |insert|      |      |   |      |       |       |
       bindings = <
-  &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp PSCRN  &trans
-  &out OUT_TOG   &kp LCTRL      &kp LGUI          &kp LALT      &kp LSHFT    &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT &trans
-  &trans         &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP  &trans       &trans          &kp LC(LEFT) &kp LC(PG_DN) &kp LC(PG_UP) &kp LC(RIGHT) &trans     &trans
+  &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp PSCRN       &trans
+  &out OUT_TOG   &kp LCTRL      &kp LGUI          &kp LALT      &kp LSHFT    &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT      &trans
+  &trans         &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP  &trans       &trans          &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp K_CMENU     &trans
                                                   &mt LALT INSERT  &trans    &trans          &trans       &trans        &trans
                         >;
                 };
