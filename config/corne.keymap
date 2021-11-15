@@ -9,6 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+&sk {
+    release-after-ms = <2000>;
+};
 
 / {
     combos {
@@ -184,12 +187,12 @@
                 raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |   | home |  pg dn| pf up |  end   | PSCRN |       |
-// |OUT_TOG|LCTRL| LGUI| LALT | LSHFT|      |   |  <-  |   v   |  ^    |  ->    | INSERT|       |
+// |OUT_TOG|LSHFT| LGUI| LALT | LCTRL|      |   |  <-  |   v   |  ^    |  ->    | INSERT|       |
 // |       |mute |V dn |V up  |      |      |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| MENU  |       |
 //                     |insert|      |      |   |      |       |       |
       bindings = <
   &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp PSCRN       &trans
-  &out OUT_TOG   &kp LCTRL      &kp LGUI          &kp LALT      &kp LSHFT    &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT      &trans
+  &out OUT_TOG   &sk LSHFT      &sk LGUI          &sk LALT      &sk LCTRL    &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT      &trans
   &trans         &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP  &trans       &trans          &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp K_CMENU     &trans
                                                   &mt LALT INSERT  &trans    &trans          &trans       &trans        &trans
                         >;
