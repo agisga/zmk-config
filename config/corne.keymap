@@ -174,13 +174,13 @@
 // ------------------------------------------------------------------------------------------------------------
 // |LC(LG(->))|  !        |  @  |  #   |  $   |  %   |   |  ^   |  &    |  *    |  (   |   )   |   |   |
 // |   `      |  1        |  2  |  3   |  4   |  5   |   |  6   |  7    |  8    |  9   |   0   |   ~   |
-// |LC(LG(<-))| LG(LS(S)) |     |      |      |  =   |   |  +   |  [    |  ]    |  {   |   }   |       |
-//                              |      |      |      |   | _    |  -    |       |
+// |LC(LG(<-))| LG(LS(S)) |     |  {   |  }   |  =   |   |  +   |  [    |  ]    |      |       |       |
+//                              |      |      |      |   |  -   |  _    |       |
       bindings = <
   &kp LC(LG(RIGHT)) &kp EXCL       &kp AT   &kp HASH   &kp DOLLAR   &kp PRCNT    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
   &kp GRAVE         &kp N1         &kp N2   &kp N3     &kp N4       &kp N5       &kp N6    &kp N7    &kp N8          &kp N9    &kp N0    &kp TILDE
-  &kp LC(LG(LEFT))  &kp LG(LS(S))  &trans   &trans     &trans       &kp EQUAL    &kp PLUS  &kp LBKT  &kp RBKT        &kp LBRC  &kp RBRC  &trans
-                                                   &trans    &trans    &trans    &kp UNDER &kp MINUS &trans
+  &kp LC(LG(LEFT))  &kp LG(LS(S))  &trans   &kp LBRC   &kp RBRC     &kp EQUAL    &kp PLUS  &kp LBKT  &kp RBKT        &trans    &trans    &trans
+                                                &trans    &trans    &trans       &kp MINUS &kp UNDER &trans
                         >;
                 };
 
