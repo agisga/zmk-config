@@ -94,6 +94,12 @@
             bindings = <&kp F12>;
         };
 
+        combo_scrnsht {
+            timeout-ms = <50>;
+            key-positions = <1 25>;
+            bindings = <&kp LG(LS(S))>;
+        };
+
         combo_volmute {
             timeout-ms = <50>;
             key-positions = <13 25>;
@@ -179,14 +185,14 @@
                 default_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |  TAB  |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
-// |  CAPS |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   ;   |   '   |
+// |  CTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
 //                     | menu | ENTER |[sticky |    | SPACE | BSPC | del   |
 //               hold: | (alt)|(LOWER)| shift] |    |       |      |(RAISE)|
                       bindings = <
-  &kp TAB               &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U      &kp I       &kp O     &kp P     &kp BSLH
-  &mt LCTRL CAPSLOCK    &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
-  &kp LSHFT             &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
+  &kp TAB      &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U      &kp I       &kp O     &kp P     &kp BSLH
+  &kp LCTRL    &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
+  &kp LSHFT    &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
                                     &mt LALT K_CMENU   &lt 1 RET     &sk LSHFT    &kp SPACE    &kp BSPC   &lt 2 DELETE
                         >;
                 };
@@ -196,15 +202,15 @@
 
                 lower_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |LC(LG(->))|  !        |  @  |  #   |  $   |  %   |   |  ^   |  &    |  *    |  (   |   )   |   |   |
-// |   `      |  1        |  2  |  3   |  4   |  5   |   |  6   |  7    |  8    |  9   |   0   |   ~   |
-// |LC(LG(<-))| LG(LS(S)) |     |  {   |  }   |  =   |   |  +   |  [    |  ]    |      |       |       |
-//                              |      |      |      |   |  -   |  _    |       |
+// |   `      |  !        |  @  |  #   |  $   |  %   |   |  ^   |  &    |  *    |  (   |   )   |   ~   |
+// |          |  1        |  2  |  3   |  4   |  5   |   |  6   |  7    |  8    |  9   |   0   |       |
+// |          |           |     |  {   |  }   |  =   |   |  +   |  [    |  ]    |      |       |       |
+//                              |      |      |      |   |  _   |  -    |       |
       bindings = <
-  &kp LC(LG(RIGHT)) &kp EXCL       &kp AT   &kp HASH   &kp DOLLAR   &kp PRCNT    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp PIPE
-  &kp GRAVE         &kp N1         &kp N2   &kp N3     &kp N4       &kp N5       &kp N6    &kp N7    &kp N8          &kp N9    &kp N0    &kp TILDE
-  &kp LC(LG(LEFT))  &kp LG(LS(S))  &trans   &kp LBRC   &kp RBRC     &kp EQUAL    &kp PLUS  &kp LBKT  &kp RBKT        &trans    &trans    &trans
-                                                &trans    &trans    &trans       &kp MINUS &kp UNDER &trans
+  &kp GRAVE  &kp EXCL   &kp AT   &kp HASH   &kp DOLLAR   &kp PRCNT    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
+  &trans     &kp N1     &kp N2   &kp N3     &kp N4       &kp N5       &kp N6    &kp N7    &kp N8          &kp N9    &kp N0    &trans
+  &trans     &trans     &trans   &kp LBRC   &kp RBRC     &kp EQUAL    &kp PLUS  &kp LBKT  &kp RBKT        &trans    &trans    &trans
+                                     &trans    &trans    &trans       &kp UNDER &kp MINUS &trans
                         >;
                 };
 
