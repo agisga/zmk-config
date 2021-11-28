@@ -124,16 +124,40 @@
             bindings = <&kp LC(LG(RIGHT))>;
         };
 
-        combo_zoomout {
+        combo_left {
             timeout-ms = <50>;
             key-positions = <18 30>;
-            bindings = <&kp LC(MINUS)>;
+            bindings = <&kp LEFT>;
         };
 
-        combo_zoomin {
+        combo_down {
             timeout-ms = <50>;
             key-positions = <19 31>;
-            bindings = <&kp LC(EQUAL)>;
+            bindings = <&kp DOWN>;
+        };
+
+        combo_up {
+            timeout-ms = <50>;
+            key-positions = <20 32>;
+            bindings = <&kp UP>;
+        };
+
+        combo_right {
+            timeout-ms = <50>;
+            key-positions = <21 33>;
+            bindings = <&kp RIGHT>;
+        };
+
+        combo_pgdn {
+            timeout-ms = <50>;
+            key-positions = <22 34>;
+            bindings = <&kp PG_DN>;
+        };
+
+        combo_pgup {
+            timeout-ms = <50>;
+            key-positions = <23 35>;
+            bindings = <&kp PG_UP>;
         };
 
         combo_lgui {
@@ -158,12 +182,12 @@
 // |  CAPS |  A  |  S  |  D   |  F   |  G     |    |  H    |  J   |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
 //                     | menu |ENTER | LOWER  |    | SPACE | BSPC | del   |
-//               hold: | (alt)|(ctrl)|(LOWER) |    |       |      |(RAISE)|
+//               hold: | (alt)|(ctrl)|(LOWER) |    |(shift)|      |(RAISE)|
                       bindings = <
   &kp TAB               &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U      &kp I       &kp O     &kp P     &kp BSLH
   &mt LCTRL CAPSLOCK    &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
   &kp LSHFT             &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
-                                    &mt LALT K_CMENU   &mt LCTRL RET &mo 1        &kp SPACE    &kp BSPC   &lt 2 DELETE
+                                    &mt LALT K_CMENU   &mt LCTRL RET &mo 1        &mt RSHFT SPACE    &kp BSPC   &lt 2 DELETE
                         >;
                 };
 
@@ -187,13 +211,13 @@
                 raise_layer {
 // ------------------------------------------------------------------------------------------------------------
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |   | home |  pg dn| pf up |  end   | PSCRN |       |
-// |OUT_TOG|LSHFT| LGUI| LALT | LCTRL|      |   |  <-  |   v   |  ^    |  ->    | INSERT|       |
-// |       |mute |V dn |V up  |      |      |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| MENU  |       |
+// |OUT_TOG|     |     |      |      |      |   |  <-  |   v   |  ^    |  ->    | INSERT|       |
+// |       |LSHFT| LGUI| LALT | LCTRL|      |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| MENU  |       |
 //                     |insert|      |      |   |      |       |       |
       bindings = <
   &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp PSCRN       &trans
-  &out OUT_TOG   &sk LSHFT      &sk LGUI          &sk LALT      &sk LCTRL    &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT      &trans
-  &trans         &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP  &trans       &trans          &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp K_CMENU     &trans
+  &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT      &trans
+  &trans         &sk LSHFT      &sk LGUI          &sk LALT      &sk LCTRL    &trans          &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp K_CMENU     &trans
                                                   &mt LALT INSERT  &trans    &trans          &trans       &trans        &trans
                         >;
                 };
