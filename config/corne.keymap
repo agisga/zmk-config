@@ -178,16 +178,16 @@
 
                 default_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |  TAB  |  Q  |  W  |  E   |  R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
-// |  CAPS |  A  |  S  |  D   |  F   |  G     |    |  H    |  J   |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
-//                     | menu |ENTER | LOWER  |    | SPACE | BSPC | del   |
-//               hold: | (alt)|(ctrl)|(LOWER) |    |(shift)|      |(RAISE)|
+// |  TAB  |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
+// |  CAPS |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
+//                     | menu | ENTER |[sticky |    | SPACE | BSPC | del   |
+//               hold: | (alt)|(LOWER)| shift] |    |       |      |(RAISE)|
                       bindings = <
   &kp TAB               &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U      &kp I       &kp O     &kp P     &kp BSLH
   &mt LCTRL CAPSLOCK    &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
   &kp LSHFT             &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
-                                    &mt LALT K_CMENU   &mt LCTRL RET &mo 1        &mt RSHFT SPACE    &kp BSPC   &lt 2 DELETE
+                                    &mt LALT K_CMENU   &lt 1 RET     &sk LSHFT    &kp SPACE    &kp BSPC   &lt 2 DELETE
                         >;
                 };
 
