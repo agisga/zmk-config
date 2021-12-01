@@ -10,9 +10,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // Note: quick-release fixes the issue of sticky shift producing multiple upper case letters (see https://github.com/zmkfirmware/zmk/issues/903#issuecomment-909209198).
-// FIXME?: this config may no longer allow for sticky mods to be chained -- again, see the above github issue for a solution if that's the case.
+// This sk config no longer allows for sticky mods to be chained -- again, see the above github issue for a solution if that's the case.
 &sk {
-    release-after-ms = <2000>;
+    release-after-ms = <1000>;
     quick-release;
 };
 
@@ -188,15 +188,15 @@
                 default_layer {
 // ------------------------------------------------------------------------------------------------------------
 // |  TAB  |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
-// |  CTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   ;   |   '   |
+// |  CAPS |  A  |  S  |  D   |   F   |  NAV G |    |  H    |  J   |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
-//                     | menu | ENTER |[sticky |    | SPACE | BSPC | del   |
-//               hold: | (alt)|(LOWER)| shift] |    |       |      |(RAISE)|
+//                     | menu | ENTER |[sticky-|    | SPACE | BSPC | del   |
+//               hold: | (alt)| (CTRL)| -shift]|    |(LOWER)|      |(RAISE)|
                       bindings = <
-  &kp TAB      &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U      &kp I       &kp O     &kp P     &kp BSLH
-  &kp LCTRL    &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
-  &kp LSHFT    &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
-                                    &mt LALT K_CMENU   &lt 1 RET     &sk LSHFT    &kp SPACE    &kp BSPC   &lt 2 DELETE
+  &kp TAB             &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U      &kp I       &kp O     &kp P     &kp BSLH
+  &mt LCTRL CAPSLOCK  &kp A     &kp S     &kp D      &kp F         &lt 3 G      &kp H        &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
+  &mt LSHFT UNDER     &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M      &kp COMMA   &kp DOT   &kp FSLH  &mt RSHFT MINUS
+                              &mt LALT K_CMENU   &mt LCTRL RET     &sk LSHFT    &lt 1 SPACE    &kp BSPC   &lt 2 DELETE
                         >;
                 };
 
@@ -208,12 +208,12 @@
 // |   `      |  !        |  @  |  #   |  $   |  %   |   |  ^   |  &    |  *    |  (   |   )   |   ~   |
 // |          |  1        |  2  |  3   |  4   |  5   |   |  6   |  7    |  8    |  9   |   0   |       |
 // |          |           |     |  {   |  }   |  =   |   |  +   |  [    |  ]    |      |       |       |
-//                              |      |      |      |   |  _   |  -    |       |
+//                              |      |      |      |   |      |       |       |
       bindings = <
   &kp GRAVE  &kp EXCL   &kp AT   &kp HASH   &kp DOLLAR   &kp PRCNT    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp TILDE
   &trans     &kp N1     &kp N2   &kp N3     &kp N4       &kp N5       &kp N6    &kp N7    &kp N8          &kp N9    &kp N0    &trans
   &trans     &trans     &trans   &kp LBRC   &kp RBRC     &kp EQUAL    &kp PLUS  &kp LBKT  &kp RBKT        &trans    &trans    &trans
-                                     &trans    &trans    &trans       &kp UNDER &kp MINUS &trans
+                                     &trans    &trans    &trans       &trans    &trans    &trans
                         >;
                 };
 
@@ -228,6 +228,20 @@
   &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT      &trans
   &trans         &sk LSHFT      &sk LGUI          &sk LALT      &sk LCTRL    &trans          &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp K_CMENU     &trans
                                                   &mt LALT INSERT  &trans    &caps_word      &trans       &trans        &trans
+                        >;
+                };
+
+                nav_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |       |     |     |      |      |         |   | home |  pg dn| pf up |  end   | PSCRN |       |
+// |       |     |     |      |      |         |   |  <-  |   v   |  ^    |  ->    | INSERT|       |
+// |       |     |     |      |      |         |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| MENU  |       |
+//                     |      |      |         |   |      |       |       |
+      bindings = <
+  &trans   &trans   &trans   &trans   &trans   &trans      &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp PSCRN       &trans
+  &trans   &trans   &trans   &trans   &trans   &trans      &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT      &trans
+  &trans   &trans   &trans   &trans   &trans   &trans      &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp K_CMENU     &trans
+                             &trans   &trans   &trans      &trans       &trans        &trans
                         >;
                 };
         };
