@@ -253,7 +253,7 @@
   &trans   &trans   &trans   &trans   &trans   &trans      &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp PSCRN     &trans
   &trans   &trans   &trans   &trans   &trans   &trans      &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp K_CMENU   &trans
   &trans   &trans   &trans   &trans   &trans   &trans      &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp INSERT    &trans
-                             &trans   &trans   &trans      &trans       &trans        &trans
+                             &trans   &trans   &trans      &kp SPACE    &kp BSPC      &kp DELETE
                         >;
                 };
         };
