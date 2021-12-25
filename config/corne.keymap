@@ -131,6 +131,24 @@
             bindings = <&kp LG(LS(S))>;
         };
 
+        combo_cut {
+            timeout-ms = <50>;
+            key-positions = <2 26>;
+            bindings = <&kp LC(X)>;
+        };
+
+        combo_copy {
+            timeout-ms = <50>;
+            key-positions = <3 27>;
+            bindings = <&kp LC(C)>;
+        };
+
+        combo_paste {
+            timeout-ms = <50>;
+            key-positions = <4 28>;
+            bindings = <&kp LC(V)>;
+        };
+
         combo_volmute {
             timeout-ms = <50>;
             key-positions = <13 25>;
