@@ -242,9 +242,9 @@
 
                 num_layer {
       bindings = <
-  &trans  AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)     &none   &none       &none      &none     &none     &trans
+  &trans  AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)     &none   &none       &none      &none     &none     &bootloader
   &trans  AS(SEMI)   AS(N4)  AS(N5)  AS(N6)  AS(EQL)      &none   &sk LSHFT   &sk LCTRL  &sk LALT  &sk LGUI  &trans
-  &trans  AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)  AS(BSLH)     &none   &none       &trans     &trans    &trans    &trans
+  &trans  AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)  AS(BSLH)     &none   &none       &trans     &trans    &trans    &reset
                              &kp DOT AS(N0)  AS(MINUS)    &trans  &trans      &trans
                         >;
                 };
@@ -288,9 +288,9 @@
 // |       |     |     |      |      |         |   | home |  pg dn| pf up |  end   | INSERT |       |
 //                     |      |      |         |   |      |       |       |
       bindings = <
-  &trans   &trans   &trans   &trans      &trans      &trans      &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp PSCRN     &trans
-  &trans   &sk LGUI &sk LALT &sk LCTRL   &sk LSHFT   &trans      &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &caps_word    &trans
-  &trans   &trans   &trans   &trans      &trans      &trans      &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp INSERT    &trans
+  &bootloader  &trans   &trans   &trans      &trans      &trans      &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp PSCRN     &trans
+  &trans       &sk LGUI &sk LALT &sk LCTRL   &sk LSHFT   &trans      &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &caps_word    &trans
+  &reset       &trans   &trans   &trans      &trans      &trans      &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp INSERT    &trans
                              &trans      &trans      &trans      &kp SPACE    &kp BSPC      &kp DELETE
                         >;
                 };
