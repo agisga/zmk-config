@@ -36,6 +36,15 @@
       };
     };
 
+    // media layer, used to control bluetooth
+    conditional_layers {
+      compatible = "zmk,conditional-layers";
+      tri_layer {
+        if-layers = <1 2>;
+        then-layer = <3>;
+      };
+    };
+
     combos {
         compatible = "zmk,combos";
         combo_esc {
@@ -210,7 +219,7 @@
 // |  CAPS |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   |   ;   |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
 //                     | menu | ENTER |[sticky-|    | SPACE | BSPC | del   |
-//               hold: | (alt)| (NAV)| -shift]|    | (SYM) | (NUM)|(RAISE)|
+//               hold: | (alt)| (NAV)| -shift] |    | (SYM) | (NUM)|(FUN)  |
                       bindings = <
   &kp TAB             &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &kp BSLH
   &mt LCTRL CAPSLOCK  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL SEMI
@@ -246,17 +255,18 @@
 
 
 
-                raise_layer {
+                fun_layer {
+// TODO
 // ------------------------------------------------------------------------------------------------------------
-// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5    |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| PSCRN    |       |
-// |OUT_TOG|     |     |      |      |         |   |  <-  |   v   |  ^    |  ->    | CAPSWORD |       |
-// |       |     |     |      |      |         |   | home |  pg dn| pf up |  end   | INSERT   |       |
-//                     |      |      |         |   |      |       |       |
+// |       |     |     |      |      |         |   |      |       |       |        |          |       |
+// |       |     |     |      |      |         |   |      |       |       |        |          |       |
+// |       |     |     |      |      |         |   |      |       |       |        |          |       |
+//                     | MEDIA|      |         |   |      |       |       |
       bindings = <
-  &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp PSCRN     &trans
-  &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &caps_word    &trans
-  &trans         &trans         &trans            &trans        &trans       &trans          &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp INSERT    &trans
-                                                  &trans        &trans       &trans         &trans       &trans        &trans
+  &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
+  &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
+  &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
+                                                  &mo 5         &trans       &trans          &trans   &trans   &trans
                         >;
                 };
 
@@ -273,6 +283,23 @@
   &trans   &sk LGUI &sk LALT &sk LCTRL   &sk LSHFT   &trans      &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &caps_word    &trans
   &trans   &trans   &trans   &trans      &trans      &trans      &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp INSERT    &trans
                              &trans      &trans      &trans      &kp SPACE    &kp BSPC      &kp DELETE
+                        >;
+                };
+
+
+
+
+                media_layer {
+// ------------------------------------------------------------------------------------------------------------
+// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5    |   |      |       |       |        |          |       |
+// |OUT_TOG|     |     |      |      |         |   |      |       |       |        |          |       |
+// |       |     |     |      |      |         |   |      |       |       |        |          |       |
+//                     |      |      |         |   |      |       |       |
+      bindings = <
+  &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &trans   &trans   &trans   &trans   &trans   &trans
+  &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
+  &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
+                                                  &trans        &trans       &trans          &trans   &trans   &trans
                         >;
                 };
         };
