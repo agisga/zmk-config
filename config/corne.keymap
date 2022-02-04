@@ -283,12 +283,12 @@
 
                 nav_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |         |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| PSCRN  |       |
+// |       |     | esc | tab  | MENU |         |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| PSCRN  |       |
 // | CAPS  | LGUI| LALT| LCTRL| LSHFT|         |   |  <-  |   v   |  ^    |  ->    |CAPSWORD|       |
 // |       |     |     |      |      |         |   | home |  pg dn| pf up |  end   | INSERT |       |
 //                     |      |      |         |   | bspc | tab   | delete|
       bindings = <
-  &bootloader  &trans   &trans   &trans      &trans      &trans      &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp PSCRN     &trans
+  &bootloader  &trans   &kp ESC  &kp TAB     &kp K_CMENU &trans      &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp PSCRN     &trans
   &kp CAPSLOCK &sk LGUI &sk LALT &sk LCTRL   &sk LSHFT   &trans      &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &caps_word    &trans
   &reset       &trans   &trans   &trans      &trans      &trans      &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp INSERT    &trans
                              &trans      &trans      &trans      &kp BSPC    &kp  TAB     &kp DELETE
