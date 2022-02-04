@@ -232,7 +232,7 @@
 
         combo_guitab {
             timeout-ms = <50>;
-            key-positions = <14 15>;
+            key-positions = <13 14 15>;
             bindings = <&kp LG(TAB)>;
         };
 
