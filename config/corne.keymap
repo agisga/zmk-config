@@ -217,6 +217,30 @@
             key-positions = <33 34>;
             bindings = <&kp LALT>;
         };
+
+        combo_alttab {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp LA(TAB)>;
+        };
+
+        combo_altshifttab {
+            timeout-ms = <50>;
+            key-positions = <14 15 16>;
+            bindings = <&kp LA(LS(TAB))>;
+        };
+
+        combo_guitab {
+            timeout-ms = <50>;
+            key-positions = <14 15>;
+            bindings = <&kp LG(TAB)>;
+        };
+
+        combo_altctrltab {
+            timeout-ms = <50>;
+            key-positions = <26 27 28>;
+            bindings = <&kp LG(TAB)>;
+        };
     };
 
     keymap {
