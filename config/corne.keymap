@@ -233,7 +233,7 @@
         combo_altctrltab {
             timeout-ms = <50>;
             key-positions = <26 27 28>;
-            bindings = <&kp LG(TAB)>;
+            bindings = <&kp LA(LC(TAB))>;
         };
     };
 
