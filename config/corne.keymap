@@ -212,12 +212,6 @@
             bindings = <&kp LGUI>;
         };
 
-        combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <33 34>;
-            bindings = <&kp LALT>;
-        };
-
         combo_alttab {
             timeout-ms = <50>;
             key-positions = <14 15>;
@@ -251,13 +245,13 @@
 // |  TAB  |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   | RCTRL |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
-//                     | menu | ENTER |[sticky-|    | BSPC  |SPACE | del   |
-//               hold: | (alt)| (NAV)| -shift] |    | (SYM) | (NUM)|(FUN)  |
+//                          | DEL | BSPC | RET |    | sticky- | SPC | ESC |
+//                    hold: | FUN | NUM  | SYM |    | -shift  | NAV | ALT |
                       bindings = <
   &kp TAB    &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &kp BSLH
   &kp LCTRL  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &kp RCTRL
   &kp LSHFT  &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &kp RSHFT
-                                  &mt LALT K_CMENU   &lt 4 RET     &skq LSHFT   &lt 2 BSPC  &lt 1 SPACE  &lt 3 DELETE
+                            &lt 4 DELETE  &lt 1 BSPC  &lt 2 RET        &skq LSHFT  &lt 3 SPACE  &mt LALT ESC
                         >;
                 };
 
@@ -266,56 +260,49 @@
 
                 num_layer {
       bindings = <
-  &trans  AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)     &none   &none       &none      &none     &none     &bootloader
-  &trans  AS(SEMI)   AS(N4)  AS(N5)  AS(N6)  AS(EQL)      &none   &sk LSHFT   &sk LCTRL  &sk LALT  &sk LGUI  &trans
-  &trans  AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)  AS(BSLH)     &none   &none       &trans     &trans    &trans    &reset
-                             &kp DOT AS(N0)  AS(MINUS)    &trans  &trans      &trans
+  &bootloader &none     &none      &none      &none       &none      AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)  &trans
+  &trans      &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT   &none      AS(EQL)    AS(N4)  AS(N5)  AS(N6)  AS(SEMI)  &trans
+  &trans      &none     &none      &none      &none       &none      AS(BSLH)   AS(N1)  AS(N2)  AS(N3)  AS(GRAVE) &trans
+                                   &trans     &trans      &trans     AS(MINUS)  AS(N0)  &kp DOT
                         >;
                 };
-
 
 
 
                 sym_layer {
       bindings = <
-  &trans  &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC      &none  &none      &none      &none     &none     &trans
-  &trans  &kp COLON  &kp DLLR  &kp PRCT   &kp CRRT  &kp PLUS      &none  &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI  &trans
-  &trans  &kp TILDE  &kp EXCL  &kp AT     &kp HASH  &kp PIPE      &none  &none      &none      &trans    &trans    &trans
-                               &kp LPAR   &kp RPAR  &kp UNDER     &trans  &trans    &trans
+  &bootloader &none     &none      &none      &none       &none      &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC   &trans
+  &trans      &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT   &none      &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT  &kp COLON  &trans
+  &trans      &none     &none      &none      &none       &none      &kp PIPE   &kp EXCL  &kp AT     &kp HASH  &kp TILDE  &trans
+                                   &trans     &trans      &trans     &kp UNDER  &kp RPAR  &kp LPAR
                         >;
                 };
 
-
-
-
-                fun_layer {
-// TODO
-// ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |         |   |      |       |       |        |          |       |
-// |       |     |     |      |      |         |   |      |       |       |        |          |       |
-// |       |     |     |      |      |         |   |      |       |       |        |          |       |
-//                     | MEDIA|      |         |   |      |       |       |
-      bindings = <
-  &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
-  &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
-  &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
-                                                  &mo 5         &trans       &trans          &trans   &trans   &trans
-                        >;
-                };
 
 
 
                 nav_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |       |     | esc | tab  | MENU |         |   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| PSCRN  |       |
-// | CAPS  | LGUI| LALT| LCTRL| LSHFT|         |   |  <-  |   v   |  ^    |  ->    |CAPSWORD|       |
-// |       |     |     |      |      |         |   | home |  pg dn| pf up |  end   | INSERT |       |
-//                     |      |      |         |   | bspc | tab   | delete|
       bindings = <
-  &bootloader  &trans   &kp ESC  &kp TAB     &kp K_CMENU &trans      &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp PSCRN     &trans
-  &kp CAPSLOCK &sk LGUI &sk LALT &sk LCTRL   &sk LSHFT   &trans      &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &caps_word    &trans
-  &reset       &trans   &trans   &trans      &trans      &trans      &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp INSERT    &trans
-                             &trans      &trans      &trans      &kp BSPC    &kp  TAB     &kp DELETE
+  &trans  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INSERT       &none  &kp K_CMENU  &kp TAB    &none     &none     &bootloader
+  &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &sk LSHFT    &sk LCTRL  &sk LALT  &sk LGUI  &trans
+  &trans  &kp K_UNDO  &kp K_CUT   &kp K_COPY  &kp K_PASTE &kp K_REDO       &none  &none        &none      &none     &none     &trans
+                                  &kp DEL     &kp BSPC    &kp TAB          &trans &trans       &trans
+                        >;
+                };
+
+
+
+                fun_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |       |     |     |      |      |         |   |      |       |       |        |          |       |
+// |       |     |     |      |      |         |   |      |       |       |        |          |       |
+// |       |     |     |      |      |         |   |      |       |       |        |          |       |
+//                     |      |      |         |   |      |       | MEDIA |
+      bindings = <
+  &bootloader &none     &none      &none      &none       &none      &kp PSCRN        &kp F7   &kp F8  &kp F9  &kp F12  &trans
+  &trans      &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT   &none      &kp SLCK         &kp F4   &kp F5  &kp F6  &kp F11  &trans
+  &trans      &none     &none      &none      &none       &none      &kp PAUSE_BREAK  &kp F1   &kp F2  &kp F3  &kp F10  &trans
+                                   &trans     &trans      &trans     &kp TAB          &kp SPC  &mo 5
                         >;
                 };
 
