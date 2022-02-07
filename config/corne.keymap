@@ -283,9 +283,9 @@
 
                 nav_layer {
       bindings = <
-  &trans  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INSERT       &none  &kp K_CMENU  &kp TAB    &none     &none     &bootloader
-  &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &sk LSHFT    &sk LCTRL  &sk LALT  &sk LGUI  &trans
-  &trans  &kp K_UNDO  &kp K_CUT   &kp K_COPY  &kp K_PASTE &kp K_REDO       &none  &none        &none      &none     &none     &trans
+  &trans  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INSERT       &none  &kp K_CMENU  &kp TAB    &kp LA(LC(TAB))  &none     &bootloader
+  &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &sk LSHFT    &sk LCTRL  &sk LALT         &sk LGUI  &trans
+  &trans  &kp K_UNDO  &kp K_CUT   &kp K_COPY  &kp K_PASTE &kp K_REDO       &none  &none        &none      &none            &none     &trans
                                   &kp DEL     &kp BSPC    &kp TAB          &trans &trans       &trans
                         >;
                 };
