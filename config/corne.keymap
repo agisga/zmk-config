@@ -245,13 +245,13 @@
 // |  TAB  |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   | RCTRL |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
-//                          | DEL | BSPC | RET |    | sticky- | SPC | ESC |
-//                    hold: | FUN | NUM  | SYM |    | -shift  | NAV | ALT |
+//                       | DEL | BSPC | sticky-|    | TAB   | SPC | ESC |
+//                 hold: | SYM | NUM  | -shift |    | RET   | NAV | FUN |
                       bindings = <
   &kp TAB    &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &kp BSLH
   &kp LCTRL  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &kp RCTRL
   &kp LSHFT  &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &kp RSHFT
-                            &lt 4 DELETE  &lt 1 BSPC  &lt 2 RET        &skq LSHFT  &lt 3 SPACE  &mt LALT ESC
+                           &lt 2 DELETE  &lt 1 BSPC  &skq LSHFT        &as RET TAB  &lt 3 SPACE  &lt 4 ESC
                         >;
                 };
 
@@ -286,7 +286,7 @@
   &trans  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INSERT       &none  &kp K_CMENU  &kp TAB    &kp LA(LC(TAB))  &none     &bootloader
   &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &sk LSHFT    &sk LCTRL  &sk LALT         &sk LGUI  &trans
   &trans  &kp K_UNDO  &kp K_CUT   &kp K_COPY  &kp K_PASTE &kp K_REDO       &none  &none        &none      &none            &none     &trans
-                                  &kp DEL     &kp BSPC    &kp TAB          &trans &trans       &trans
+                                  &kp DEL     &kp BSPC    &kp RET          &trans &trans       &trans
                         >;
                 };
 
@@ -297,12 +297,12 @@
 // |       |     |     |      |      |         |   |      |       |       |        |          |       |
 // |       |     |     |      |      |         |   |      |       |       |        |          |       |
 // |       |     |     |      |      |         |   |      |       |       |        |          |       |
-//                     |      |      |         |   |      |       | MEDIA |
+//                     |MEDIA |      |         |   |      |       |       |
       bindings = <
   &bootloader &none     &none      &none      &none       &none      &kp PSCRN        &kp F7   &kp F8  &kp F9  &kp F12  &trans
   &trans      &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT   &none      &kp SLCK         &kp F4   &kp F5  &kp F6  &kp F11  &trans
   &trans      &none     &none      &none      &none       &none      &kp PAUSE_BREAK  &kp F1   &kp F2  &kp F3  &kp F10  &trans
-                                   &trans     &trans      &trans     &kp TAB          &kp SPC  &mo 5
+                                   &mo 5      &trans      &trans     &kp TAB          &kp SPC  &trans
                         >;
                 };
 
