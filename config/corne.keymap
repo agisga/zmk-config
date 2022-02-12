@@ -249,9 +249,9 @@
 //                 hold: | SYM | NUM  | -shift |    | RET   | NAV | FUN |
                       bindings = <
   &kp TAB    &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &kp BSLH
-  &kp LCTRL  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &kp RCTRL
+  &kp LCTRL  &kp A     &kp S     &kp D      &lt 2 F       &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &kp RCTRL
   &kp LSHFT  &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &kp RSHFT
-                           &lt 2 DELETE  &lt 1 BSPC  &skq LSHFT        &as RET TAB  &lt 3 SPACE  &lt 4 ESC
+                           &lt 4 DELETE  &lt 1 BSPC  &skq LSHFT        &lt 1 TAB  &lt 3 SPACE  &lt 5 ESC
                         >;
                 };
 
@@ -260,7 +260,7 @@
 
                 num_layer {
       bindings = <
-  &bootloader &none     &none      &none      &none       &none      AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)  &trans
+  &bootloader &none     &none      &kp RET    &none       &none      AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)  &trans
   &trans      &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT   &none      AS(EQL)    AS(N4)  AS(N5)  AS(N6)  AS(SEMI)  &trans
   &trans      &none     &none      &none      &none       &none      AS(BSLH)   AS(N1)  AS(N2)  AS(N3)  AS(GRAVE) &trans
                                    &trans     &trans      &trans     AS(MINUS)  AS(N0)  &kp DOT
@@ -271,7 +271,7 @@
 
                 sym_layer {
       bindings = <
-  &bootloader &none     &none      &none      &none       &none      &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC   &trans
+  &bootloader &none     &none      &kp RET    &none       &none      &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC   &trans
   &trans      &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT   &none      &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT  &kp COLON  &trans
   &trans      &none     &none      &none      &none       &none      &kp PIPE   &kp EXCL  &kp AT     &kp HASH  &kp TILDE  &trans
                                    &trans     &trans      &trans     &kp UNDER  &kp RPAR  &kp LPAR
@@ -293,16 +293,11 @@
 
 
                 fun_layer {
-// ------------------------------------------------------------------------------------------------------------
-// |       |     |     |      |      |         |   |      |       |       |        |          |       |
-// |       |     |     |      |      |         |   |      |       |       |        |          |       |
-// |       |     |     |      |      |         |   |      |       |       |        |          |       |
-//                     |MEDIA |      |         |   |      |       |       |
       bindings = <
-  &bootloader &none     &none      &none      &none       &none      &kp PSCRN        &kp F7   &kp F8  &kp F9  &kp F12  &trans
+  &bootloader &none     &none      &kp RET    &none       &none      &kp PSCRN        &kp F7   &kp F8  &kp F9  &kp F12  &trans
   &trans      &sk LGUI  &sk LALT   &sk LCTRL  &sk LSHFT   &none      &kp SLCK         &kp F4   &kp F5  &kp F6  &kp F11  &trans
   &trans      &none     &none      &none      &none       &none      &kp PAUSE_BREAK  &kp F1   &kp F2  &kp F3  &kp F10  &trans
-                                   &mo 5      &trans      &trans     &kp TAB          &kp SPC  &trans
+                                   &trans     &trans      &trans     &kp TAB          &kp SPC  &kp K_CMENU
                         >;
                 };
 
