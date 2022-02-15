@@ -235,6 +235,18 @@
             key-positions = <26 27 28>;
             bindings = <&kp LA(LC(TAB))>;
         };
+        
+        combo_ret1 {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp RET>;
+        };
+        
+        combo_ret2 {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp RET>;
+        };
     };
 
     keymap {
@@ -249,7 +261,7 @@
 //                 hold: | SYM | NUM  | -shift |    | RET   | NAV | FUN |
                       bindings = <
   &mt LALT TAB    &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &mt RALT BSLH
-  &kp LCTRL       &kp A     &kp S     &kp D      &lt 2 F       &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &kp RCTRL
+  &mt LCTRL LPAR  &kp A     &kp S     &kp D      &lt 2 F       &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL RPAR
   &mt LSHFT UNDER &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT MINUS
                            &lt 4 DELETE  &lt 1 BSPC  &skq LSHFT        &lt 1 TAB  &lt 3 SPACE  &lt 5 ESC
                         >;
