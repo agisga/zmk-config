@@ -1,0 +1,178 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+
+//        combo_f1 {
+//            timeout-ms = <50>;
+//            key-positions = <13 25>;
+//            bindings = <&kp F1>;
+//        };
+//
+//        combo_f2 {
+//            timeout-ms = <50>;
+//            key-positions = <14 26>;
+//            bindings = <&kp F2>;
+//        };
+//
+//        combo_f3 {
+//            timeout-ms = <50>;
+//            key-positions = <15 27>;
+//            bindings = <&kp F3>;
+//        };
+//
+//        combo_f4 {
+//            timeout-ms = <50>;
+//            key-positions = <16 28>;
+//            bindings = <&kp F4>;
+//        };
+//
+//        combo_f5 {
+//            timeout-ms = <50>;
+//            key-positions = <17 29>;
+//            bindings = <&kp F5>;
+//        };
+//
+//        combo_f6 {
+//            timeout-ms = <50>;
+//            key-positions = <18 30>;
+//            bindings = <&kp F6>;
+//        };
+//
+//        combo_f7 {
+//            timeout-ms = <50>;
+//            key-positions = <19 31>;
+//            bindings = <&kp F7>;
+//        };
+//
+//        combo_f8 {
+//            timeout-ms = <50>;
+//            key-positions = <20 32>;
+//            bindings = <&kp F8>;
+//        };
+//
+//        combo_f9 {
+//            timeout-ms = <50>;
+//            key-positions = <21 33>;
+//            bindings = <&kp F9>;
+//        };
+//
+//        combo_f10 {
+//            timeout-ms = <50>;
+//            key-positions = <22 34>;
+//            bindings = <&kp F10>;
+//        };
+//
+//        combo_f11 {
+//            timeout-ms = <50>;
+//            key-positions = <23 35>;
+//            bindings = <&kp F11>;
+//        };
+//
+//        combo_f12 {
+//            timeout-ms = <50>;
+//            key-positions = <25 37>;
+//            bindings = <&kp F12>;
+//        };
+
+        combo_voldn {
+            timeout-ms = <50>;
+            key-positions = <26 38>;
+            bindings = <&kp C_VOL_DN>;
+        };
+
+        combo_volup {
+            timeout-ms = <50>;
+            key-positions = <27 39>;
+            bindings = <&kp C_VOL_UP>;
+        };
+
+        combo_zoomout {
+            timeout-ms = <50>;
+            key-positions = <28 40>;
+            bindings = <&kp LC(MINUS)>;
+        };
+
+        combo_zoomin {
+            timeout-ms = <50>;
+            key-positions = <29 41>;
+            bindings = <&kp LC(EQUAL)>;
+        };
+
+        combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <37 38>;
+            bindings = <&kp LGUI>;
+        };
+    };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  `    |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   -   |
+// |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   \   |
+// |  CAPS |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
+// | SHIFT |  Z  |  X  |  C   |  V   |  B   |   [    |  |  ]    |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+//                     | menu | =    |SPACE | ENTER  |  | SPACE | BSPC | RAISE | del   |
+//               hold: | (gui)| (alt)|(ctrl)|        |  |       |      |       |       |
+      bindings = <
+&kp GRAVE             &kp N1    &kp N2    &kp N3     &kp N4        &kp N5                                     &kp N6       &kp N7     &kp N8      &kp N9    &kp N0    &kp MINUS
+&kp TAB               &kp Q     &kp W     &kp E      &kp R         &kp T                                      &kp Y        &kp U      &kp I       &kp O     &kp P     &kp BSLH
+&mt LCTRL CAPSLOCK    &kp A     &kp S     &kp D      &kp F         &kp G                                      &kp H        &kp J      &kp K       &kp L     &kp SEMI  &kp SQT
+&kp LSHFT             &kp Z     &kp X     &kp C      &kp V         &kp B            &kp LBKT       &kp RBKT   &kp N        &kp M      &kp COMMA   &kp DOT   &kp FSLH  &kp RSHFT
+                                &mt LGUI K_CMENU   &mt LALT EQUAL   &mt LCTRL SPACE  &kp RET       &kp SPACE  &kp BSPC   &mo 2  &kp DELETE
+      >;
+    };
+
+    lower_layer {
+// LOWER layer is no longer used in this config! (for now)
+// ------------------------------------------------------------------------------------------------------------
+// |  ESC     |  F1 |  F2 |  F3  |  F4  |  F5  |                   |   F6 |  F7   |  F8   |  F9  |  F10  |  F11  |
+// |LC(LG(->))|  !  |  @  |  #   |  $   |  %   |                   |  ^   |  &    |  *    |  (   |   )   |  F12  |
+// |   `      |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   ~   |
+// |LC(LG(<-))|     |     |      |  +   |  =   |        |  |       |  -   |  [    |  ]    |  {   |   }   |       |
+//                        |      |      |      |        |  | _     |      |       |       |
+      bindings = <
+&kp ESC           &kp F1           &kp F2            &kp F3            &kp F4       &kp F5                       &kp F6    &kp F7    &kp F8          &kp F9    &kp F10   &kp F11
+&kp LC(LG(RIGHT)) &kp EXCL         &kp AT            &kp HASH          &kp DOLLAR   &kp PRCNT                    &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR  &kp F12
+&kp GRAVE         &kp N1           &kp N2            &kp N3            &kp N4       &kp N5                       &kp N6    &kp N7    &kp N8          &kp N9    &kp N0    &kp TILDE
+&kp LC(LG(LEFT))  &trans           &trans            &trans            &kp PLUS     &kp EQUAL &trans   &trans    &kp MINUS &kp LBKT  &kp RBKT        &kp LBRC  &kp RBRC  &trans
+                                                     &trans            &trans       &trans    &trans   &kp UNDER &trans    &trans    &trans
+      >;
+    };
+
+    raise_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |  ESC  |  F1 |  F2 |  F3  |  F4  |  F5  |                   |   F6 |  F7   |  F8   |  F9    |  F10  |  F11  |
+// | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   | home |  pg dn| pf up |  end   | PSCRN |  F12  |
+// |OUT_TOG|LCTRL| LGUI| LALT | LSHFT|      |                   |  <-  |   v   |  ^    |  ->    | INSERT|       |
+// |       |mute |V dn |V up  |      |      |                   |LC(<-)|LC(pgup)|LC(pgdn)|LC(->)| MENU  |       |
+//                     |insert|      |      |        |  |       |      |       |       |
+      bindings = <
+&kp ESC        &kp F1         &kp F2            &kp F3        &kp F4       &kp F5                             &kp F6       &kp F7        &kp F8        &kp F9        &kp F10     &kp F11
+&bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4                       &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp PSCRN   &kp F12
+&out OUT_TOG   &kp LCTRL      &kp LGUI          &kp LALT      &kp LSHFT    &trans                             &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT  &trans
+&trans         &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP  &trans       &trans      &trans       &trans    &kp LC(LEFT) &kp LC(PG_UP) &kp LC(PG_DN) &kp LC(RIGHT) &kp K_CMENU &trans
+                                                &mt LGUI INSERT  &trans   &trans      &trans       &trans    &trans       &trans        &trans
+      >;
+    };
+  };
+};
