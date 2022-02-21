@@ -44,78 +44,6 @@
             bindings = <&kp ESC>;
         };
 
-        combo_f1 {
-            timeout-ms = <50>;
-            key-positions = <1 13>;
-            bindings = <&kp F1>;
-        };
-
-        combo_f2 {
-            timeout-ms = <50>;
-            key-positions = <2 14>;
-            bindings = <&kp F2>;
-        };
-
-        combo_f3 {
-            timeout-ms = <50>;
-            key-positions = <3 15>;
-            bindings = <&kp F3>;
-        };
-
-        combo_f4 {
-            timeout-ms = <50>;
-            key-positions = <4 16>;
-            bindings = <&kp F4>;
-        };
-
-        combo_f5 {
-            timeout-ms = <50>;
-            key-positions = <5 17>;
-            bindings = <&kp F5>;
-        };
-
-        combo_f6 {
-            timeout-ms = <50>;
-            key-positions = <6 18>;
-            bindings = <&kp F6>;
-        };
-
-        combo_f7 {
-            timeout-ms = <50>;
-            key-positions = <7 19>;
-            bindings = <&kp F7>;
-        };
-
-        combo_f8 {
-            timeout-ms = <50>;
-            key-positions = <8 20>;
-            bindings = <&kp F8>;
-        };
-
-        combo_f9 {
-            timeout-ms = <50>;
-            key-positions = <9 21>;
-            bindings = <&kp F9>;
-        };
-
-        combo_f10 {
-            timeout-ms = <50>;
-            key-positions = <10 22>;
-            bindings = <&kp F10>;
-        };
-
-        combo_f11 {
-            timeout-ms = <50>;
-            key-positions = <11 23>;
-            bindings = <&kp F11>;
-        };
-
-        combo_f12 {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp F12>;
-        };
-
         combo_scrnsht {
             timeout-ms = <50>;
             key-positions = <1 25>;
@@ -170,42 +98,6 @@
             bindings = <&kp LC(LG(RIGHT))>;
         };
 
-        combo_left {
-            timeout-ms = <50>;
-            key-positions = <18 30>;
-            bindings = <&kp LEFT>;
-        };
-
-        combo_down {
-            timeout-ms = <50>;
-            key-positions = <19 31>;
-            bindings = <&kp DOWN>;
-        };
-
-        combo_up {
-            timeout-ms = <50>;
-            key-positions = <20 32>;
-            bindings = <&kp UP>;
-        };
-
-        combo_right {
-            timeout-ms = <50>;
-            key-positions = <21 33>;
-            bindings = <&kp RIGHT>;
-        };
-
-        combo_pgdn {
-            timeout-ms = <50>;
-            key-positions = <22 34>;
-            bindings = <&kp PG_DN>;
-        };
-
-        combo_pgup {
-            timeout-ms = <50>;
-            key-positions = <23 35>;
-            bindings = <&kp PG_UP>;
-        };
-
         combo_lgui {
             timeout-ms = <50>;
             key-positions = <25 26>;
@@ -235,17 +127,23 @@
             key-positions = <26 27 28>;
             bindings = <&kp LA(LC(TAB))>;
         };
-        
-        combo_ret1 {
+
+        combo_ret {
             timeout-ms = <50>;
             key-positions = <26 27>;
             bindings = <&kp RET>;
         };
-        
-        combo_ret2 {
+
+        combo_cbspc {
             timeout-ms = <50>;
-            key-positions = <32 33>;
-            bindings = <&kp RET>;
+            key-positions = <20 31>;
+            bindings = <&kp LC(BSPC)>;
+        };
+
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <20 33>;
+            bindings = <&kp DELETE>;
         };
     };
 
@@ -258,10 +156,10 @@
 // | LCTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   | RCTRL |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
 //                       | DEL | BSPC | sticky-|    | TAB   | SPC | ESC |
-//                 hold: | SYM | NUM  | -shift |    | ALT   | NAV | FUN |
+//                 hold: | FUN | NUM  | -shift |    | ALT   | NAV | FUN |
                       bindings = <
   &key_repeat     &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &mt RALT BSLH
-  &mt LCTRL LPAR  &kp A     &kp S     &kp D      &lt 2 F       &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL RPAR
+  &mt LCTRL LPAR  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL RPAR
   &mt LSHFT UNDER &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT MINUS
                                 &lt 4 DELETE  &lt 1 BSPC  &skq LSHFT        &mt LALT TAB  &lt 3 SPACE  &lt 5 ESC
                         >;
@@ -282,6 +180,9 @@
 
 
                 sym_layer {
+// The SYM layer is layer 2, and there is currently no way to access it,
+// but it's exactly equal to the shifted NUM layer (which also has autoshift enabled,
+// and also has a Shift on the "F" key), so it's redundant in that way...
       bindings = <
   &bootloader &none     &none      &kp RET    &none       &none      &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR  &kp RBRC   &trans
   &trans      &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT   &none      &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT  &kp COLON  &trans
