@@ -106,14 +106,8 @@
 
         combo_alttab {
             timeout-ms = <50>;
-            key-positions = <14 15>;
-            bindings = <&kp LA(TAB)>;
-        };
-
-        combo_altshifttab {
-            timeout-ms = <50>;
             key-positions = <14 15 16>;
-            bindings = <&kp LA(LS(TAB))>;
+            bindings = <&kp LA(TAB)>;
         };
 
         combo_guitab {
@@ -133,10 +127,22 @@
             key-positions = <26 27>;
             bindings = <&kp RET>;
         };
+        
+        combo_bspc {
+            timeout-ms = <50>;
+            key-positions = <20 31>;
+            bindings = <&kp BSPC>;
+        };
+        
+        combo_ctrl {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&sk LCTRL>;
+        };
 
         combo_cbspc {
             timeout-ms = <50>;
-            key-positions = <20 31>;
+            key-positions = <20 21 31>;
             bindings = <&kp LC(BSPC)>;
         };
 
@@ -144,6 +150,12 @@
             timeout-ms = <50>;
             key-positions = <20 33>;
             bindings = <&kp DELETE>;
+        };
+        
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&kp TAB>;
         };
     };
 
@@ -161,7 +173,7 @@
   &key_repeat     &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &mt RALT BSLH
   &mt LCTRL LPAR  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL RPAR
   &mt LSHFT UNDER &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT MINUS
-                                &lt 4 DELETE  &lt 1 BSPC  &skq LSHFT        &mt LALT TAB  &lt 3 SPACE  &lt 5 ESC
+                                    &lt 4 F2     &mo 1    &skq LSHFT        &lt 3 SPACE  &mo 3  &lt 5 ESC
                         >;
                 };
 
