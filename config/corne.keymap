@@ -134,6 +134,12 @@
             bindings = <&kp BSPC>;
         };
         
+        combo_bspc2 {
+            timeout-ms = <50>;
+            key-positions = <17 28>;
+            bindings = <&kp BSPC>;
+        };
+        
         combo_ctrl {
             timeout-ms = <50>;
             key-positions = <20 21>;
@@ -149,6 +155,12 @@
         combo_del {
             timeout-ms = <50>;
             key-positions = <20 33>;
+            bindings = <&kp DELETE>;
+        };
+
+        combo_del2 {
+            timeout-ms = <50>;
+            key-positions = <17 26>;
             bindings = <&kp DELETE>;
         };
         
@@ -167,13 +179,13 @@
 // |REPEAT |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   | RCTRL |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
-//                       | DEL | BSPC | sticky-|    | TAB   | SPC | ESC |
-//                 hold: | FUN | NUM  | -shift |    | ALT   | NAV | FUN |
+//                       | *   |      | sticky-|    | SPC   | SPC | #   |
+//                 hold: | FUN | NUM  | -shift |    | NAV   | NAV | FUN |
                       bindings = <
   &key_repeat     &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &mt RALT BSLH
   &mt LCTRL LPAR  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL RPAR
   &mt LSHFT UNDER &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT MINUS
-                                    &lt 4 F2     &mo 1    &skq LSHFT        &lt 3 SPACE  &mo 3  &lt 5 ESC
+                                    &lt 4 ASTRK     &mo 1    &skq LSHFT        &lt 3 SPACE  &lt 3 SPACE  &lt 5 HASH
                         >;
                 };
 
