@@ -136,7 +136,7 @@
         
         combo_bspc2 {
             timeout-ms = <50>;
-            key-positions = <17 28>;
+            key-positions = <15 28>;
             bindings = <&kp BSPC>;
         };
         
@@ -160,7 +160,7 @@
 
         combo_del2 {
             timeout-ms = <50>;
-            key-positions = <17 26>;
+            key-positions = <15 26>;
             bindings = <&kp DELETE>;
         };
         
