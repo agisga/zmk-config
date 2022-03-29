@@ -179,13 +179,13 @@
 // |REPEAT |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   | RCTRL |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
-//                       | *   |      | sticky-|    | SPC   | SPC | #   |
+//                       | *   |  '   | sticky-|    | SPC   | SPC | #   |
 //                 hold: | FUN | NUM  | -shift |    | NAV   | NAV | FUN |
                       bindings = <
   &key_repeat     &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &mt RALT BSLH
-  &mt LCTRL LPAR  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL RPAR
+  &mt LCTRL LPAR  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SEMI)  &mt RCTRL RPAR
   &mt LSHFT UNDER &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT MINUS
-                                    &lt 4 ASTRK     &mo 1    &skq LSHFT        &lt 3 SPACE  &lt 3 SPACE  &lt 5 HASH
+                                    &lt 4 ASTRK  &lt 1 SQT  &skq LSHFT      &lt 3 SPACE  &lt 3 SPACE  &lt 5 HASH
                         >;
                 };
 
@@ -195,7 +195,7 @@
                 num_layer {
       bindings = <
   &bootloader &none     &none      &kp RET    &none       &none      AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)  &trans
-  &trans      &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT   &none      AS(EQL)    AS(N4)  AS(N5)  AS(N6)  AS(SEMI)  &trans
+  &trans      &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT   &none      AS(EQL)    AS(N4)  AS(N5)  AS(N6)  AS(SQT)   &trans
   &trans      &none     &none      &none      &none       &none      AS(BSLH)   AS(N1)  AS(N2)  AS(N3)  AS(GRAVE) &trans
                                    &trans     &trans      &trans     AS(MINUS)  AS(N0)  &kp DOT
                         >;
