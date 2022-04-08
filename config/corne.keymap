@@ -179,13 +179,13 @@
 // |REPEAT |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
 // | LCTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   | RCTRL |
 // | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
-//                       | *   |  '   | sticky-|    | SPC   | SPC | #   |
-//                 hold: | FUN | NUM  | -shift |    | NAV   | NAV | FUN |
+//                       | *   |  -   | sticky-|    | SPC   | SPC | #     |
+//                 hold: | FUN | NUM  | -shift |    | NAV   | NAV | MEDIA |
                       bindings = <
   &key_repeat     &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &mt RALT BSLH
   &mt LCTRL LPAR  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SEMI)  &mt RCTRL RPAR
-  &mt LSHFT UNDER &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT MINUS
-                                    &lt 4 ASTRK  &lt 1 SQT  &skq LSHFT      &lt 3 SPACE  &lt 3 SPACE  &lt 5 HASH
+  &mt LSHFT LBKT  &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT RBKT
+                                    &lt 4 ASTRK  &lt 1 MINUS  &skq LSHFT    &lt 3 SPACE  &lt 3 SPACE  &lt 5 HASH
                         >;
                 };
 
@@ -194,10 +194,10 @@
 
                 num_layer {
       bindings = <
-  &bootloader &none     &none      &kp RET    &none       &none      AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)  &trans
+  &bootloader &none     &kp COMMA  &kp DOT    &none       &none      AS(LBKT)   AS(N7)  AS(N8)  AS(N9)  AS(RBKT)  &trans
   &trans      &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT   &none      AS(EQL)    AS(N4)  AS(N5)  AS(N6)  AS(SQT)   &trans
   &trans      &none     &none      &none      &none       &none      AS(BSLH)   AS(N1)  AS(N2)  AS(N3)  AS(GRAVE) &trans
-                                   &trans     &trans      &trans     AS(MINUS)  AS(N0)  &kp DOT
+                                   &trans     &trans      &trans     &kp UNDER  AS(N0)  &kp DOT
                         >;
                 };
 
@@ -221,7 +221,7 @@
                 nav_layer {
       bindings = <
   &trans  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INSERT       &none  &kp K_CMENU  &kp TAB    &kp LA(LC(TAB))  &none     &bootloader
-  &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &kp LSHFT    &kp LCTRL  &kp LALT         &kp LGUI  &trans
+  &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &kp LSHFT    &kp LCTRL  &kp LALT         &kp LGUI  &tog 6
   &trans  &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LC(Y)        &none  &none        &none      &none            &none     &trans
                                   &kp DEL     &kp BSPC    &kp RET          &trans &trans       &trans
                         >;
@@ -249,10 +249,20 @@
 //                     |      |      |         |   |      |       |       |
       bindings = <
   &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &trans   &trans   &trans   &trans   &trans   &trans
-  &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
+  &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &tog 6
   &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
                                                   &trans        &trans       &trans          &trans   &trans   &trans
                         >;
                 };
+                
+                dvorak_layer {
+                      bindings = <
+  &key_repeat     AS(SQT)    AS(COMMA)   AS(DOT)     &kp P   &kp Y    &kp F    &kp G   &kp C   &kp R   &kp L  &mt RALT BSLH
+  &mt LCTRL LPAR  &kp A      &kp O       &kp E       &kp U   &kp I    &kp D    &kp H   &kp T   &kp N   &kp S  &mt RCTRL RPAR
+  &mt LSHFT LBKT  AS(FSLH)   &kp Q       &kp J       &kp K   &kp X    &kp B    &kp M   &kp W   &kp V   &kp Z  &mt RSHFT RBKT
+                              &lt 4 ASTRK  &lt 1 MINUS  &skq LSHFT    &lt 3 SPACE  &lt 3 SPACE  &lt 5 HASH
+
+                        >;
+                };           
         };
 };
