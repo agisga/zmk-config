@@ -69,31 +69,31 @@
         };
 
         combo_volmute {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <13 25>;
             bindings = <&kp C_MUTE>;
         };
 
         combo_voldn {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <14 26>;
             bindings = <&kp C_VOL_DN>;
         };
 
         combo_volup {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <15 27>;
             bindings = <&kp C_VOL_UP>;
         };
 
         combo_pworkspace {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <16 28>;
             bindings = <&kp LC(LG(LEFT))>;
         };
 
         combo_nworkspace {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <17 29>;
             bindings = <&kp LC(LG(RIGHT))>;
         };
@@ -129,19 +129,19 @@
         };
         
         combo_bspc {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <20 31>;
             bindings = <&kp BSPC>;
         };
         
         combo_bspc2 {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <15 28>;
             bindings = <&kp BSPC>;
         };
         
         combo_ctrl {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&sk LCTRL>;
         };
@@ -153,13 +153,13 @@
         };
 
         combo_del {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <20 33>;
             bindings = <&kp DELETE>;
         };
 
         combo_del2 {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <15 26>;
             bindings = <&kp DELETE>;
         };
