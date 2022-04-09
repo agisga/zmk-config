@@ -112,13 +112,13 @@
 
         combo_guitab {
             timeout-ms = <50>;
-            key-positions = <13 14 15>;
+            key-positions = <15 16 17>;
             bindings = <&kp LG(TAB)>;
         };
 
         combo_altctrltab {
             timeout-ms = <50>;
-            key-positions = <26 27 28>;
+            key-positions = <3 4 5>;
             bindings = <&kp LA(LC(TAB))>;
         };
 
@@ -229,7 +229,7 @@
                 nav_layer {
       bindings = <
   &trans  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INSERT       &none  &kp K_CMENU  &kp TAB    &kp LA(LC(TAB))  &none     &bootloader
-  &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &kp LSHFT    &kp LCTRL  &kp LALT         &kp LGUI  &tog 2
+  &trans  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &kp CAPSLOCK     &none  &kp LSHFT    &kp LCTRL  &kp LALT         &kp LGUI  &tog 1
   &trans  &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LC(Y)        &none  &none        &none      &none            &none     &trans
                                   &kp DEL     &kp BSPC    &kp RET          &trans &trans       &trans
                         >;
@@ -257,7 +257,7 @@
 //                     |      |      |         |   |      |       |       |
       bindings = <
   &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4    &trans   &trans   &trans   &trans   &trans   &trans
-  &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &tog 2
+  &out OUT_TOG   &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &tog 1
   &trans         &trans         &trans            &trans        &trans       &trans          &trans   &trans   &trans   &trans   &trans   &trans
                                                   &trans        &trans       &trans          &trans   &trans   &trans
                         >;
