@@ -33,6 +33,15 @@
         bindings = <&kp>;
         release-after-ms = <1000>;
         quick-release;
+
+      hm: homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          label = "HOMEROW_MODS";
+          #binding-cells = <2>;
+          tapping-term-ms = <300>;
+          quick-tap-ms = <-1>;
+          flavor = "tap-preferred";
+          bindings = <&kp>, <&kp>;
       };
     };
 
@@ -98,11 +107,11 @@
             bindings = <&kp LC(LG(RIGHT))>;
         };
 
-        combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <25 26>;
-            bindings = <&kp LGUI>;
-        };
+//        combo_lgui {
+//            timeout-ms = <50>;
+//            key-positions = <25 26>;
+//            bindings = <&kp LGUI>;
+//        };
 
         combo_alttab {
             timeout-ms = <50>;
@@ -110,36 +119,36 @@
             bindings = <&kp LA(TAB)>;
         };
 
-        combo_guitab {
-            timeout-ms = <50>;
-            key-positions = <27 28 29>;
-            bindings = <&kp LG(TAB)>;
-        };
+//        combo_guitab {
+//            timeout-ms = <50>;
+//            key-positions = <27 28 29>;
+//            bindings = <&kp LG(TAB)>;
+//        };
 
-        combo_altctrltab {
-            timeout-ms = <50>;
-            key-positions = <3 4 5>;
-            bindings = <&kp LA(LC(TAB))>;
-        };
+//        combo_altctrltab {
+//            timeout-ms = <50>;
+//            key-positions = <3 4 5>;
+//            bindings = <&kp LA(LC(TAB))>;
+//        };
 
         combo_ret {
             timeout-ms = <50>;
             key-positions = <26 27>;
             bindings = <&kp RET>;
         };
-        
+
         combo_bspc {
             timeout-ms = <30>;
             key-positions = <20 31>;
             bindings = <&kp BSPC>;
         };
-        
+
         combo_bspc2 {
             timeout-ms = <30>;
             key-positions = <15 28>;
             bindings = <&kp BSPC>;
         };
-        
+
         combo_ctrl {
             timeout-ms = <30>;
             key-positions = <20 21>;
@@ -163,7 +172,7 @@
             key-positions = <15 26>;
             bindings = <&kp DELETE>;
         };
-        
+
         combo_tab {
             timeout-ms = <50>;
             key-positions = <32 33>;
@@ -182,22 +191,28 @@
 //                       | *   |  -   | sticky-|    | SPC   | SPC | #     |
 //                 hold: | FUN | NUM  | -shift |    | NAV   | NAV | MEDIA |
                       bindings = <
+  &key_repeat     &kp Q      &kp W       &kp E       &kp R         &kp T        &kp Y        &kp U         &kp I        &kp O       &kp P          &mt RALT BSLH
+  &mt LCTRL LPAR  &hm LGUI A &hm LALT S  &hm LCTRL D &hm LSHIFT F  &kp G        &kp H        &hm LSHIFT J  &hm LCTRL K  &hm LALT L  &hm LGUI SQT   &mt RCTRL RPAR
+  &mt LSHFT LBKT  &kp Z      &kp X       &kp C       &kp V         &kp B        &kp N        &kp M         AS(COMMA)    AS(DOT)     AS(FSLH)       &mt RSHFT RBKT
+                                    &lt 5 ASTRK  &lt 2 MINUS  &skq LSHFT    &lt 4 SPACE  &lt 4 SPACE  &lt 6 HASH
+                        >;
+                };
+
+
+                gaming_layer {
+// ------------------------------------------------------------------------------------------------------------
+// |REPEAT |  Q  |  W  |  E   |   R   |  T     |    |  Y    |  U   |  I    |  O   |   P   |   \   |
+// | LCTRL |  A  |  S  |  D   |   F   |  G     |    |  H    |  J   |  K    |  L   |   '   | RCTRL |
+// | SHIFT |  Z  |  X  |  C   |   V   |  B     |    |  N    |  M   |  ,    |  .   |   /   | SHIFT |
+//                       | *   |  -   | sticky-|    | SPC   | SPC | #     |
+//                 hold: | FUN | NUM  | -shift |    | NAV   | NAV | MEDIA |
+                      bindings = <
   &key_repeat     &kp Q     &kp W     &kp E      &kp R         &kp T        &kp Y        &kp U       &kp I       &kp O     &kp P     &mt RALT BSLH
   &mt LCTRL LPAR  &kp A     &kp S     &kp D      &kp F         &kp G        &kp H        &kp J       &kp K       &kp L     AS(SQT)   &mt RCTRL RPAR
   &mt LSHFT LBKT  &kp Z     &kp X     &kp C      &kp V         &kp B        &kp N        &kp M       AS(COMMA)   AS(DOT)   AS(FSLH)  &mt RSHFT RBKT
                                     &lt 5 ASTRK  &lt 2 MINUS  &skq LSHFT    &lt 4 SPACE  &lt 4 SPACE  &lt 6 HASH
                         >;
                 };
-
-                
-                dvorak_layer {
-                      bindings = <
-  &key_repeat     AS(SQT)    AS(COMMA)   AS(DOT)     &kp P   &kp Y    &kp F    &kp G   &kp C   &kp R   &kp L  &mt RALT BSLH
-  &mt LCTRL LPAR  &kp A      &kp O       &kp E       &kp U   &kp I    &kp D    &kp H   &kp T   &kp N   &kp S  &mt RCTRL RPAR
-  &mt LSHFT LBKT  AS(FSLH)   &kp Q       &kp J       &kp K   &kp X    &kp B    &kp M   &kp W   &kp V   &kp Z  &mt RSHFT RBKT
-                              &lt 5 ASTRK  &lt 2 MINUS  &skq LSHFT    &lt 4 SPACE  &lt 4 SPACE  &lt 6 HASH
-                        >;
-                }; 
 
 
                 num_layer {
@@ -262,6 +277,6 @@
                                                   &trans        &trans       &trans          &trans   &trans   &trans
                         >;
                 };
-          
+
         };
 };
