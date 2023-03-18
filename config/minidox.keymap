@@ -93,7 +93,7 @@
       label = "STICKY_NUM_ESC"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&sl &noneM>, <&kp ESC>; \
+      bindings = <&sl U_NUM>, <&kp ESC>; \
     }; \
 
     td_bootloader: double_tap_bootloader { \
