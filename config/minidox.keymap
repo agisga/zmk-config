@@ -74,9 +74,7 @@
       label = "FAST_LAYER_TAP";
       #binding-cells = <2>;
       tapping-term-ms = <190>;
-      quick-tap-ms = <150>;
       flavor = "tap-preferred";
-      global-quick-tap;
       bindings = <&mo>, <&kp>;
     };
 
@@ -193,6 +191,11 @@
         tap-ms = <40>;
         bindings = <&kp LT &kp GT &kp LEFT>;
     )
+    ZMK_MACRO(fifteen_stars,
+        wait-ms = <50>;
+        tap-ms = <40>;
+        bindings = <&kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp SPC>;
+    )
   };
 
   combos {
@@ -235,7 +238,7 @@
 
                 base_layer {
                       bindings = <
-&kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             &kp SQT
+&kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
 &lts U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &lts U_BUTTON COMMA
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &ltf U_NAV SPC &ltf U_NAV SPC  &key_repeat
@@ -262,7 +265,7 @@
 
                 button_layer {
                       bindings = <
-&colonq     &colonwq    &colonqex  &none      &none   &none           &none        &none          &kp LPAR     &kp RPAR
+&colonq     &colonwq    &colonqex  &none      &none   &none           &none        &fifteen_stars &kp LPAR     &kp RPAR
 &kp RA(Q)   &kp RA(P)   &kp RA(S)  &kp RA(Y)  &none   &angbrc_macro   &dqt_macro   &paren_macro   &bkt_macro   &brc_macro
 U_UND       U_CUT       U_CPY      U_PST      U_RDO   &kp LT          &leftarr     &ellipsis      &rightarr    &kp GT
                         &none      &none      &none   &none           &none        &none
