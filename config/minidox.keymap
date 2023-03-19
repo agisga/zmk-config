@@ -200,31 +200,31 @@
 
     combo_volmute {
         timeout-ms = <30>;
-        key-positions = <10 22>;
+        key-positions = <10 20>;
         bindings = <&kp C_MUTE>;
     };
 
     combo_voldn {
         timeout-ms = <30>;
-        key-positions = <11 23>;
+        key-positions = <11 21>;
         bindings = <&kp C_VOL_DN>;
     };
 
     combo_volup {
         timeout-ms = <30>;
-        key-positions = <12 24>;
+        key-positions = <12 22>;
         bindings = <&kp C_VOL_UP>;
     };
 
     combo_pworkspace {
         timeout-ms = <30>;
-        key-positions = <13 25>;
+        key-positions = <13 23>;
         bindings = <&kp LC(LG(LEFT))>;
     };
 
     combo_nworkspace {
         timeout-ms = <30>;
-        key-positions = <14 26>;
+        key-positions = <14 24>;
         bindings = <&kp LC(LG(RIGHT))>;
     };
   };
@@ -283,7 +283,7 @@ U_UND       U_CUT       U_CPY      U_PST      U_RDO   &kp LT          &leftarr  
 AS(LBKT)   AS(N7)  AS(N8)  AS(N9)   AS(RBKT)           &kp INS           &kp HOME    &kp UP      &kp END     &kp PG_UP
 AS(SEMI)   AS(N4)  AS(N5)  AS(N6)   AS(EQL)            &u_to_U_BASE      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_DN
 AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)   AS(BSLH)           &kp DEL           U_PST       U_CPY       U_CUT       &kp BSPC
-                   &kp DOT AS(N0)   AS(MINUS)          &ltf U_BASE SPACE &kp LSHFT   &kp LCTRL
+                   &kp DOT AS(N0)   AS(MINUS)          &ltf U_BASE SPC   &kp LSHFT   &kp LCTRL
                         >;
                 };
 
