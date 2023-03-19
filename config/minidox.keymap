@@ -31,7 +31,7 @@
         compatible = "zmk,behavior-hold-tap";
         label = "AUTO_SHIFT";
         #binding-cells = <2>;
-        tapping_term_ms = <140>;
+        tapping_term_ms = <150>;
         quick_tap_ms = <0>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
@@ -195,9 +195,43 @@
     )
   };
 
+  combos {
+    compatible = "zmk,combos";
 
-    keymap {
-      compatible = "zmk,keymap";
+    combo_volmute {
+        timeout-ms = <30>;
+        key-positions = <10 22>;
+        bindings = <&kp C_MUTE>;
+    };
+
+    combo_voldn {
+        timeout-ms = <30>;
+        key-positions = <11 23>;
+        bindings = <&kp C_VOL_DN>;
+    };
+
+    combo_volup {
+        timeout-ms = <30>;
+        key-positions = <12 24>;
+        bindings = <&kp C_VOL_UP>;
+    };
+
+    combo_pworkspace {
+        timeout-ms = <30>;
+        key-positions = <13 25>;
+        bindings = <&kp LC(LG(LEFT))>;
+    };
+
+    combo_nworkspace {
+        timeout-ms = <30>;
+        key-positions = <14 26>;
+        bindings = <&kp LC(LG(RIGHT))>;
+    };
+  };
+
+
+  keymap {
+    compatible = "zmk,keymap";
 
                 base_layer {
                       bindings = <
@@ -236,7 +270,7 @@ U_UND       U_CUT       U_CPY      U_PST      U_RDO   &kp LT          &leftarr  
                 };
 
                 nav_layer {
-      bindings = <
+                      bindings = <
 &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none  &u_to_U_BASE    &u_to_U_EXTRA     &u_to_U_TAP  U_BOOT
 &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none  &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
 &kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none  &u_to_U_NAVNUM  &u_to_U_NAVNUM    &none        &none
@@ -245,16 +279,16 @@ U_UND       U_CUT       U_CPY      U_PST      U_RDO   &kp LT          &leftarr  
                 };
 
                 navnum_layer {
-      bindings = <
+                      bindings = <
 AS(LBKT)   AS(N7)  AS(N8)  AS(N9)   AS(RBKT)           &kp INS           &kp HOME    &kp UP      &kp END     &kp PG_UP
 AS(SEMI)   AS(N4)  AS(N5)  AS(N6)   AS(EQL)            &u_to_U_BASE      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_DN
-AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)   AS(BSLH)           &kp DEL           U_CUT       U_CPY       U_PST       &kp BSPC
-                   &kp DOT AS(N0)   AS(MINUS)          &ltf SPACE U_BASE &kp LSHFT   &kp LCTRL
+AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)   AS(BSLH)           &kp DEL           U_PST       U_CPY       U_CUT       &kp BSPC
+                   &kp DOT AS(N0)   AS(MINUS)          &ltf U_BASE SPACE &kp LSHFT   &kp LCTRL
                         >;
                 };
 
                 media_layer {
-      bindings = <
+                      bindings = <
 &bt BT_CLR   &none        &kp C_VOL_UP &none        &none           &none   &u_to_U_BASE   &u_to_U_EXTRA  &u_to_U_TAP  U_BOOT
 &none        &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &none           &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &out OUT_TOG    &none   &u_to_U_NAVNUM &u_to_U_NAVNUM &trans       &none
@@ -263,7 +297,7 @@ AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)   AS(BSLH)           &kp DEL           U_CUT  
                 };
 
                 num_layer {
-      bindings = <
+                      bindings = <
 &kp QMARK  &kp SLASH  &kp TAB    &kp DEL    &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
 &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp SEMI      AS(EQL)    AS(N1)     AS(N2)  AS(N3)  AS(N0)
 U_UND      U_CUT      U_CPY      U_PST      U_RDO         AS(BSLH)   AS(N4)     AS(N5)  AS(N6)  AS(GRAVE)
@@ -272,7 +306,7 @@ U_UND      U_CUT      U_CPY      U_PST      U_RDO         AS(BSLH)   AS(N4)     
                 };
 
                 sym_layer {
-      bindings = <
+                      bindings = <
 U_BOOT   &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC
 &kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp EXCL  &kp AT     &kp HASH   &kp RPAR
 &none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp DLLR  &kp PRCT   &kp CRRT   &kp TILDE
@@ -281,12 +315,12 @@ U_BOOT   &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS 
                 };
 
                 fun_layer {
-      bindings = <
+                      bindings = <
 U_BOOT    &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12
 &kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F1   &kp F2   &kp F3   &kp F10
 &none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F4   &kp F5   &kp F6   &kp F11
                        &none          &none         &none     &kp TAB          &kp SPC  &kp ESC
                         >;
                 };
-        };
+  };
 };
