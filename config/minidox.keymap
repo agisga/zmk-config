@@ -151,6 +151,11 @@
         tap-ms = <40>;
         bindings = <&kp COLON &kp Q>;
     )
+    ZMK_MACRO(colonw,
+        wait-ms = <50>;
+        tap-ms = <40>;
+        bindings = <&kp COLON &kp W>;
+    )
     ZMK_MACRO(colonwq,
         wait-ms = <50>;
         tap-ms = <40>;
@@ -275,10 +280,10 @@
 
                 button_layer {
                       bindings = <
-&colonq     &colonwq    &colonqex  &none      &none   &none           &none        &fifteen_stars &kp LPAR     &kp RPAR
-&kp RA(Q)   &kp RA(P)   &kp RA(S)  &kp RA(Y)  &none   &angbrc_macro   &dqt_macro   &paren_macro   &bkt_macro   &brc_macro
-U_UND       U_CUT       U_CPY      U_PST      U_RDO   &kp LT          &leftarr     &ellipsis      &rightarr    &kp GT
-                        &none      &none      &none   &none           &none        &none
+&colonq     &colonw     &colonwq   &colonqex  &kp COLON   &none           &none        &fifteen_stars &kp LPAR     &kp RPAR
+&kp RA(Q)   &kp RA(P)   &kp RA(S)  &kp RA(Y)  &kp SEMI    &angbrc_macro   &dqt_macro   &paren_macro   &bkt_macro   &brc_macro
+U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &leftarr     &ellipsis      &rightarr    &kp GT
+                        &none      &none      &none       &none           &none        &none
                         >;
                 };
 
