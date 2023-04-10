@@ -53,9 +53,7 @@
       label = "HOMEROW_MODS";
       #binding-cells = <2>;
       tapping-term-ms = <250>;
-      quick-tap-ms = <150>;
       flavor = "tap-preferred";
-      global-quick-tap;
       bindings = <&kp>, <&kp>;
     };
 
@@ -316,10 +314,10 @@ AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)   AS(BSLH)           &kp DEL           U_PST  
 
                 num_layer {
                       bindings = <
-&kp QMARK  &kp SLASH  &kp TAB    &kp DEL    &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp SEMI      AS(EQL)    AS(N1)     AS(N2)  AS(N3)  AS(N0)
-U_UND      U_CUT      U_CPY      U_PST      U_RDO         AS(BSLH)   AS(N4)     AS(N5)  AS(N6)  AS(GRAVE)
-                      &kp ESC    &trans     &kp ASTRK     &kp UNDER  AS(MINUS)  &kp DOT
+&kp ESC    &kp QMARK  &kp TAB    &kp DEL         &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
+&kp LGUI   &kp LALT   &kp LCTRL  &hm LSHFT SLASH &kp SEMI      AS(EQL)    AS(N1)     AS(N2)  AS(N3)  AS(N0)
+U_UND      U_CUT      U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N4)     AS(N5)  AS(N6)  AS(GRAVE)
+                      &kp ESC    &trans          &kp ASTRK     &kp UNDER  AS(MINUS)  &kp DOT
                         >;
                 };
 
