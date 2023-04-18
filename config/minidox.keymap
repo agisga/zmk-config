@@ -209,6 +209,11 @@
         tap-ms = <40>;
         bindings = <&kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp SPC>;
     )
+    ZMK_MACRO(todo_macro,
+        wait-ms = <50>;
+        tap-ms = <40>;
+        bindings = <&kp T &kp O &kp D &kp O>;
+    )
   };
 
   combos {
@@ -269,16 +274,16 @@
 
                 tap_layer {
                       bindings = <
-&kp Q  &kp W     &kp F     &kp P        &kp G          &kp J          &kp L          &kp U           &kp Y         &kp SQT
-&kp A  &kp R     &kp S     &kp T        &kp D          &kp H          &kp N          &kp E           &kp I         &kp O
-&kp Z  &kp X     &kp C     &kp V        &kp B          &kp K          &kp M          &kp BSPC        &kp DOT       &kp COMMA
-                           &kp LA(TAB)  &td_num_esc    &td_shift_ret  &ltf U_NAV SPC &ltf U_NAV SPC  &key_repeat
+&kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
+&hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
+&ltm U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
+                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &mo U_NAV       &key_repeat
                         >;
                 };
 
                 button_layer {
                       bindings = <
-&colonq     &colonw     &colonwq   &colonqex  &kp COLON   &none           &none        &fifteen_stars &kp LPAR     &kp RPAR
+&colonq     &colonw     &colonwq   &colonqex  &kp COLON   &none           &todo_macro  &fifteen_stars &kp LPAR     &kp RPAR
 &kp RA(Q)   &kp RA(P)   &kp RA(S)  &kp RA(Y)  &kp SEMI    &angbrc_macro   &dqt_macro   &paren_macro   &bkt_macro   &brc_macro
 U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &leftarr     &ellipsis      &rightarr    &kp GT
                         &none      &none      &none       &none           &none        &none
