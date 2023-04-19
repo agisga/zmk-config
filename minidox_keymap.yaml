@@ -172,16 +172,16 @@ layers:
   - LCTRL
   - LALT
   - LGUI
-  - BSPC
-  - '{}'
-  - '[]'
-  - '()'
-  - '""'
-  - ''
-  - RA(Y)
-  - RA(S)
-  - RA(P)
   - RA(Q)
+  - RA(P)
+  - RA(S)
+  - RA(Y)
+  - CLCK
+  - '<>'
+  - '()'
+  - '[]'
+  - '{}'
+  - '""'
   - DEL
   - APP
   - RET
