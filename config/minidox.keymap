@@ -8,11 +8,10 @@
 #define U_TAP    2
 #define U_BUTTON 3
 #define U_NAV    4
-#define U_NAVNUM 5
-#define U_MEDIA  6
-#define U_NUM    7
-#define U_SYM    8
-#define U_FUN    9
+#define U_MEDIA  5
+#define U_NUM    6
+#define U_SYM    7
+#define U_FUN    8
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -133,14 +132,6 @@
       tapping-term-ms = <200>; \
       bindings = <&none>, <&to U_TAP>; \
     }; \
-
-    u_to_U_NAVNUM: double_tap_to_u_navnum { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_U_NAVNUM"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&none>, <&to U_NAVNUM>; \
-    }; \
   }; \
 
   macros {
@@ -258,8 +249,8 @@
                       bindings = <
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
+&ltm U_BUTTON Z  &lts U_FUN X    &kp C           &kp V           &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
+                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &sl U_NAV       &key_repeat
                         >;
                 };
 
@@ -277,7 +268,7 @@
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
 &ltm U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &mo U_NAV       &key_repeat
+                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
@@ -292,19 +283,10 @@ U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &lefta
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none  &u_to_U_BASE    &u_to_U_EXTRA     &u_to_U_TAP  U_BOOT
-&kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none  &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
-&kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none  &u_to_U_NAVNUM  &u_to_U_NAVNUM    &none        &none
-                        &kp DEL     &kp K_APP   &kp RET          &none  &trans          &none
-                        >;
-                };
-
-                navnum_layer {
-                      bindings = <
-AS(LBKT)   AS(N7)  AS(N8)  AS(N9)   AS(RBKT)           &kp INS           &kp HOME    &kp UP      &kp END     &kp PG_UP
-AS(SEMI)   AS(N4)  AS(N5)  AS(N6)   AS(EQL)            &u_to_U_BASE      &kp LEFT    &kp DOWN    &kp RIGHT   &kp PG_DN
-AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)   AS(BSLH)           &kp DEL           U_PST       U_CPY       U_CUT       &kp BSPC
-                   &kp DOT AS(N0)   AS(MINUS)          &ltf U_BASE SPC   &kp LSHFT   &kp LCTRL
+&kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_EXTRA     &u_to_U_TAP  U_BOOT
+&kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
+&kp RA(Q)   &kp RA(P)   &kp RA(S)   &kp RA(Y)   &kp CLCK         &angbrc_macro  &paren_macro    &bkt_macro        &brc_macro   &dqt_macro
+                        &kp DEL     &kp K_APP   &kp RET          &none          &trans          &none
                         >;
                 };
 
@@ -312,7 +294,7 @@ AS(GRAVE)  AS(N1)  AS(N2)  AS(N3)   AS(BSLH)           &kp DEL           U_PST  
                       bindings = <
 &bt BT_CLR   &none        &kp C_VOL_UP &none        &none           &none   &u_to_U_BASE   &u_to_U_EXTRA  &u_to_U_TAP  U_BOOT
 &none        &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &none           &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &out OUT_TOG    &none   &u_to_U_NAVNUM &u_to_U_NAVNUM &trans       &none
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &out OUT_TOG    &none   &none          &none          &trans       &none
                           &kp C_MUTE   &kp C_PP     &kp C_STOP      &none   &none          &none
                         >;
                 };

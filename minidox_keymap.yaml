@@ -1,0 +1,338 @@
+# for use with https://caksoylar.github.io/keymap-drawer
+layout:
+  qmk_keyboard: corne_rotated
+  qmk_layout: LAYOUT_split_3x5_3
+layers:
+  base_layer:
+  - Q
+  - W
+  - F
+  - P
+  - G
+  - J
+  - L
+  - U
+  - Y
+  - {t: '''', h: LS(SQT)}
+  - {t: A, h: LGUI}
+  - {t: R, h: LALT}
+  - {t: S, h: LCTRL}
+  - {t: T, h: LSHFT}
+  - D
+  - H
+  - {t: N, h: LSHFT}
+  - {t: E, h: LCTRL}
+  - {t: I, h: LALT}
+  - {t: O, h: LGUI}
+  - {t: Z, h: button_layer}
+  - {t: X, h: fun_layer}
+  - C
+  - V
+  - B
+  - K
+  - M
+  - BSPC
+  - {t: ., h: media_layer}
+  - {t: ',', h: button_layer}
+  - LA(TAB)
+  - 'sticky NUM TD esc'
+  - 'sticky Shift TD ret'
+  - SPC
+  - {t: nav_layer, h: sticky}
+  - '&key_repeat'
+  extra_layer:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: LGUI}
+  - {t: S, h: LALT}
+  - {t: D, h: LCTRL}
+  - {t: F, h: LSHFT}
+  - G
+  - H
+  - {t: J, h: LSHFT}
+  - {t: K, h: LCTRL}
+  - {t: L, h: LALT}
+  - {t: '''', h: LGUI}
+  - {t: Z, h: button_layer}
+  - {t: X, h: fun_layer}
+  - {t: C, h: RALT}
+  - {t: V, h: sym_layer}
+  - B
+  - N
+  - M
+  - ','
+  - {t: ., h: media_layer}
+  - {t: /, h: button_layer}
+  - LA(TAB)
+  - 'sticky NUM TD esc'
+  - 'sticky Shift TD ret'
+  - SPC
+  - {t: SPC, h: nav_layer}
+  - '&key_repeat'
+  tap_layer:
+  - Q
+  - W
+  - F
+  - P
+  - G
+  - J
+  - L
+  - U
+  - Y
+  - {t: '''', h: LS(SQT)}
+  - {t: A, h: LGUI}
+  - {t: R, h: LALT}
+  - {t: S, h: LCTRL}
+  - {t: T, h: LSHFT}
+  - D
+  - H
+  - {t: N, h: LSHFT}
+  - {t: E, h: LCTRL}
+  - {t: I, h: LALT}
+  - {t: O, h: LGUI}
+  - {t: Z, h: button_layer}
+  - {t: X, h: fun_layer}
+  - {t: C, h: RALT}
+  - {t: V, h: sym_layer}
+  - B
+  - K
+  - M
+  - BSPC
+  - {t: ., h: media_layer}
+  - {t: ',', h: button_layer}
+  - LA(TAB)
+  - 'sticky NUM TD esc'
+  - 'sticky Shift TD ret'
+  - SPC
+  - {t: SPC, h: nav_layer}
+  - '&key_repeat'
+  button_layer:
+  - ':q'
+  - ':w'
+  - ':wq'
+  - ':q!'
+  - ':'
+  - ''
+  - 'TODO'
+  - '15stars'
+  - (
+  - )
+  - RA(Q)
+  - RA(P)
+  - RA(S)
+  - RA(Y)
+  - ;
+  - '<>'
+  - '""'
+  - '()'
+  - '[]'
+  - '{}'
+  - {t: LC(Z), type: held}
+  - LC(X)
+  - LC(C)
+  - LC(V)
+  - LC(Y)
+  - <
+  - '<-'
+  - '...'
+  - '->'
+  - '>'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  nav_layer:
+  - PG UP
+  - HOME
+  - UP
+  - END
+  - INS
+  - ''
+  - 'TD to BASE'
+  - 'TD to EXTRA'
+  - 'TD to TAP'
+  - 'boot'
+  - PG DN
+  - LEFT
+  - DOWN
+  - RIGHT
+  - '&caps_word'
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - BSPC
+  - '{}'
+  - '[]'
+  - '()'
+  - '""'
+  - ''
+  - RA(Y)
+  - RA(S)
+  - RA(P)
+  - RA(Q)
+  - DEL
+  - APP
+  - RET
+  - ''
+  - {type: held}
+  - ''
+  media_layer:
+  - BT CLR
+  - ''
+  - VOL UP
+  - ''
+  - ''
+  - ''
+  - 'TD to BASE'
+  - 'TD to EXTRA'
+  - 'TD to TAP'
+  - 'boot'
+  - ''
+  - PREV
+  - VOL DN
+  - NEXT
+  - ''
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - BT 0
+  - BT 1
+  - BT 2
+  - BT 3
+  - OUT TOG
+  - ''
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - MUTE
+  - PP
+  - STOP
+  - ''
+  - ''
+  - ''
+  num_layer:
+  - ESC
+  - '?'
+  - TAB
+  - DEL
+  - ':'
+  - {t: '[', h: LS(LBKT)}
+  - {t: '7', h: LS(7)}
+  - {t: '8', h: LS(8)}
+  - {t: '9', h: LS(9)}
+  - {t: ']', h: LS(RBKT)}
+  - LGUI
+  - LALT
+  - LCTRL
+  - {t: /, h: LSHFT}
+  - ;
+  - {t: EQL, h: LS(EQL)}
+  - {t: '1', h: LS(1)}
+  - {t: '2', h: LS(2)}
+  - {t: '3', h: LS(3)}
+  - {t: '0', h: LS(0)}
+  - LC(Z)
+  - LC(X)
+  - LC(C)
+  - LC(V)
+  - LC(Y)
+  - {t: \, h: LS(BSLH)}
+  - {t: '4', h: LS(4)}
+  - {t: '5', h: LS(5)}
+  - {t: '6', h: LS(6)}
+  - {t: '`', h: LS(GRAVE)}
+  - ESC
+  - ''
+  - '*'
+  - _
+  - {t: '-', h: LS(MINUS)}
+  - .
+  sym_layer:
+  - 'boot'
+  - 'TD to TAP'
+  - 'TD to EXTRA'
+  - 'TD to BASE'
+  - ''
+  - '{'
+  - '&'
+  - '*'
+  - (
+  - '}'
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - +
+  - '!'
+  - '@'
+  - '#'
+  - )
+  - ''
+  - ''
+  - RALT
+  - {type: held}
+  - ''
+  - '|'
+  - $
+  - PRCT
+  - CRRT
+  - '~'
+  - ''
+  - ''
+  - ''
+  - ':'
+  - ;
+  - ''
+  fun_layer:
+  - 'boot'
+  - 'TD to TAP'
+  - 'TD to EXTRA'
+  - 'TD to BASE'
+  - ''
+  - PSCRN
+  - F7
+  - F8
+  - F9
+  - F12
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - SLCK
+  - F1
+  - F2
+  - F3
+  - F10
+  - ''
+  - {type: held}
+  - RALT
+  - ''
+  - ''
+  - PAUSE BREAK
+  - F4
+  - F5
+  - F6
+  - F11
+  - ''
+  - ''
+  - ''
+  - TAB
+  - SPC
+  - ESC
