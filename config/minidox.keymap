@@ -203,7 +203,11 @@
     ZMK_MACRO(todo_macro,
         wait-ms = <50>;
         tap-ms = <40>;
-        bindings = <&kp T &kp O &kp D &kp O>;
+        bindings
+            = <&macro_press &kp LSHFT>
+            , <&macro_tap &kp T &kp O &kp D &kp O &kp SPC>
+            , <&macro_release &kp LSHFT>
+            ;
     )
   };
 
