@@ -250,7 +250,7 @@
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
 &ltm U_BUTTON Z  &lts U_FUN X    &kp C           &kp V           &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &sl U_NAV       &key_repeat
+                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
@@ -268,14 +268,14 @@
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
 &ltm U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
+                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &sl U_NAV       &key_repeat
                         >;
                 };
 
                 button_layer {
                       bindings = <
 &colonq     &colonw     &colonwq   &colonqex  &kp COLON   &none           &todo_macro  &fifteen_stars &kp LPAR     &kp RPAR
-&kp RA(Q)   &kp RA(P)   &kp RA(S)  &kp RA(Y)  &kp SEMI    &angbrc_macro   &dqt_macro   &paren_macro   &bkt_macro   &brc_macro
+&kp RA(Q)   &brc_macro  &kp RA(S)  &bkt_macro &kp SEMI    &angbrc_macro   &dqt_macro   &paren_macro   &kp RA(Y)    &kp RA(P)
 U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &leftarr     &ellipsis      &rightarr    &kp GT
                         &none      &none      &none       &none           &none        &none
                         >;
@@ -285,7 +285,7 @@ U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &lefta
                       bindings = <
 &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_EXTRA     &u_to_U_TAP  U_BOOT
 &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
-&kp RA(Q)   &kp RA(P)   &kp RA(S)   &kp RA(Y)   &kp CLCK         &angbrc_macro  &paren_macro    &bkt_macro        &brc_macro   &dqt_macro
+&kp BSPC    U_CUT       U_CPY       U_PST       &kp CLCK         &none          &none           &none             &none        &none
                         &kp DEL     &kp K_APP   &kp RET          &none          &trans          &none
                         >;
                 };

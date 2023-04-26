@@ -38,7 +38,7 @@ layers:
   - 'sticky NUM TD esc'
   - 'sticky Shift TD ret'
   - SPC
-  - {t: nav_layer, h: sticky}
+  - {t: SPC, h: nav_layer}
   - '&key_repeat'
   extra_layer:
   - Q
@@ -100,8 +100,8 @@ layers:
   - {t: O, h: LGUI}
   - {t: Z, h: button_layer}
   - {t: X, h: fun_layer}
-  - {t: C, h: RALT}
-  - {t: V, h: sym_layer}
+  - C
+  - V
   - B
   - K
   - M
@@ -112,7 +112,7 @@ layers:
   - 'sticky NUM TD esc'
   - 'sticky Shift TD ret'
   - SPC
-  - {t: SPC, h: nav_layer}
+  - 'sticky NAV'
   - '&key_repeat'
   button_layer:
   - ':q'
@@ -125,16 +125,16 @@ layers:
   - '15stars'
   - (
   - )
-  - RA(Q)
-  - RA(P)
-  - RA(S)
-  - RA(Y)
+  - 'ä'
+  - '{}'
+  - 'ß'
+  - '[]'
   - ;
   - '<>'
   - '""'
   - '()'
-  - '[]'
-  - '{}'
+  - 'ü'
+  - 'ö'
   - {t: LC(Z), type: held}
   - LC(X)
   - LC(C)
@@ -172,16 +172,16 @@ layers:
   - LCTRL
   - LALT
   - LGUI
-  - RA(Q)
-  - RA(P)
-  - RA(S)
-  - RA(Y)
+  - BSPC
+  - LC(X)
+  - LC(C)
+  - LC(V)
   - CLCK
-  - '<>'
-  - '()'
-  - '[]'
-  - '{}'
-  - '""'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
   - DEL
   - APP
   - RET
