@@ -211,39 +211,39 @@
     )
   };
 
-  combos {
-    compatible = "zmk,combos";
-
-    combo_volmute {
-        timeout-ms = <30>;
-        key-positions = <10 20>;
-        bindings = <&kp C_MUTE>;
-    };
-
-    combo_voldn {
-        timeout-ms = <30>;
-        key-positions = <11 21>;
-        bindings = <&kp C_VOL_DN>;
-    };
-
-    combo_volup {
-        timeout-ms = <30>;
-        key-positions = <12 22>;
-        bindings = <&kp C_VOL_UP>;
-    };
-
-    combo_pworkspace {
-        timeout-ms = <30>;
-        key-positions = <13 23>;
-        bindings = <&kp LC(LG(LEFT))>;
-    };
-
-    combo_nworkspace {
-        timeout-ms = <30>;
-        key-positions = <14 24>;
-        bindings = <&kp LC(LG(RIGHT))>;
-    };
-  };
+//  combos {
+//    compatible = "zmk,combos";
+//
+//    combo_volmute {
+//        timeout-ms = <30>;
+//        key-positions = <10 20>;
+//        bindings = <&kp C_MUTE>;
+//    };
+//
+//    combo_voldn {
+//        timeout-ms = <30>;
+//        key-positions = <11 21>;
+//        bindings = <&kp C_VOL_DN>;
+//    };
+//
+//    combo_volup {
+//        timeout-ms = <30>;
+//        key-positions = <12 22>;
+//        bindings = <&kp C_VOL_UP>;
+//    };
+//
+//    combo_pworkspace {
+//        timeout-ms = <30>;
+//        key-positions = <13 23>;
+//        bindings = <&kp LC(LG(LEFT))>;
+//    };
+//
+//    combo_nworkspace {
+//        timeout-ms = <30>;
+//        key-positions = <14 24>;
+//        bindings = <&kp LC(LG(RIGHT))>;
+//    };
+//  };
 
 
   keymap {
@@ -253,7 +253,7 @@
                       bindings = <
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_BUTTON Z  &lts U_FUN X    &kp C           &kp V           &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
+&ltm U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
@@ -278,10 +278,10 @@
 
                 button_layer {
                       bindings = <
-&colonq     &colonw     &colonwq   &colonqex  &kp COLON   &none           &todo_macro  &fifteen_stars &kp LPAR     &kp RPAR
-&kp RA(Q)   &brc_macro  &kp RA(S)  &bkt_macro &kp SEMI    &angbrc_macro   &dqt_macro   &paren_macro   &kp RA(Y)    &kp RA(P)
-U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &leftarr     &ellipsis      &rightarr    &kp GT
-                        &none      &none      &none       &none           &none        &none
+&colonq     &colonw      &colonwq     &colonqex  &kp COLON     &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR
+&kp RA(Q)   &brc_macro   &kp RA(S)    &bkt_macro &angbrc_macro &todo_macro  &dqt_macro   &paren_macro   &fifteen_stars    &kp RA(P)
+&trans      &kp C_VOL_DN &kp C_VOL_UP &none      &none         &kp LT       &leftarr     &ellipsis      &rightarr         &kp GT
+                         &none        &none      &none         &none        &none        &none
                         >;
                 };
 
@@ -290,7 +290,7 @@ U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &lefta
 &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_EXTRA     &u_to_U_TAP  U_BOOT
 &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
 &kp BSPC    U_CUT       U_CPY       U_PST       &kp CLCK         &none          &none           &none             &none        &none
-                        &kp DEL     &kp K_APP   &kp RET          &none          &trans          &none
+                        &kp ESC     &kp K_APP   &kp RET          &none          &trans          &none
                         >;
                 };
 
@@ -305,27 +305,27 @@ U_UND       U_CUT       U_CPY      U_PST      U_RDO       &kp LT          &lefta
 
                 num_layer {
                       bindings = <
-&kp ESC    &kp QMARK  &kp TAB    &kp DEL         &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI   &kp LALT   &kp LCTRL  &hm LSHFT SLASH &kp SEMI      AS(EQL)    AS(N1)     AS(N2)  AS(N3)  AS(N0)
-U_UND      U_CUT      U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N4)     AS(N5)  AS(N6)  AS(GRAVE)
-                      &kp ESC    &trans          &kp ASTRK     &kp UNDER  AS(MINUS)  &kp DOT
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp C_MUTE    AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
+&kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  &kp SEMI
+U_UND             U_CUT               U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
+                  &kp ESC             &trans     &kp ASTRK       AS(MINUS)     AS(N0)     &kp DOT
                         >;
                 };
 
                 sym_layer {
                       bindings = <
 U_BOOT   &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC
-&kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp EXCL  &kp AT     &kp HASH   &kp RPAR
-&none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp DLLR  &kp PRCT   &kp CRRT   &kp TILDE
-                      &none          &none         &none    &kp COLON  &kp SEMI  &none
+&kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT   &kp COLON
+&none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp EXCL  &kp AT     &kp HASH   &kp TILDE
+                      &none          &none         &none    &kp UNDER  &kp RPAR  &none
                         >;
                 };
 
                 fun_layer {
                       bindings = <
 U_BOOT    &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12
-&kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F1   &kp F2   &kp F3   &kp F10
-&none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F4   &kp F5   &kp F6   &kp F11
+&kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11
+&none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10
                        &none          &none         &none     &kp TAB          &kp SPC  &kp ESC
                         >;
                 };
