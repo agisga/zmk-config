@@ -125,7 +125,7 @@
       bindings = <&none>, <&to U_QWERTY>; \
     }; \
 
-    u_to_U_EXP: double_tap_to_u_tap { \
+    u_to_U_EXP: double_tap_to_u_exp { \
       compatible = "zmk,behavior-tap-dance"; \
       label = "DOUBLE_TAP_TO_U_EXP"; \
       #binding-cells = <0>; \
@@ -267,12 +267,12 @@
                         >;
                 };
 
-                tap_layer {
+                exp_layer {
                       bindings = <
-&kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
+&kp Q            &kp W           &kp C           &kp P           &kp K          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &sl U_NAV       &key_repeat
+&ltm U_BUTTON Z  &lts U_FUN V    &hm RALT F      &ltf U_SYM G    &kp B          &kp X          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
+                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
