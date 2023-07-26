@@ -280,7 +280,7 @@
                       bindings = <
 &colonq     &colonw      &colonwq     &colonqex  &kp COLON     &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR
 &kp RA(Q)   &brc_macro   &kp RA(S)    &bkt_macro &angbrc_macro &todo_macro  &dqt_macro   &paren_macro   &fifteen_stars    &kp RA(P)
-&trans      &kp C_VOL_DN &kp C_VOL_UP &none      &none         &kp LT       &leftarr     &ellipsis      &rightarr         &kp GT
+&trans      &none        &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE  &kp LT       &leftarr     &ellipsis      &rightarr         &kp GT
                          &none        &none      &none         &none        &none        &none
                         >;
                 };
@@ -305,7 +305,7 @@
 
                 num_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp C_MUTE    AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
 &kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  &kp SEMI
 U_UND             U_CUT               U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
                   &kp ESC             &trans     &kp ASTRK       AS(MINUS)     AS(N0)     &kp DOT
