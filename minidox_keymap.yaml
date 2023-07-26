@@ -24,7 +24,7 @@ layers:
   - {t: E, h: LCTRL}
   - {t: I, h: LALT}
   - {t: O, h: LGUI}
-  - {t: Z, h: button_layer}
+  - {t: Z, h: macro_layer}
   - {t: X, h: fun_layer}
   - {t: C, h: RALT}
   - {t: V, h: sym_layer}
@@ -33,7 +33,7 @@ layers:
   - M
   - BSPC
   - {t: ., h: media_layer}
-  - {t: ',', h: button_layer}
+  - {t: ',', h: macro_layer}
   - LA(TAB)
   - 'sticky NUM TD esc'
   - 'sticky Shift TD ret'
@@ -61,7 +61,7 @@ layers:
   - {t: K, h: LCTRL}
   - {t: L, h: LALT}
   - {t: '''', h: LGUI}
-  - {t: Z, h: button_layer}
+  - {t: Z, h: macro_layer}
   - {t: X, h: fun_layer}
   - {t: C, h: RALT}
   - {t: V, h: sym_layer}
@@ -70,7 +70,7 @@ layers:
   - M
   - ','
   - {t: ., h: media_layer}
-  - {t: /, h: button_layer}
+  - {t: /, h: macro_layer}
   - LA(TAB)
   - 'sticky NUM TD esc'
   - 'sticky Shift TD ret'
@@ -98,7 +98,7 @@ layers:
   - {t: E, h: LCTRL}
   - {t: I, h: LALT}
   - {t: O, h: LGUI}
-  - {t: Z, h: button_layer}
+  - {t: Z, h: macro_layer}
   - {t: V, h: fun_layer}
   - {t: F, h: RALT}
   - {t: G, h: sym_layer}
@@ -107,14 +107,14 @@ layers:
   - M
   - BSPC
   - {t: ., h: media_layer}
-  - {t: ',', h: button_layer}
+  - {t: ',', h: macro_layer}
   - LA(TAB)
   - 'sticky NUM TD esc'
   - 'sticky Shift TD ret'
   - SPC
-  - 'sticky NAV'
+  - {t: SPC, h: nav_layer}
   - '&key_repeat'
-  button_layer:
+  macro_layer:
   - ':q'
   - ':w'
   - ':wq'
@@ -176,13 +176,13 @@ layers:
   - LC(X)
   - LC(C)
   - LC(V)
-  - CLCK
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
   - DEL
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ESC
   - APP
   - RET
   - ''
@@ -257,7 +257,7 @@ layers:
   - {t: '3', h: LS(3)}
   - {t: '`', h: LS(GRAVE)}
   - ESC
-  - ''
+  - {tap: 'sticky', type: held}
   - '*'
   - -
   - {t: '0', h: LS(0)}

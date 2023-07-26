@@ -4,9 +4,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define U_BASE   0
-#define U_QWERTY  1
+#define U_QWERTY 1
 #define U_EXP    2
-#define U_BUTTON 3
+#define U_MACRO 3
 #define U_NAV    4
 #define U_MEDIA  5
 #define U_NUM    6
@@ -253,7 +253,7 @@
                       bindings = <
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_BUTTON Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
+&ltm U_MACRO Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
@@ -262,7 +262,7 @@
                       bindings = <
 &kp Q            &kp W          &kp E           &kp R           &kp T          &kp Y          &kp U           &kp I          &kp O            &kp P
 &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT
-&ltm U_BUTTON Z  &lts U_FUN X   &hm RALT C      &ltf U_SYM V    &kp B          &kp N          &kp M           &kp COMMA      &lts U_MEDIA DOT &ltm U_BUTTON SLASH
+&ltm U_MACRO Z  &lts U_FUN X   &hm RALT C      &ltf U_SYM V    &kp B          &kp N          &kp M           &kp COMMA      &lts U_MEDIA DOT &ltm U_MACRO SLASH
                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
@@ -271,12 +271,12 @@
                       bindings = <
 &kp Q            &kp W           &kp C           &kp P           &kp K          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_BUTTON Z  &lts U_FUN V    &hm RALT F      &ltf U_SYM G    &kp B          &kp X          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_BUTTON COMMA
+&ltm U_MACRO Z  &lts U_FUN V    &hm RALT F      &ltf U_SYM G    &kp B          &kp X          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
-                button_layer {
+                macro_layer {
                       bindings = <
 &colonq     &colonw      &colonwq     &colonqex  &kp COLON     &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR
 &kp RA(Q)   &brc_macro   &kp RA(S)    &bkt_macro &angbrc_macro &todo_macro  &dqt_macro   &paren_macro   &fifteen_stars    &kp RA(P)
@@ -289,7 +289,7 @@
                       bindings = <
 &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT
 &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
-&kp BSPC    U_CUT       U_CPY       U_PST       &kp CLCK         &none          &none           &none             &none        &none
+&kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none          &none           &none             &none        &none
                         &kp ESC     &kp K_APP   &kp RET          &none          &trans          &none
                         >;
                 };

@@ -146,7 +146,7 @@ path.combo {
 <text x="730.0" y="185.0" class="hold">LGUI</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="191.0" width="52.0" height="52.0" class="key"/>
 <text x="58.0" y="217.0" class="tap">Z</text>
-<text x="58.0" y="241.0" class="hold" style="font-size: 60%">button_layer</text>
+<text x="58.0" y="241.0" class="hold" style="font-size: 64%">macro_layer</text>
 <rect rx="6.0" ry="6.0" x="88.0" y="177.0" width="52.0" height="52.0" class="key"/>
 <text x="114.0" y="203.0" class="tap">X</text>
 <text x="114.0" y="227.0" class="hold" style="font-size: 78%">fun_layer</text>
@@ -169,7 +169,7 @@ path.combo {
 <text x="674.0" y="227.0" class="hold" style="font-size: 64%">media_layer</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="191.0" width="52.0" height="52.0" class="key"/>
 <text x="730.0" y="217.0" class="tap">,</text>
-<text x="730.0" y="241.0" class="hold" style="font-size: 60%">button_layer</text>
+<text x="730.0" y="241.0" class="hold" style="font-size: 64%">macro_layer</text>
 <rect rx="6.0" ry="6.0" x="172.0" y="234.84799999999996" width="52.0" height="52.0" class="key"/>
 <text x="198.0" y="260.84799999999996" class="tap">LA(TAB)</text>
 <g transform="rotate(15.0, 259.59999999999997, 269.08000000000004)">
@@ -246,7 +246,7 @@ path.combo {
 <text x="730.0" y="515.6530669589464" class="hold">LGUI</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="521.6530669589464" width="52.0" height="52.0" class="key"/>
 <text x="58.0" y="547.6530669589464" class="tap">Z</text>
-<text x="58.0" y="571.6530669589464" class="hold" style="font-size: 60%">button_layer</text>
+<text x="58.0" y="571.6530669589464" class="hold" style="font-size: 64%">macro_layer</text>
 <rect rx="6.0" ry="6.0" x="88.0" y="507.6530669589464" width="52.0" height="52.0" class="key"/>
 <text x="114.0" y="533.6530669589464" class="tap">X</text>
 <text x="114.0" y="557.6530669589464" class="hold" style="font-size: 78%">fun_layer</text>
@@ -269,7 +269,7 @@ path.combo {
 <text x="674.0" y="557.6530669589464" class="hold" style="font-size: 64%">media_layer</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="521.6530669589464" width="52.0" height="52.0" class="key"/>
 <text x="730.0" y="547.6530669589464" class="tap">/</text>
-<text x="730.0" y="571.6530669589464" class="hold" style="font-size: 60%">button_layer</text>
+<text x="730.0" y="571.6530669589464" class="hold" style="font-size: 64%">macro_layer</text>
 <rect rx="6.0" ry="6.0" x="172.0" y="565.5010669589464" width="52.0" height="52.0" class="key"/>
 <text x="198.0" y="591.5010669589464" class="tap">LA(TAB)</text>
 <g transform="rotate(15.0, 259.59999999999997, 599.7330669589464)">
@@ -347,7 +347,7 @@ path.combo {
 <text x="730.0" y="846.3061339178928" class="hold">LGUI</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="852.3061339178928" width="52.0" height="52.0" class="key"/>
 <text x="58.0" y="878.3061339178928" class="tap">Z</text>
-<text x="58.0" y="902.3061339178928" class="hold" style="font-size: 60%">button_layer</text>
+<text x="58.0" y="902.3061339178928" class="hold" style="font-size: 64%">macro_layer</text>
 <rect rx="6.0" ry="6.0" x="88.0" y="838.3061339178928" width="52.0" height="52.0" class="key"/>
 <text x="114.0" y="864.3061339178928" class="tap">V</text>
 <text x="114.0" y="888.3061339178928" class="hold" style="font-size: 78%">fun_layer</text>
@@ -370,7 +370,7 @@ path.combo {
 <text x="674.0" y="888.3061339178928" class="hold" style="font-size: 64%">media_layer</text>
 <rect rx="6.0" ry="6.0" x="704.0" y="852.3061339178928" width="52.0" height="52.0" class="key"/>
 <text x="730.0" y="878.3061339178928" class="tap">,</text>
-<text x="730.0" y="902.3061339178928" class="hold" style="font-size: 60%">button_layer</text>
+<text x="730.0" y="902.3061339178928" class="hold" style="font-size: 64%">macro_layer</text>
 <rect rx="6.0" ry="6.0" x="172.0" y="896.1541339178928" width="52.0" height="52.0" class="key"/>
 <text x="198.0" y="922.1541339178928" class="tap">LA(TAB)</text>
 <g transform="rotate(15.0, 259.59999999999997, 930.3861339178928)">
@@ -389,14 +389,14 @@ path.combo {
 </g>
 <g transform="rotate(-15.0, 528.4000000000001, 930.3861339178928)">
 <rect rx="6.0" ry="6.0" x="502.4000000000001" y="904.3861339178928" width="52.0" height="52.0" class="key"/>
-<text x="528.4000000000001" y="930.3861339178928" class="tap">
-<tspan x="528.4000000000001" dy="-0.6em">sticky</tspan><tspan x="528.4000000000001" dy="1.2em">NAV</tspan></text>
+<text x="528.4000000000001" y="930.3861339178928" class="tap">SPC</text>
+<text x="528.4000000000001" y="954.3861339178928" class="hold" style="font-size: 78%">nav_layer</text>
 </g>
 <rect rx="6.0" ry="6.0" x="564.0" y="896.1541339178928" width="52.0" height="52.0" class="key"/>
 <text x="590.0" y="922.1541339178928" class="tap" style="font-size: 64%">&amp;key_repeat</text>
 </g>
-<g class="layer-button_layer">
-<text x="30.0" y="1019.9592008768392" class="label">button_layer:</text>
+<g class="layer-macro_layer">
+<text x="30.0" y="1019.9592008768392" class="label">macro_layer:</text>
 <rect rx="6.0" ry="6.0" x="32.0" y="1070.959200876839" width="52.0" height="52.0" class="key"/>
 <text x="58.0" y="1096.959200876839" class="tap">:q</text>
 <rect rx="6.0" ry="6.0" x="88.0" y="1056.959200876839" width="52.0" height="52.0" class="key"/>
@@ -525,14 +525,14 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="200.0" y="1499.6122678357856" width="52.0" height="52.0" class="key"/>
 <text x="226.0" y="1525.6122678357856" class="tap">LC(V)</text>
 <rect rx="6.0" ry="6.0" x="256.0" y="1506.6122678357856" width="52.0" height="52.0" class="key"/>
-<text x="282.0" y="1532.6122678357856" class="tap">CLCK</text>
+<text x="282.0" y="1532.6122678357856" class="tap">DEL</text>
 <rect rx="6.0" ry="6.0" x="480.0" y="1506.6122678357856" width="52.0" height="52.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="536.0" y="1499.6122678357856" width="52.0" height="52.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="592.0" y="1492.6122678357856" width="52.0" height="52.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="648.0" y="1499.6122678357856" width="52.0" height="52.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="704.0" y="1513.6122678357856" width="52.0" height="52.0" class="key"/>
 <rect rx="6.0" ry="6.0" x="172.0" y="1557.4602678357855" width="52.0" height="52.0" class="key"/>
-<text x="198.0" y="1583.4602678357855" class="tap">DEL</text>
+<text x="198.0" y="1583.4602678357855" class="tap">ESC</text>
 <g transform="rotate(15.0, 259.59999999999997, 1591.6922678357855)">
 <rect rx="6.0" ry="6.0" x="233.59999999999997" y="1565.6922678357855" width="52.0" height="52.0" class="key"/>
 <text x="259.59999999999997" y="1591.6922678357855" class="tap">APP</text>
@@ -709,7 +709,8 @@ path.combo {
 <rect rx="6.0" ry="6.0" x="172.0" y="2218.7664017536786" width="52.0" height="52.0" class="key"/>
 <text x="198.0" y="2244.7664017536786" class="tap">ESC</text>
 <g transform="rotate(15.0, 259.59999999999997, 2252.9984017536785)">
-<rect rx="6.0" ry="6.0" x="233.59999999999997" y="2226.9984017536785" width="52.0" height="52.0" class="key"/>
+<rect rx="6.0" ry="6.0" x="233.59999999999997" y="2226.9984017536785" width="52.0" height="52.0" class="held key"/>
+<text x="259.59999999999997" y="2252.9984017536785" class="held tap">sticky</text>
 </g>
 <g transform="rotate(30.0, 325.12, 2264.198401753679)">
 <rect rx="6.0" ry="6.0" x="299.12" y="2224.198401753679" width="52.0" height="80.0" class="key"/>
