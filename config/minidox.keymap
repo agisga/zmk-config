@@ -4,8 +4,8 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define U_BASE   0
-#define U_EXTRA  1
-#define U_TAP    2
+#define U_QWERTY  1
+#define U_EXP    2
 #define U_BUTTON 3
 #define U_NAV    4
 #define U_MEDIA  5
@@ -117,20 +117,20 @@
       bindings = <&none>, <&to U_BASE>; \
     }; \
 
-    u_to_U_EXTRA: double_tap_to_u_extra { \
+    u_to_U_QWERTY: double_tap_to_u_qwerty { \
       compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_U_EXTRA"; \
+      label = "DOUBLE_TAP_TO_U_QWERTY"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&none>, <&to U_EXTRA>; \
+      bindings = <&none>, <&to U_QWERTY>; \
     }; \
 
-    u_to_U_TAP: double_tap_to_u_tap { \
+    u_to_U_EXP: double_tap_to_u_tap { \
       compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_U_TAP"; \
+      label = "DOUBLE_TAP_TO_U_EXP"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&none>, <&to U_TAP>; \
+      bindings = <&none>, <&to U_EXP>; \
     }; \
   }; \
 
@@ -258,7 +258,7 @@
                         >;
                 };
 
-                extra_layer {
+                qwerty_layer {
                       bindings = <
 &kp Q            &kp W          &kp E           &kp R           &kp T          &kp Y          &kp U           &kp I          &kp O            &kp P
 &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT
@@ -287,7 +287,7 @@
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_EXTRA     &u_to_U_TAP  U_BOOT
+&kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT
 &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
 &kp BSPC    U_CUT       U_CPY       U_PST       &kp CLCK         &none          &none           &none             &none        &none
                         &kp ESC     &kp K_APP   &kp RET          &none          &trans          &none
@@ -296,7 +296,7 @@
 
                 media_layer {
                       bindings = <
-&bt BT_CLR   &none        &kp C_VOL_UP &none        &none           &none   &u_to_U_BASE   &u_to_U_EXTRA  &u_to_U_TAP  U_BOOT
+&bt BT_CLR   &none        &kp C_VOL_UP &none        &none           &none   &u_to_U_BASE   &u_to_U_QWERTY  &u_to_U_EXP  U_BOOT
 &none        &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &none           &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &out OUT_TOG    &none   &none          &none          &trans       &none
                           &kp C_MUTE   &kp C_PP     &kp C_STOP      &none   &none          &none
@@ -314,7 +314,7 @@ U_UND             U_CUT               U_CPY      U_PST           U_RDO         A
 
                 sym_layer {
                       bindings = <
-U_BOOT   &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC
+U_BOOT   &u_to_U_EXP  &u_to_U_QWERTY  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC
 &kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT   &kp COLON
 &none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp EXCL  &kp AT     &kp HASH   &kp TILDE
                       &none          &none         &none    &kp UNDER  &kp RPAR  &none
@@ -323,7 +323,7 @@ U_BOOT   &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS 
 
                 fun_layer {
                       bindings = <
-U_BOOT    &u_to_U_TAP  &u_to_U_EXTRA  &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12
+U_BOOT    &u_to_U_EXP  &u_to_U_QWERTY  &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12
 &kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11
 &none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10
                        &none          &none         &none     &kp TAB          &kp SPC  &kp ESC
