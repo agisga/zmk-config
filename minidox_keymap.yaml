@@ -26,8 +26,8 @@ layers:
   - {t: O, h: LGUI}
   - {t: Z, h: button_layer}
   - {t: X, h: fun_layer}
-  - C
-  - V
+  - {t: C, h: RALT}
+  - {t: V, h: sym_layer}
   - B
   - K
   - M
@@ -40,7 +40,7 @@ layers:
   - SPC
   - {t: SPC, h: nav_layer}
   - '&key_repeat'
-  extra_layer:
+  qwerty_layer:
   - Q
   - W
   - E
@@ -77,12 +77,12 @@ layers:
   - SPC
   - {t: SPC, h: nav_layer}
   - '&key_repeat'
-  tap_layer:
+  exp_layer:
   - Q
   - W
-  - F
+  - C
   - P
-  - G
+  - K
   - J
   - L
   - U
@@ -99,11 +99,11 @@ layers:
   - {t: I, h: LALT}
   - {t: O, h: LGUI}
   - {t: Z, h: button_layer}
-  - {t: X, h: fun_layer}
-  - C
-  - V
+  - {t: V, h: fun_layer}
+  - {t: F, h: RALT}
+  - {t: G, h: sym_layer}
   - B
-  - K
+  - X
   - M
   - BSPC
   - {t: ., h: media_layer}
@@ -121,30 +121,30 @@ layers:
   - ':q!'
   - ':'
   - ''
-  - 'TODO'
-  - '15stars'
+  - ''
+  - 'ü'
   - (
   - )
   - 'ä'
   - '{}'
   - 'ß'
   - '[]'
-  - ;
   - '<>'
+  - 'TODO'
   - '""'
   - '()'
-  - 'ü'
+  - '15stars'
   - 'ö'
   - {t: LC(Z), type: held}
-  - LC(X)
-  - LC(C)
-  - LC(V)
-  - LC(Y)
+  - ''
+  - VOL DN
+  - VOL UP
+  - MUTE
   - <
   - '<-'
   - '...'
   - '->'
-  - '>'
+  - {t: '>', type: held}
   - ''
   - ''
   - ''
@@ -226,8 +226,8 @@ layers:
   - ''
   - ''
   num_layer:
-  - ESC
-  - '?'
+  - 'prevWS'
+  - 'nextWS'
   - TAB
   - DEL
   - ':'
@@ -240,27 +240,27 @@ layers:
   - LALT
   - LCTRL
   - {t: /, h: LSHFT}
-  - ;
+  - '?'
   - {t: EQL, h: LS(EQL)}
-  - {t: '1', h: LS(1)}
-  - {t: '2', h: LS(2)}
-  - {t: '3', h: LS(3)}
-  - {t: '0', h: LS(0)}
+  - {t: '4', h: LS(4)}
+  - {t: '5', h: LS(5)}
+  - {t: '6', h: LS(6)}
+  - {t: ';', h: LS(;)}
   - LC(Z)
   - LC(X)
   - LC(C)
   - LC(V)
   - LC(Y)
   - {t: \, h: LS(BSLH)}
-  - {t: '4', h: LS(4)}
-  - {t: '5', h: LS(5)}
-  - {t: '6', h: LS(6)}
+  - {t: '1', h: LS(1)}
+  - {t: '2', h: LS(2)}
+  - {t: '3', h: LS(3)}
   - {t: '`', h: LS(GRAVE)}
   - ESC
   - ''
   - '*'
-  - _
-  - {t: '-', h: LS(MINUS)}
+  - -
+  - {t: '0', h: LS(0)}
   - .
   sym_layer:
   - 'boot'
@@ -279,25 +279,25 @@ layers:
   - LSHFT
   - ''
   - +
-  - '!'
-  - '@'
-  - '#'
-  - )
+  - '$'
+  - '%'
+  - '^'
+  - ':'
   - ''
   - ''
   - RALT
   - {type: held}
   - ''
   - '|'
-  - $
-  - PRCT
-  - CRRT
+  - '!'
+  - '@'
+  - '#'
   - '~'
   - ''
   - ''
   - ''
-  - ':'
-  - ;
+  - '_'
+  - ')'
   - ''
   fun_layer:
   - 'boot'
@@ -316,20 +316,20 @@ layers:
   - LSHFT
   - ''
   - SLCK
-  - F1
-  - F2
-  - F3
-  - F10
+  - F4
+  - F5
+  - F6
+  - F11
   - ''
   - {type: held}
   - RALT
   - ''
   - ''
-  - PAUSE BREAK
-  - F4
-  - F5
-  - F6
-  - F11
+  - PAUSE BREAK  
+  - F1
+  - F2
+  - F3
+  - F10
   - ''
   - ''
   - ''
