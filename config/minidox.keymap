@@ -253,7 +253,7 @@
                       bindings = <
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_MACRO Z  &lts U_FUN X    &hm RALT C      &ltf U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
+&ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
@@ -262,7 +262,7 @@
                       bindings = <
 &kp Q            &kp W          &kp E           &kp R           &kp T          &kp Y          &kp U           &kp I          &kp O            &kp P
 &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT
-&ltm U_MACRO Z  &lts U_FUN X   &hm RALT C      &ltf U_SYM V    &kp B          &kp N          &kp M           &kp COMMA      &lts U_MEDIA DOT &ltm U_MACRO SLASH
+&ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B          &kp N          &kp M           &kp COMMA      &lts U_MEDIA DOT &ltm U_MACRO SLASH
                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
@@ -271,7 +271,7 @@
                       bindings = <
 &kp Q            &kp W           &kp C           &kp P           &kp K          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_MACRO Z  &lts U_FUN V    &hm RALT F      &ltf U_SYM G    &kp B          &kp X          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
+&ltm U_MACRO Z   &lts U_FUN V    &hm RALT F      &ltm U_SYM G    &kp B          &kp X          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
