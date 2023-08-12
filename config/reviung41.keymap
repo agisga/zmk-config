@@ -259,82 +259,82 @@
 
                 base_layer {
                       bindings = <
-&kp C_VOL_UP &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)  &kp UP
-&kp C_VOL_DN &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O &kp DOWN
-&kp C_MUTE   &ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA &key_repeat
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &ltf U_NAV SPC  &key_repeat
+&kp TAB     &kp Q            &kp W           &kp F           &kp P           &kp G    &kp J    &kp L           &kp U           &kp Y             AS(SQT)            &kp C_VOL_UP
+&kp LS(TAB) &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D    &kp H    &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O         &kp C_VOL_DN
+&kp LALT    &ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B    &kp K    &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA &kp C_MUTE
+                                                    &kp LA(TAB)  &td_num_esc  &td_shift_ret  &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
                 qwerty_layer {
                       bindings = <
-&kp C_VOL_UP &kp Q            &kp W          &kp E           &kp R           &kp T          &kp Y          &kp U           &kp I          &kp O            &kp P  &kp UP
-&kp C_VOL_DN &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT  &kp DOWN
-&kp C_MUTE   &ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B          &kp N          &kp M           &kp COMMA      &lts U_MEDIA DOT &ltm U_MACRO SLASH  &key_repeat
-                                &kp LA(TAB)     &td_num_esc     &td_shift_ret  &ltf U_NAV SPC  &key_repeat
+&kp TAB     &kp Q            &kp W          &kp E           &kp R           &kp T    &kp Y    &kp U           &kp I          &kp O            &kp P               &kp C_VOL_UP
+&kp LS(TAB) &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT        &kp C_VOL_DN
+&kp LALT    &ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B    &kp N    &kp M           &kp COMMA      &lts U_MEDIA DOT &ltm U_MACRO SLASH  &kp C_MUTE
+                                                    &kp LA(TAB)  &td_num_esc  &td_shift_ret  &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
                 exp_layer {
                       bindings = <
-&kp C_VOL_UP &kp Q            &kp W           &kp C           &kp P           &kp K          &kp J          &kp L           &kp U           &kp Y             AS(SQT)  &kp UP
-&kp C_VOL_DN &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O  &kp DOWN
-&kp C_MUTE   &ltm U_MACRO Z   &lts U_FUN V    &hm RALT F      &ltm U_SYM G    &kp B          &kp X          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA  &key_repeat
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &ltf U_NAV SPC  &key_repeat
+&kp TAB     &kp Q            &kp W           &kp F           &kp P           &kp B    &kp J    &kp L           &kp U           &kp Y             AS(SQT)            &kp C_VOL_UP
+&kp LS(TAB) &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp G    &kp M    &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O         &kp C_VOL_DN
+&kp LALT    &ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM D    &kp V    &kp K    &kp H           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA &kp C_MUTE
+                                                    &kp LA(TAB)  &td_num_esc  &td_shift_ret  &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
                 macro_layer {
                       bindings = <
-&kp C_VOL_UP &colonq     &colonw      &colonwq     &colonqex  &kp COLON     &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR  &kp UP
-&kp C_VOL_DN &kp RA(Q)   &brc_macro   &kp RA(S)    &bkt_macro &angbrc_macro &todo_macro  &dqt_macro   &paren_macro   &fifteen_stars    &kp RA(P)  &kp DOWN
-&kp C_MUTE   &trans      &none        &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE  &kp LT       &leftarr     &ellipsis      &rightarr         &kp GT  &key_repeat
-                         &none        &none      &none         &none      &none
+&none  &colonq     &colonw      &colonwq     &colonqex  &kp COLON     &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR   &none
+&none  &kp RA(Q)   &brc_macro   &kp RA(S)    &bkt_macro &angbrc_macro &todo_macro  &dqt_macro   &paren_macro   &fifteen_stars    &kp RA(P)  &none
+&none  &trans      &none        &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE  &kp LT       &leftarr     &ellipsis      &rightarr         &kp GT     &none
+                                                     &none  &none  &none  &none  &none
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&kp C_VOL_UP &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT  &kp UP
-&kp C_VOL_DN &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI  &kp DOWN
-&kp C_MUTE   &kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none          &none           &none             &none        &none  &key_repeat
-                        &kp ESC     &kp K_APP   &kp RET          &trans          &none
+&none  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT   &none
+&none  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI  &none
+&none  &kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none          &none           &none             &none        &none     &none
+                                                           &kp ESC  &kp K_APP  &kp RET  &trans  &none
                         >;
                 };
 
                 media_layer {
                       bindings = <
-&kp C_VOL_UP &bt BT_CLR &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF  &none   &u_to_U_BASE   &u_to_U_QWERTY  &u_to_U_EXP  U_BOOT  &kp UP
-&kp C_VOL_DN &none      &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR  &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI  &kp DOWN
-&kp C_MUTE   &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_TOG     &none   &none          &none          &trans       &none  &key_repeat
-                          &rgb_ug RGB_TOG   &kp C_PP     &kp C_STOP    &none          &none
+&kp C_VOL_UP &bt BT_CLR &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF  &none   &u_to_U_BASE   &u_to_U_QWERTY &u_to_U_EXP  U_BOOT    &kp C_VOL_UP
+&kp C_VOL_DN &none      &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR  &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI  &kp C_VOL_DN
+&kp C_MUTE   &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_TOG     &none   &none          &none          &trans       &none     &kp C_MUTE
+                                                                  &rgb_ug RGB_TOG  &kp C_PP  &kp C_STOP  &none  &none
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&kp C_VOL_UP &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)  &kp UP
-&kp C_VOL_DN &kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  &kp SEMI  &kp DOWN
-&kp C_MUTE   U_UND             U_CUT               U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)  &key_repeat
-                  &kp ESC             &trans     AS(MINUS)     AS(N0)     &kp DOT
+&none &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)  &none
+&none &kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  &kp SEMI  &none
+&none U_UND             U_CUT               U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE) &none
+                                            &kp ESC  &trans  AS(MINUS)  AS(N0)  &kp DOT
                         >;
                 };
 
                 sym_layer {
                       bindings = <
-&kp C_VOL_UP U_BOOT   &u_to_U_EXP  &u_to_U_QWERTY  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC  &kp UP
-&kp C_VOL_DN &kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT   &kp COLON  &kp DOWN
-&kp C_MUTE   &none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp EXCL  &kp AT     &kp HASH   &kp TILDE  &key_repeat
-                      &none          &none        &kp UNDER  &kp RPAR  &none
+&none U_BOOT   &u_to_U_EXP  &u_to_U_QWERTY &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC   &none
+&none &kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT   &kp COLON  &none
+&none &none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp EXCL  &kp AT     &kp HASH   &kp TILDE  &none
+                                              &none  &none  &kp UNDER  &kp RPAR  &none
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-&kp C_VOL_UP U_BOOT    &u_to_U_EXP  &u_to_U_QWERTY  &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12  &kp UP
-&kp C_VOL_DN &kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11  &kp DOWN
-&kp C_MUTE   &none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10  &key_repeat
-                       &none          &none       &kp TAB          &kp SPC  &kp ESC
+&none U_BOOT    &u_to_U_EXP  &u_to_U_QWERTY &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12  &none
+&none &kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11  &none
+&none &none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10  &none
+                                               &none  &none  &kp TAB  &kp SPC  &kp ESC
                         >;
                 };
         };
