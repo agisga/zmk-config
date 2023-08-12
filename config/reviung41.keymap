@@ -88,7 +88,7 @@
       compatible = "zmk,behavior-hold-tap";
       label = "FAST_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <150>;
+      tapping-term-ms = <200>;
       flavor = "tap-preferred";
       bindings = <&mo>, <&kp>;
     };

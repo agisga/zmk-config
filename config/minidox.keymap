@@ -269,9 +269,9 @@
 
                 exp_layer {
                       bindings = <
-&kp Q            &kp W           &kp C           &kp P           &kp K          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
-&hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_MACRO Z   &lts U_FUN V    &hm RALT F      &ltm U_SYM G    &kp B          &kp X          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
+&kp Q            &kp W           &kp F           &kp P           &kp B          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
+&hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp G          &kp M          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
+&ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM D    &kp V          &kp K          &kp H           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
