@@ -132,6 +132,42 @@
       tapping-term-ms = <200>; \
       bindings = <&none>, <&to U_EXP>; \
     }; \
+
+    dot_mm: dot_colon {
+      compatible = "zmk,behavior-mod-morph";
+      label = "DOT_COLON";
+      #binding-cells = <0>;
+      bindings = <&kp DOT>, <&kp COLON>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    com_mm: comma_semi {
+      compatible = "zmk,behavior-mod-morph";
+      label = "COMMA_SEMI";
+      #binding-cells = <0>;
+      bindings = <&kp COMMA>, <&kp SEMI>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+
+    lt_dot_mm: dot_colon_layer_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "DOT_COLON_LAYER_TAP";
+      #binding-cells = <2>;
+      tapping-term-ms = <350>;
+      quick-tap-ms = <150>;
+      flavor = "tap-preferred";
+      global-quick-tap;
+      bindings = <&mo>, <&dot_mm>;
+    };
+
+    lt_com_mm: comma_semi_layer_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "COMMA_SEMI_LAYER_TAP";
+      #binding-cells = <2>;
+      tapping-term-ms = <250>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&com_mm>;
+    };
   }; \
 
   macros {
@@ -253,7 +289,7 @@
                       bindings = <
 &kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
 &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp H          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
+&ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B          &kp K          &kp M           &kp BSPC        &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
@@ -262,17 +298,17 @@
                       bindings = <
 &kp Q            &kp W          &kp E           &kp R           &kp T          &kp Y          &kp U           &kp I          &kp O            &kp P
 &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT
-&ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B          &kp N          &kp M           &kp COMMA      &lts U_MEDIA DOT &ltm U_MACRO SLASH
+&ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B          &kp N          &kp M           &com_mm   &lt_dot_mm U_MEDIA 0  &ltm U_MACRO SLASH
                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
                 exp_layer {
                       bindings = <
-&kp Q            &kp W           &kp F           &kp P           &kp B          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
-&hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp G          &kp M          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM D    &kp V          &kp K          &kp H           &kp BSPC        &lts U_MEDIA DOT  &ltm U_MACRO COMMA
-                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
+&none   &none  &none  &none  &none &none  &none  &none  &none  &none
+&none   &none  &none  &none  &none &none  &none  &none  &none  &none
+&none   &none  &none  &none  &none &none  &none  &none  &none  &none
+     &none  &none &none &none &ltf U_NAV SPC &none
                         >;
                 };
 
@@ -305,25 +341,25 @@
 
                 num_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp COLON     AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  &kp SEMI
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &none         AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
+&kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
 U_UND             U_CUT               U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
-                  &kp ESC             &trans     &kp ASTRK       AS(MINUS)     AS(N0)     &kp DOT
+                  &kp ESC             &trans     &kp ASTRK       &kp UNDER     AS(N0)     &kp DOT
                         >;
                 };
 
                 sym_layer {
                       bindings = <
-U_BOOT   &u_to_U_EXP  &u_to_U_QWERTY  &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC
-&kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT   &kp COLON
+U_BOOT   &u_to_U_EXP  &u_to_U_QWERTY &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC
+&kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT   &kp UNDER
 &none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp EXCL  &kp AT     &kp HASH   &kp TILDE
-                      &none          &none         &none    &kp UNDER  &kp RPAR  &none
+                      &none          &none         &none    &kp MINUS  &kp RPAR  &none
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-U_BOOT    &u_to_U_EXP  &u_to_U_QWERTY  &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12
+U_BOOT    &u_to_U_EXP  &u_to_U_QWERTY &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12
 &kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11
 &none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10
                        &none          &none         &none     &kp TAB          &kp SPC  &kp ESC
