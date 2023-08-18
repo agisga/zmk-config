@@ -332,10 +332,10 @@
 
                 media_layer {
                       bindings = <
-&bt BT_CLR   &none        &kp C_VOL_UP &none        &none           &none   &u_to_U_BASE   &u_to_U_QWERTY  &u_to_U_EXP  U_BOOT
+&kp C_MUTE   &none        &kp C_VOL_UP &none        &none           &none   &u_to_U_BASE   &u_to_U_QWERTY  &u_to_U_EXP  U_BOOT
 &none        &kp C_PREV   &kp C_VOL_DN &kp C_NEXT   &none           &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &out OUT_TOG    &none   &none          &none          &trans       &none
-                          &kp C_MUTE   &kp C_PP     &kp C_STOP      &none   &none          &none
+                          &bt BT_CLR   &kp C_PP     &kp C_STOP      &none   &none          &none
                         >;
                 };
 

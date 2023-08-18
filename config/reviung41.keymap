@@ -1,14 +1,9 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 
 #define U_BASE   0
@@ -304,8 +299,8 @@
 
                 qwerty_layer {
                       bindings = <
-&kp TAB     &kp Q            &kp W          &kp E           &kp R           &kp T    &kp Y    &kp U           &kp I          &kp O            &kp P               &kp C_VOL_UP
-&kp LS(TAB) &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT        &kp C_VOL_DN
+&kp TAB     &kp Q            &kp W          &kp E           &kp R           &kp T    &kp Y    &kp U           &kp I          &kp O            &kp P               &kp BSPC
+&kp ESC     &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT        &kp RET
 &kp LALT    &ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B    &kp N    &kp M           &com_mm   &lt_dot_mm U_MEDIA 0  &ltm U_MACRO SLASH  &kp C_MUTE
                                                     &kp LA(TAB)  &td_num_esc  &td_shift_ret  &ltf U_NAV SPC  &key_repeat
                         >;
@@ -340,10 +335,10 @@
 
                 media_layer {
                       bindings = <
-&kp C_VOL_UP &bt BT_CLR &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF  &none   &u_to_U_BASE   &u_to_U_QWERTY &u_to_U_EXP  U_BOOT    &kp C_VOL_UP
-&kp C_VOL_DN &none      &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR  &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI  &kp C_VOL_DN
-&kp C_MUTE   &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_TOG     &none   &none          &none          &trans       &none     &kp C_MUTE
-                                                                  &rgb_ug RGB_TOG  &kp C_PP  &kp C_STOP  &none  &none
+&kp C_VOL_UP &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &none   &u_to_U_BASE   &u_to_U_QWERTY &u_to_U_EXP  U_BOOT    &kp C_VOL_UP
+&kp C_VOL_DN &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &ext_power EP_TOG &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI  &kp C_VOL_DN
+&kp C_MUTE   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_TOG      &none   &none          &none          &trans       &none     &kp C_MUTE
+                                                                 &bt BT_CLR  &kp C_PP  &kp C_STOP  &none  &none
                         >;
                 };
 
