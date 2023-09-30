@@ -9,7 +9,7 @@
 #define U_BASE   0
 #define U_QWERTY 1
 #define U_EXP    2
-#define U_MACRO 3
+#define U_MACRO  3
 #define U_NAV    4
 #define U_MEDIA  5
 #define U_NUM    6
@@ -33,7 +33,7 @@
         compatible = "zmk,behavior-hold-tap";
         label = "AUTO_SHIFT";
         #binding-cells = <2>;
-        tapping_term_ms = <160>;
+        tapping_term_ms = <200>;
         quick_tap_ms = <0>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
@@ -250,39 +250,33 @@
     )
   };
 
-//  combos {
-//    compatible = "zmk,combos";
-//
-//    combo_volmute {
-//        timeout-ms = <30>;
-//        key-positions = <10 20>;
-//        bindings = <&kp C_MUTE>;
-//    };
-//
-//    combo_voldn {
-//        timeout-ms = <30>;
-//        key-positions = <11 21>;
-//        bindings = <&kp C_VOL_DN>;
-//    };
-//
-//    combo_volup {
-//        timeout-ms = <30>;
-//        key-positions = <12 22>;
-//        bindings = <&kp C_VOL_UP>;
-//    };
-//
-//    combo_pworkspace {
-//        timeout-ms = <30>;
-//        key-positions = <13 23>;
-//        bindings = <&kp LC(LG(LEFT))>;
-//    };
-//
-//    combo_nworkspace {
-//        timeout-ms = <30>;
-//        key-positions = <14 24>;
-//        bindings = <&kp LC(LG(RIGHT))>;
-//    };
-//  };
+  combos {
+    compatible = "zmk,combos";
+
+    combo_tab {
+        timeout-ms = <30>;
+        key-positions = <2 3>;
+        bindings = <&kp TAB>;
+    };
+
+    combo_slash {
+        timeout-ms = <30>;
+        key-positions = <26 27>;
+        bindings = <&kp SLASH>;
+    };
+
+    combo_esc {
+        timeout-ms = <30>;
+        key-positions = <8 9>;
+        bindings = <&kp ESC>;
+    };
+
+    combo_ret {
+        timeout-ms = <30>;
+        key-positions = <32 33>;
+        bindings = <&kp RET>;
+    };
+  };
 
 
   keymap {
@@ -291,8 +285,8 @@
                 base_layer {
                       bindings = <
 &kp TAB     &kp Q            &kp W           &kp F           &kp P           &kp G    &kp J    &kp L           &kp U           &kp Y             AS(SQT)            &kp C_VOL_UP
-&kp LS(TAB) &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D    &kp H    &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O         &kp C_VOL_DN
-&kp LALT    &ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B    &kp K    &kp M           &kp BSPC   &lt_dot_mm U_MEDIA 0 &lt_com_mm U_MACRO 0 &kp C_MUTE
+&kp LS(TAB) &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D    &kp M    &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O         &kp C_VOL_DN
+&kp LALT    &ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B    &kp K    &ltm U_NAV H    &kp BSPC   &lt_dot_mm U_MEDIA 0 &lt_com_mm U_MACRO 0 &kp C_MUTE
                                                     &kp LA(TAB)  &td_num_esc  &td_shift_ret  &ltf U_NAV SPC  &key_repeat
                         >;
                 };
