@@ -54,8 +54,9 @@
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
       flavor = "tap-preferred";
+      tapping-term-ms = <250>;
+      require-prior-idle-ms = <200>;
       bindings = <&kp>, <&kp>;
     };
 
@@ -63,10 +64,9 @@
       compatible = "zmk,behavior-hold-tap";
       label = "SLOW_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <350>;
-      quick-tap-ms = <150>;
       flavor = "tap-preferred";
-      global-quick-tap;
+      tapping-term-ms = <350>;
+      require-prior-idle-ms = <200>;
       bindings = <&mo>, <&kp>;
     };
 
@@ -74,8 +74,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "MEDIUM_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
       flavor = "tap-preferred";
+      tapping-term-ms = <250>;
       bindings = <&mo>, <&kp>;
     };
 
@@ -83,8 +83,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "FAST_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <200>;
       flavor = "tap-preferred";
+      tapping-term-ms = <200>;
       bindings = <&mo>, <&kp>;
     };
 
@@ -156,10 +156,9 @@
       compatible = "zmk,behavior-hold-tap";
       label = "DOT_COLON_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <350>;
-      quick-tap-ms = <150>;
       flavor = "tap-preferred";
-      global-quick-tap;
+      tapping-term-ms = <350>;
+      require-prior-idle-ms = <200>;
       bindings = <&mo>, <&dot_mm>;
     };
 
@@ -167,8 +166,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "COMMA_SEMI_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
       flavor = "tap-preferred";
+      tapping-term-ms = <250>;
       bindings = <&mo>, <&com_mm>;
     };
   }; \
@@ -285,7 +284,7 @@
                 base_layer {
                       bindings = <
 &kp TAB     &kp Q            &kp W           &kp F           &kp P           &kp G    &kp J    &kp L           &kp U           &kp Y             AS(SQT)            &kp C_VOL_UP
-&kp LS(TAB) &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D    &kp M    &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O         &kp C_VOL_DN
+&key_repeat &hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D    &kp M    &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O         &kp C_VOL_DN
 &kp LALT    &ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B    &kp K    &ltm U_NAV H    &kp BSPC   &lt_dot_mm U_MEDIA 0 &lt_com_mm U_MACRO 0 &kp C_MUTE
                                                     &kp LA(TAB)  &td_num_esc  &td_shift_ret  &ltf U_NAV SPC  &key_repeat
                         >;
@@ -294,7 +293,7 @@
                 qwerty_layer {
                       bindings = <
 &kp TAB     &kp Q            &kp W          &kp E           &kp R           &kp T    &kp Y    &kp U           &kp I          &kp O            &kp P               &kp BSPC
-&kp ESC     &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT        &kp RET
+&key_repeat &hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT        &kp RET
 &kp LALT    &ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B    &kp N    &kp M           &com_mm   &lt_dot_mm U_MEDIA 0  &ltm U_MACRO SLASH  &kp C_MUTE
                                                     &kp LA(TAB)  &td_num_esc  &td_shift_ret  &ltf U_NAV SPC  &key_repeat
                         >;

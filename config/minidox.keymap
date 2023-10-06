@@ -51,8 +51,9 @@
       compatible = "zmk,behavior-hold-tap";
       label = "HOMEROW_MODS";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
       flavor = "tap-preferred";
+      tapping-term-ms = <250>;
+      require-prior-idle-ms = <200>;
       bindings = <&kp>, <&kp>;
     };
 
@@ -60,10 +61,9 @@
       compatible = "zmk,behavior-hold-tap";
       label = "SLOW_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <350>;
-      quick-tap-ms = <150>;
       flavor = "tap-preferred";
-      global-quick-tap;
+      tapping-term-ms = <350>;
+      require-prior-idle-ms = <200>;
       bindings = <&mo>, <&kp>;
     };
 
@@ -71,8 +71,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "MEDIUM_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
       flavor = "tap-preferred";
+      tapping-term-ms = <250>;
       bindings = <&mo>, <&kp>;
     };
 
@@ -80,8 +80,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "FAST_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <150>;
       flavor = "tap-preferred";
+      tapping-term-ms = <200>;
       bindings = <&mo>, <&kp>;
     };
 
@@ -153,10 +153,9 @@
       compatible = "zmk,behavior-hold-tap";
       label = "DOT_COLON_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <350>;
-      quick-tap-ms = <150>;
       flavor = "tap-preferred";
-      global-quick-tap;
+      tapping-term-ms = <350>;
+      require-prior-idle-ms = <200>;
       bindings = <&mo>, <&dot_mm>;
     };
 
@@ -164,8 +163,8 @@
       compatible = "zmk,behavior-hold-tap";
       label = "COMMA_SEMI_LAYER_TAP";
       #binding-cells = <2>;
-      tapping-term-ms = <250>;
       flavor = "tap-preferred";
+      tapping-term-ms = <250>;
       bindings = <&mo>, <&com_mm>;
     };
   }; \
