@@ -174,73 +174,48 @@
 
   macros {
     ZMK_MACRO(colonq,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp COLON &kp Q>;
     )
     ZMK_MACRO(colonw,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp COLON &kp W>;
     )
     ZMK_MACRO(colonwq,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp COLON &kp W &kp Q>;
     )
     ZMK_MACRO(colonqex,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp COLON &kp Q &kp EXCL>;
     )
+    ZMK_MACRO(tabedit,
+        bindings = <&kp COLON &kp T &kp A &kp B &kp E &kp D &kp I &kp T>;
+    )
     ZMK_MACRO(leftarr,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp LT &kp MINUS>;
     )
     ZMK_MACRO(rightarr,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp MINUS &kp GT>;
     )
     ZMK_MACRO(ellipsis,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp DOT &kp DOT &kp DOT>;
     )
     ZMK_MACRO(paren_macro,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp LPAR &kp RPAR &kp LEFT>;
     )
     ZMK_MACRO(bkt_macro,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp LBKT &kp RBKT &kp LEFT>;
     )
     ZMK_MACRO(brc_macro,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp LBRC &kp RBRC &kp LEFT>;
     )
     ZMK_MACRO(dqt_macro,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp DQT &kp DQT &kp LEFT>;
     )
     ZMK_MACRO(angbrc_macro,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp LT &kp GT &kp LEFT>;
     )
     ZMK_MACRO(fifteen_stars,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings = <&kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp SPC>;
     )
     ZMK_MACRO(todo_macro,
-        wait-ms = <50>;
-        tap-ms = <40>;
         bindings
             = <&macro_press &kp LSHFT>
             , <&macro_tap &kp T &kp O &kp D &kp O &kp SPC>
@@ -310,7 +285,7 @@
 
                 macro_layer {
                       bindings = <
-&none  &colonq     &colonw      &colonwq     &colonqex  &kp COLON     &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR   &none
+&none  &colonq     &colonw      &colonwq     &colonqex  &tabedit      &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR   &none
 &none  &kp RA(Q)   &brc_macro   &kp RA(S)    &bkt_macro &angbrc_macro &todo_macro  &dqt_macro   &paren_macro   &fifteen_stars    &kp RA(P)  &none
 &none  &trans      &none        &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE  &kp LT       &leftarr     &ellipsis      &rightarr         &kp GT     &none
                                                      &none  &none  &none  &none  &none
