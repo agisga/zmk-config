@@ -242,10 +242,10 @@
         bindings = <&kp ESC>;
     };
 
-    combo_ret {
+    combo_qmark {
         timeout-ms = <30>;
         key-positions = <27 28>;
-        bindings = <&kp RET>;
+        bindings = <&kp QMARK>;
     };
   };
 
@@ -309,10 +309,10 @@
 
                 num_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &none         AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp ESC       AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
 &kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
 U_UND             U_CUT               U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
-                  &kp ESC             &trans     &kp ASTRK       &kp UNDER     AS(N0)     &kp DOT
+                                      &kp ESC    &trans          &kp ASTRK     &kp UNDER  AS(N0)     &kp DOT
                         >;
                 };
 
