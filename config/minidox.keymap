@@ -226,25 +226,37 @@
 
     combo_tab {
         timeout-ms = <30>;
-        key-positions = <1 2>;
+        key-positions = <3 4>;
         bindings = <&kp TAB>;
-    };
-
-    combo_slash {
-        timeout-ms = <30>;
-        key-positions = <21 22>;
-        bindings = <&kp SLASH>;
     };
 
     combo_esc {
         timeout-ms = <30>;
-        key-positions = <7 8>;
+        key-positions = <13 14>;
         bindings = <&kp ESC>;
+    };
+
+    combo_slash {
+        timeout-ms = <30>;
+        key-positions = <23 24>;
+        bindings = <&kp SLASH>;
+    };
+
+    combo_del {
+        timeout-ms = <30>;
+        key-positions = <5 6>;
+        bindings = <&kp DEL>;
+    };
+
+    combo_ret {
+        timeout-ms = <30>;
+        key-positions = <15 16>;
+        bindings = <&kp RET>;
     };
 
     combo_qmark {
         timeout-ms = <30>;
-        key-positions = <27 28>;
+        key-positions = <25 26>;
         bindings = <&kp QMARK>;
     };
   };
