@@ -236,10 +236,10 @@
         bindings = <&kp ESC>;
     };
 
-    combo_slash {
+    combo_z_left {
         timeout-ms = <30>;
         key-positions = <23 24>;
-        bindings = <&kp SLASH>;
+        bindings = <&kp Z>;
     };
 
     combo_del {
@@ -254,10 +254,10 @@
         bindings = <&kp RET>;
     };
 
-    combo_qmark {
+    combo_z_right {
         timeout-ms = <30>;
         key-positions = <25 26>;
-        bindings = <&kp QMARK>;
+        bindings = <&kp Z>;
     };
   };
 
@@ -267,18 +267,18 @@
 
                 base_layer {
                       bindings = <
-&kp Q            &kp W           &kp F           &kp P           &kp G          &kp J          &kp L           &kp U           &kp Y             AS(SQT)
-&hm LGUI A       &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp D          &kp M          &hm LSHFT N     &hm LCTRL E     &hm LALT I        &hm LGUI O
-&ltm U_MACRO Z   &lts U_FUN X    &hm RALT C      &ltm U_SYM V    &kp B          &kp K          &ltm U_NAV H    &kp BSPC        &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0
+&kp Q       &kp W           &ltm U_MACRO F  &kp P           &kp B          &kp J          &kp L           &ltm U_MACRO U  &kp Y                 AS(SQT)
+&hm LGUI A  &hm LALT R      &hm LCTRL S     &hm LSHFT T     &kp G          &kp M          &hm LSHFT N     &hm LCTRL E     &hm LALT I            &hm LGUI O
+&kp BSPC    &lts U_FUN X    &hm RALT C      &ltm U_SYM D    &kp V          &kp K          &ltm U_NAV H    &com_mm         &lt_dot_mm U_MEDIA 0  AS(SLASH)
                                  &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
 
                 qwerty_layer {
                       bindings = <
-&kp Q            &kp W          &kp E           &kp R           &kp T          &kp Y          &kp U           &kp I          &kp O            &kp P
-&hm LGUI A       &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT
-&ltm U_MACRO Z   &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B          &kp N          &kp M           &com_mm   &lt_dot_mm U_MEDIA 0  &ltm U_MACRO SLASH
+&kp Q       &kp W          &ltm U_MACRO E  &kp R           &kp T          &kp Y          &kp U           &ltm U_MACRO I &kp O            &kp P
+&hm LGUI A  &hm LALT S     &hm LCTRL D     &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K    &hm LALT L       &hm LGUI SQT
+&kp Z       &lts U_FUN X   &hm RALT C      &ltm U_SYM V    &kp B          &kp N          &kp M           &com_mm   &lt_dot_mm U_MEDIA 0  AS(SLASH)
                                 &kp LA(TAB)     &td_num_esc     &td_shift_ret  &kp SPC        &ltf U_NAV SPC  &key_repeat
                         >;
                 };
