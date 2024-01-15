@@ -231,7 +231,7 @@
                       bindings = <
 &kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y                 AS(SQT)     &kp DEL
 &kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I            &hm LGUI O  &kp RET
-&hm LALT SLASH &ltm U_MACRO Z &lts U_FUN X &hm RALT C   &ltm U_SYM D    &kp V          &kp K   &ltm U_NAV H    &kp BSPC     &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0 &kp QMARK
+&hm LALT SLASH &ltm U_MACRO Z &lts U_FUN X &hm RALT C   &ltm U_SYM D    &kp V          &kp K   &kp H           &kp BSPC     &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0 &kp QMARK
                                                     &kp LA(TAB)  &td_num_esc  &ltf U_NAV SPC  &td_shift_ret &key_repeat
                         >;
                 };
@@ -268,7 +268,7 @@
 &none  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT   &none
 &none  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI  &none
 &none  &kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none          &none           &none             &none        &none     &none
-                                                           &kp ESC  &kp K_APP  &trans  &kp RET  &none
+                                            &kp K_APP  &kp RET  &trans  &kp RET  &kp ESC
                         >;
                 };
 
