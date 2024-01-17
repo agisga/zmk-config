@@ -270,7 +270,7 @@
 &kp Q          &kp W        &kp F           &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y                 AS(SQT)
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I            &hm LGUI O
 &ltm U_MACRO Z &lts U_FUN X &hm RALT C      &ltm U_SYM D    &kp V          &kp K   &kp H           &kp BSPC     &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0
-                      &kp LA(TAB)     &td_num_esc   &ltf U_NAV SPC        &ltf U_NAV SPC     &td_shift_ret  &key_repeat
+                      &kp LA(TAB)     &td_num_esc   &ltf U_NAV SPC        &ltf U_NAV LC(BSPC)     &td_shift_ret  &key_repeat
                         >;
                 };
 
@@ -279,7 +279,7 @@
 &kp Q          &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I        &kp O                 &kp P
 &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K  &hm LALT L            &hm LGUI SQT
 &ltm U_MACRO Z &lts U_FUN X   &hm RALT C   &ltm U_SYM V    &kp B          &kp N          &kp M           &com_mm      &lt_dot_mm U_MEDIA 0  &ltm U_MACRO SLASH
-                    &kp LA(TAB)     &td_num_esc    &ltf U_NAV SPC        &ltf U_NAV SPC     &td_shift_ret  &key_repeat
+                    &kp LA(TAB)     &td_num_esc    &ltf U_NAV SPC        &ltf U_NAV LC(BSPC)     &td_shift_ret  &key_repeat
                         >;
                 };
 
@@ -304,9 +304,9 @@
                 nav_layer {
                       bindings = <
 &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT
-&kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &none          &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
+&kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &kp CAPSLOCK   &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI
 &kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none          &none           &none             &none        &none
-                        &kp K_APP   &kp RET   &trans          &trans          &kp RET         &kp ESC
+                           &kp K_APP   &kp RET   &trans          &trans          &kp RET         &kp ESC
                         >;
                 };
 
