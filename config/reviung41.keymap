@@ -96,12 +96,20 @@
       bindings = <&skq LSHFT>, <&kp RET>; \
     }; \
 
-    td_num_esc: sticky_num_esc { \
+    td_num_ret: sticky_num_return { \
       compatible = "zmk,behavior-tap-dance"; \
-      label = "STICKY_NUM_ESC"; \
+      label = "STICKY_NUM_RETURN"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&sl U_NUM>, <&kp ESC>; \
+      bindings = <&sl U_NUM>, <&kp RET>; \
+    }; \
+
+    app_sw: app_switcher { \
+      compatible = "zmk,behavior-tap-dance"; \
+      label = "APP_SWITCHER"; \
+      #binding-cells = <0>; \
+      tapping-term-ms = <200>; \
+      bindings = <&kp LA(TAB)>, <&kp LG(TAB)>; \
     }; \
 
     td_bootloader: double_tap_bootloader { \
@@ -229,19 +237,19 @@
 
                 base_layer {
                       bindings = <
-&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y                 AS(SQT)     &kp DEL
-&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I            &hm LGUI O  &kp RET
-&hm LALT SLASH &ltm U_MACRO Z &lts U_FUN X &hm RALT C   &ltm U_SYM D    &kp V          &kp K   &kp H           &kp BSPC     &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0 &kp QMARK
-                                                    &kp LA(TAB)  &td_num_esc  &ltf U_NAV SPC  &td_shift_ret &key_repeat
+&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y                 AS(SQT)              &kp BSPC
+&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I            &hm LGUI O           &kp RET
+&hm LALT DEL   &ltm U_MACRO Z &lts U_FUN X &hm RALT C   &ltm U_SYM D    &kp V          &kp K   &kp H           AS(SLASH)    &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0 &paren_macro
+                                                    &app_sw  &td_num_ret  &ltf U_NAV SPC  &td_shift_ret &key_repeat
                         >;
                 };
 
                 qwerty_layer {
                       bindings = <
-&kp TAB   &kp Q           &kp W          &kp E        &kp R           &kp T    &kp Y    &kp U           &kp I        &kp O                &kp P              &kp BSPC
-&kp ESC   &hm LGUI A      &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K  &hm LALT L           &hm LGUI SQT       &kp RET
-&kp LALT  &ltm U_MACRO Z  &lts U_FUN X   &hm RALT C   &ltm U_SYM V    &kp B    &kp N    &kp M           &com_mm      &lt_dot_mm U_MEDIA 0 &ltm U_MACRO SLASH &kp DEL
-                                                    &kp LA(TAB)  &td_num_esc  &ltf U_NAV SPC  &td_shift_ret  &key_repeat
+&kp TAB      &kp Q           &kp W          &kp E        &kp R           &kp T    &kp Y    &kp U           &kp I        &kp O                &kp P              &kp BSPC
+&kp ESC      &hm LGUI A      &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K  &hm LALT L           &hm LGUI SQT       &kp RET
+&hm LALT DEL &ltm U_MACRO Z  &lts U_FUN X   &hm RALT C   &ltm U_SYM V    &kp B    &kp N    &kp M           &com_mm      &lt_dot_mm U_MEDIA 0 &ltm U_MACRO SLASH &paren_macro
+                                                    &app_sw  &td_num_ret  &ltf U_NAV SPC  &td_shift_ret  &key_repeat
                         >;
                 };
 
@@ -267,7 +275,7 @@
                       bindings = <
 &none  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT   &none
 &none  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &kp CAPSLOCK   &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI  &none
-&none  &kp BSPC    U_CUT       U_CPY       U_PST       &kp DEL          &none          &none           &none             &none        &none     &none
+&none  &none       &none       &none       &kp BSPC    &kp DEL          &none          &none           &none             &none        &none     &none
                                             &kp K_APP  &kp RET  &trans  &kp RET  &kp ESC
                         >;
                 };
