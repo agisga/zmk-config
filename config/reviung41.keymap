@@ -6,25 +6,20 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 
-#define U_BASE   0
-#define U_QWERTY 1
-#define U_EXP    2
-#define U_MACRO  3
-#define U_NAV    4
-#define U_MEDIA  5
-#define U_NUM    6
-#define U_SYM    7
-#define U_FUN    8
+#define L_BASE   0
+#define L_QWERTY 1
+#define L_EXP    2
+#define L_NAV    3
+#define L_NUM    4
+#define L_FUN    5
 
 #define AS(keycode) &as LS(keycode) keycode
 
-#define U_UND &kp LC(Z)
-#define U_CUT &kp LC(X)
-#define U_CPY &kp LC(C)
-#define U_PST &kp LC(V)
-#define U_RDO &kp LC(Y)
+#define WIN_UND &kp LC(Z)
+#define WIN_CUT &kp LC(X)
+#define WIN_CPY &kp LC(C)
+#define WIN_PST &kp LC(V)
 
-#define U_BOOT &td_bootloader
 
 / {
   behaviors {
@@ -101,7 +96,7 @@
       label = "STICKY_NUM_RETURN"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&sl U_NUM>, <&kp RET>; \
+      bindings = <&sl L_NUM>, <&kp RET>; \
     }; \
 
     app_sw: app_switcher { \
@@ -112,72 +107,37 @@
       bindings = <&kp LA(TAB)>, <&kp LG(TAB)>; \
     }; \
 
-    td_bootloader: double_tap_bootloader { \
+    td_oe_boot: td_oe_bootloader { \
       compatible = "zmk,behavior-tap-dance"; \
       label = "TD_BOOTLOADER"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&none>, <&bootloader>; \
+      bindings = <&kp RA(P)>, <&none>, <&bootloader>; \
     }; \
 
-    u_to_U_BASE: double_tap_to_u_base { \
+    td_ae_to_L_BASE: td_ae_to_layer_base { \
       compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_U_BASE"; \
+      label = "DOUBLE_TAP_TO_L_BASE"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&none>, <&to U_BASE>; \
+      bindings = <&kp RA(Q)>, <&none>, <&to L_BASE>; \
     }; \
 
-    u_to_U_QWERTY: double_tap_to_u_qwerty { \
+    td_ue_to_L_QWERTY: td_ue_to_layer_qwerty { \
       compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_U_QWERTY"; \
+      label = "DOUBLE_TAP_TO_L_QWERTY"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&none>, <&to U_QWERTY>; \
+      bindings = <&kp RA(Y)>, <&none>, <&to L_QWERTY>; \
     }; \
 
-    u_to_U_EXP: double_tap_to_u_exp { \
+    td_ss_to_L_EXP: td_ss_to_layer_exp { \
       compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_U_EXP"; \
+      label = "DOUBLE_TAP_TO_L_EXP"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
-      bindings = <&none>, <&to U_EXP>; \
+      bindings = <&kp RA(S)>, <&none>, <&to L_EXP>; \
     }; \
-
-    dot_mm: dot_colon {
-      compatible = "zmk,behavior-mod-morph";
-      label = "DOT_COLON";
-      #binding-cells = <0>;
-      bindings = <&kp DOT>, <&kp COLON>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-
-    com_mm: comma_semi {
-      compatible = "zmk,behavior-mod-morph";
-      label = "COMMA_SEMI";
-      #binding-cells = <0>;
-      bindings = <&kp COMMA>, <&kp SEMI>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-
-    lt_dot_mm: dot_colon_layer_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "DOT_COLON_LAYER_TAP";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <350>;
-      require-prior-idle-ms = <200>;
-      bindings = <&mo>, <&dot_mm>;
-    };
-
-    lt_com_mm: comma_semi_layer_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "COMMA_SEMI_LAYER_TAP";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <250>;
-      bindings = <&mo>, <&com_mm>;
-    };
   }; \
 
   macros {
@@ -196,12 +156,6 @@
     ZMK_MACRO(tabedit,
         bindings = <&kp COLON &kp T &kp A &kp B &kp E &kp D &kp I &kp T>;
     )
-    ZMK_MACRO(leftarr,
-        bindings = <&kp LT &kp MINUS>;
-    )
-    ZMK_MACRO(rightarr,
-        bindings = <&kp MINUS &kp GT>;
-    )
     ZMK_MACRO(ellipsis,
         bindings = <&kp DOT &kp DOT &kp DOT>;
     )
@@ -216,9 +170,6 @@
     )
     ZMK_MACRO(dqt_macro,
         bindings = <&kp DQT &kp DQT &kp LEFT>;
-    )
-    ZMK_MACRO(angbrc_macro,
-        bindings = <&kp LT &kp GT &kp LEFT>;
     )
     ZMK_MACRO(fifteen_stars,
         bindings = <&kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp SPC>;
@@ -237,19 +188,19 @@
 
                 base_layer {
                       bindings = <
-&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y                 AS(SQT)              &kp DEL
-&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I            &hm LGUI O           &kp RET
-&hm LALT SLASH &ltm U_MACRO Z &lts U_FUN X &hm RALT C   &ltm U_SYM D    &kp V          &kp K   &kp H           &kp BSPC     &lt_dot_mm U_MEDIA 0  &lt_com_mm U_MACRO 0 &kp QMARK
-                                                    &app_sw  &td_num_ret  &ltf U_NAV SPC  &td_shift_ret &key_repeat
+&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y           AS(SQT)          &kp DEL
+&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I      &hm LGUI O       &kp RET
+AS(SLASH)      &kp Z          &kp X        &kp C        &kp D           &kp V          &kp K   &kp H           &kp BSPC     AS(DOT)         AS(COMMA)        AS(SEMI)
+                                                    &app_sw  &td_num_ret  &ltf L_NAV SPC  &td_shift_ret &sl L_FUN
                         >;
                 };
 
                 qwerty_layer {
                       bindings = <
-&kp TAB      &kp Q           &kp W          &kp E        &kp R           &kp T    &kp Y    &kp U           &kp I        &kp O                &kp P              &kp BSPC
-&kp ESC      &hm LGUI A      &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K  &hm LALT L           &hm LGUI SQT       &kp RET
-&kp LALT     &ltm U_MACRO Z  &lts U_FUN X   &hm RALT C   &ltm U_SYM V    &kp B    &kp N    &kp M           &com_mm      &lt_dot_mm U_MEDIA 0 &ltm U_MACRO SLASH &kp DEL
-                                                    &app_sw  &td_num_ret  &ltf U_NAV SPC  &td_shift_ret  &key_repeat
+&kp TAB      &kp Q           &kp W          &kp E        &kp R           &kp T    &kp Y    &kp U           &kp I            &kp O           &kp P          &kp BSPC
+&kp ESC      &hm LGUI A      &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SQT   &kp RET
+AS(SEMI)     &kp Z           &kp X          &kp C        &kp V           &kp B    &kp N    &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)      &kp DEL
+                                                    &app_sw  &td_num_ret  &ltf L_NAV SPC  &td_shift_ret  &sl L_FUN
                         >;
                 };
 
@@ -258,61 +209,34 @@
 &none   &none   &none  &none  &none  &none &none  &none  &none  &none  &none  &none
 &none   &none   &none  &none  &none  &none &none  &none  &none  &none  &none  &none
 &none   &none   &none  &none  &none  &none &none  &none  &none  &none  &none  &none
-              &none  &none &ltf U_NAV SPC &none &none
-                        >;
-                };
-
-                macro_layer {
-                      bindings = <
-&none  &colonq     &colonw      &colonwq     &colonqex  &tabedit      &none        &none        &kp RA(Y)      &kp LPAR          &kp RPAR   &none
-&none  &kp RA(Q)   &brc_macro   &kp RA(S)    &bkt_macro &angbrc_macro &todo_macro  &dqt_macro   &paren_macro   &fifteen_stars    &kp RA(P)  &none
-&none  &trans      &none        &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE  &kp LT       &leftarr     &ellipsis      &rightarr         &kp GT     &none
-                                                     &none  &none  &none  &none  &none
+              &none  &none &mo L_NAV &none &none
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&none  &kp PG_UP   &kp HOME    &kp UP      &kp END     &kp INS          &none          &u_to_U_BASE    &u_to_U_QWERTY     &u_to_U_EXP  U_BOOT   &none
-&none  &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &caps_word       &kp CAPSLOCK   &kp LSHFT       &kp LCTRL         &kp LALT     &kp LGUI  &none
-&none  &none       &none       &none       &kp BSPC    &kp DEL          &none          &none           &none             &none        &none     &none
+&none  &kp PG_UP   &kp HOME     &kp UP       &kp END     &kp INS          &fifteen_stars &td_ae_to_L_BASE &td_ue_to_L_QWERTY   &td_ss_to_L_EXP &td_oe_boot &none
+&none  &kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &caps_word       &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI    &none
+&none  &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp BSPC    &kp DEL          &ellipsis      &dqt_macro       &paren_macro         &bkt_macro      &brc_macro  &none
                                             &kp K_APP  &kp RET  &trans  &kp RET  &kp ESC
-                        >;
-                };
-
-                media_layer {
-                      bindings = <
-&kp C_VOL_UP &rgb_ug RGB_BRI &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_EFF &rgb_ug RGB_TOG   &none   &u_to_U_BASE   &u_to_U_QWERTY &u_to_U_EXP  U_BOOT    &kp C_VOL_UP
-&kp C_VOL_DN &rgb_ug RGB_BRD &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_EFR &ext_power EP_TOG &none   &kp LSHFT      &kp LCTRL      &kp LALT     &kp LGUI  &kp C_VOL_DN
-&kp C_MUTE   &bt BT_SEL 0    &bt BT_SEL 1    &bt BT_SEL 2    &bt BT_SEL 3    &out OUT_TOG      &none   &none          &none          &trans       &none     &kp C_MUTE
-                                                                 &bt BT_CLR  &kp C_PP  &kp C_STOP  &none  &none
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&none &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp DEL         &kp ESC       AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)   &none
-&none &kp LGUI          &kp LALT            &kp LCTRL  &hm LSHFT SLASH &kp QMARK     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)  &none
-&none U_UND             U_CUT               U_CPY      U_PST           U_RDO         AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)  &none
-                                            &kp ESC  &trans  AS(UNDER)  AS(N0)  &kp DOT
-                        >;
-                };
-
-                sym_layer {
-                      bindings = <
-&none U_BOOT   &u_to_U_EXP  &u_to_U_QWERTY &u_to_U_BASE  &none    &kp LBRC   &kp AMPS  &kp ASTRK  &kp LPAR   &kp RBRC   &none
-&none &kp LGUI &kp LALT     &kp LCTRL      &kp LSHFT     &none    &kp PLUS   &kp DLLR  &kp PRCT   &kp CRRT   &kp UNDER  &none
-&none &none    &none        &kp RALT       &trans        &none    &kp PIPE   &kp EXCL  &kp AT     &kp HASH   &kp TILDE  &none
-                                              &none  &none  &kp MINUS  &kp RPAR  &none
+&none &kp LC(LG(LEFT))  &kp LC(LG(RIGHT)) &kp TAB    AS(SEMI)  &kp ESC      AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)   &none
+&none &kp LGUI          &kp LALT          &kp LCTRL  &kp LSHFT &caps_word   AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)  &none
+&none WIN_UND           WIN_CUT           WIN_CPY    WIN_PST   &kp DEL      AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)  &none
+                                                    &kp ESC  &trans  AS(UNDER)  AS(N0)  AS(SLASH)
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-&none U_BOOT    &u_to_U_EXP  &u_to_U_QWERTY &u_to_U_BASE  &none     &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12  &none
-&none &kp LGUI  &kp LALT     &kp LCTRL      &kp LSHFT     &none     &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11  &none
-&none &none     &trans       &kp RALT       &none         &none     &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10  &none
-                                               &none  &none  &none  &none  &none
+&none &colonq            &colonw      &colonwq         &colonqex        &tabedit        &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12  &none
+&none &ext_power EP_TOG  &none        &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &rgb_ug RGB_TOG &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11  &none
+&none &bt BT_SEL 0       &bt BT_SEL 1 &bt BT_SEL 2     &bt BT_SEL 3     &out OUT_TOG    &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10  &none
+                                               &bt BT_CLR  &none  &none  &none  &trans
                         >;
                 };
         };
