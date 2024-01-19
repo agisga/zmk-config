@@ -3,12 +3,12 @@ layout:
   qmk_keyboard: corne_rotated
   qmk_layout: LAYOUT_split_3x5_3
 layers:
-  base_layer:
+  base:
   - Q
   - W
   - F
   - P
-  - G
+  - B
   - J
   - L
   - U
@@ -18,29 +18,29 @@ layers:
   - {t: R, h: LALT}
   - {t: S, h: LCTRL}
   - {t: T, h: LSHFT}
-  - D
-  - H
+  - G
+  - M
   - {t: N, h: LSHFT}
   - {t: E, h: LCTRL}
   - {t: I, h: LALT}
   - {t: O, h: LGUI}
-  - {t: Z, h: macro_layer}
-  - {t: X, h: fun_layer}
-  - {t: C, h: RALT}
-  - {t: V, h: sym_layer}
-  - B
+  - Z
+  - X
+  - C
+  - D
+  - V
   - K
-  - M
+  - H
   - BSPC
-  - {t: ., h: media_layer}
-  - {t: ',', h: macro_layer}
-  - LA(TAB)
+  - {t: ., h: LS(DOT)}
+  - {t: ',', h: LS(COMMA)}
+  - 'app switcher'
   - 'sticky NUM TD esc'
+  - {t: SPC, h: nav}
+  - nav
   - 'sticky Shift TD ret'
-  - SPC
-  - {t: SPC, h: nav_layer}
-  - '&key_repeat'
-  qwerty_layer:
+  - {t: fun, h: sticky}
+  qwerty:
   - Q
   - W
   - E
@@ -61,176 +61,66 @@ layers:
   - {t: K, h: LCTRL}
   - {t: L, h: LALT}
   - {t: '''', h: LGUI}
-  - {t: Z, h: macro_layer}
-  - {t: X, h: fun_layer}
-  - {t: C, h: RALT}
-  - {t: V, h: sym_layer}
+  - Z
+  - X
+  - C
+  - V
   - B
   - N
   - M
-  - ','
-  - {t: ., h: media_layer}
-  - {t: /, h: macro_layer}
-  - LA(TAB)
+  - {t: ',', h: LS(COMMA)}
+  - {t: ., h: LS(DOT)}
+  - {t: /, h: LS(SLASH)}
+  - 'app switcher'
   - 'sticky NUM TD esc'
+  - {t: SPC, h: nav}
+  - nav
   - 'sticky Shift TD ret'
-  - SPC
-  - {t: SPC, h: nav_layer}
-  - '&key_repeat'
-  exp_layer:
-  - Q
-  - W
-  - C
-  - P
-  - K
-  - J
-  - L
-  - U
-  - Y
-  - {t: '''', h: LS(SQT)}
-  - {t: A, h: LGUI}
-  - {t: R, h: LALT}
-  - {t: S, h: LCTRL}
-  - {t: T, h: LSHFT}
-  - D
-  - H
-  - {t: N, h: LSHFT}
-  - {t: E, h: LCTRL}
-  - {t: I, h: LALT}
-  - {t: O, h: LGUI}
-  - {t: Z, h: macro_layer}
-  - {t: V, h: fun_layer}
-  - {t: F, h: RALT}
-  - {t: G, h: sym_layer}
-  - B
-  - X
-  - M
-  - BSPC
-  - {t: ., h: media_layer}
-  - {t: ',', h: macro_layer}
-  - LA(TAB)
-  - 'sticky NUM TD esc'
-  - 'sticky Shift TD ret'
-  - SPC
-  - {t: SPC, h: nav_layer}
-  - '&key_repeat'
-  macro_layer:
-  - ':q'
-  - ':w'
-  - ':wq'
-  - ':q!'
-  - ':'
-  - ''
-  - ''
-  - 'ü'
-  - (
-  - )
-  - 'ä'
-  - '{}'
-  - 'ß'
-  - '[]'
-  - '<>'
-  - 'TODO'
-  - '""'
-  - '()'
-  - '15stars'
-  - 'ö'
-  - {t: LC(Z), type: held}
-  - ''
-  - VOL DN
-  - VOL UP
-  - MUTE
-  - <
-  - '<-'
-  - '...'
-  - '->'
-  - {t: '>', type: held}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  nav_layer:
+  - {t: fun, h: sticky}
+  exp: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', nav, nav, '', '']
+  nav:
   - PG UP
   - HOME
   - UP
   - END
   - INS
-  - ''
-  - 'TD to BASE'
-  - 'TD to EXTRA'
-  - 'TD to TAP'
-  - 'boot'
+  - '&fifteen_stars'
+  - '&td_ae_to_L_BASE'
+  - '&td_ue_to_L_QWERTY'
+  - '&td_ss_to_L_EXP'
+  - '&td_oe_boot'
   - PG DN
   - LEFT
   - DOWN
   - RIGHT
   - '&caps_word'
-  - ''
+  - '&todo_macro'
   - LSHFT
   - LCTRL
   - LALT
   - LGUI
+  - MUTE
+  - VOL DN
+  - VOL UP
   - BSPC
-  - LC(X)
-  - LC(C)
-  - LC(V)
   - DEL
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ESC
+  - '&ellipsis'
+  - '&dqt_macro'
+  - '&paren_macro'
+  - '&bkt_macro'
+  - '&brc_macro'
   - APP
   - RET
-  - ''
   - {type: held}
-  - ''
-  media_layer:
-  - BT CLR
-  - ''
-  - VOL UP
-  - ''
-  - ''
-  - ''
-  - 'TD to BASE'
-  - 'TD to EXTRA'
-  - 'TD to TAP'
-  - 'boot'
-  - ''
-  - PREV
-  - VOL DN
-  - NEXT
-  - ''
-  - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
-  - BT 0
-  - BT 1
-  - BT 2
-  - BT 3
-  - OUT TOG
-  - ''
-  - ''
-  - ''
-  - {type: held}
-  - ''
-  - MUTE
-  - PP
-  - STOP
-  - ''
-  - ''
-  - ''
-  num_layer:
-  - 'prevWS'
-  - 'nextWS'
+  - {t: ▽, type: trans}
+  - RET
+  - ESC
+  num:
+  - LC(LG(LEFT))
+  - LC(LG(RIGHT))
   - TAB
-  - DEL
-  - ':'
+  - {t: ;, h: LS(SEMI)}
+  - ESC
   - {t: '[', h: LS(LBKT)}
   - {t: '7', h: LS(7)}
   - {t: '8', h: LS(8)}
@@ -239,100 +129,76 @@ layers:
   - LGUI
   - LALT
   - LCTRL
-  - {t: /, h: LSHFT}
-  - '?'
+  - LSHFT
+  - '&caps_word'
   - {t: EQL, h: LS(EQL)}
   - {t: '4', h: LS(4)}
   - {t: '5', h: LS(5)}
   - {t: '6', h: LS(6)}
-  - {t: ';', h: LS(;)}
+  - {t: '-', h: LS(MINUS)}
   - LC(Z)
   - LC(X)
   - LC(C)
   - LC(V)
-  - LC(Y)
+  - DEL
   - {t: \, h: LS(BSLH)}
   - {t: '1', h: LS(1)}
   - {t: '2', h: LS(2)}
   - {t: '3', h: LS(3)}
   - {t: '`', h: LS(GRAVE)}
   - ESC
-  - {tap: 'sticky', type: held}
-  - '*'
-  - -
+  - {t: ▽, type: trans}
+  - SPC
+  - _
   - {t: '0', h: LS(0)}
-  - .
-  sym_layer:
-  - 'boot'
-  - 'TD to TAP'
-  - 'TD to EXTRA'
-  - 'TD to BASE'
-  - ''
-  - '{'
-  - '&'
-  - '*'
-  - (
-  - '}'
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
-  - ''
-  - +
-  - '$'
-  - '%'
-  - '^'
-  - ':'
-  - ''
-  - ''
-  - RALT
-  - {type: held}
-  - ''
-  - '|'
-  - '!'
-  - '@'
-  - '#'
-  - '~'
-  - ''
-  - ''
-  - ''
-  - '_'
-  - ')'
-  - ''
-  fun_layer:
-  - 'boot'
-  - 'TD to TAP'
-  - 'TD to EXTRA'
-  - 'TD to BASE'
-  - ''
+  - {t: /, h: LS(SLASH)}
+  fun:
+  - ':q'
+  - ':w'
+  - ':wq'
+  - ':q!'
+  - ':tabedit'
   - PSCRN
   - F7
   - F8
   - F9
   - F12
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
+  - ''
+  - ''
+  - ''
+  - ''
   - ''
   - SLCK
   - F4
   - F5
   - F6
   - F11
-  - ''
-  - {type: held}
-  - RALT
-  - ''
-  - ''
-  - PAUSE BREAK  
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - OUT TOG
+  - PAUSE BREAK
   - F1
   - F2
   - F3
   - F10
+  - BT CLR
   - ''
   - ''
   - ''
-  - TAB
-  - SPC
-  - ESC
+  - ''
+  - {type: held}
+combos:
+- p: [3, 4]
+  k: TAB
+- p: [13, 14]
+  k: ESC
+- p: [23, 24]
+  k: {t: /, h: LS(SLASH)}
+- p: [5, 6]
+  k: DEL
+- p: [15, 16]
+  k: RET
+- p: [25, 26]
+  k: {t: ;, h: LS(SEMI)}
