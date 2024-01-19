@@ -35,10 +35,10 @@ layers:
   - {t: ., h: LS(DOT)}
   - {t: ',', h: LS(COMMA)}
   - 'app switcher'
-  - 'sticky NUM TD esc'
+  - 'sticky NUM td RET'
   - {t: SPC, h: nav}
   - nav
-  - 'sticky Shift TD ret'
+  - 'sticky Shift td RET'
   - {t: fun, h: sticky}
   qwerty:
   - Q
@@ -72,10 +72,10 @@ layers:
   - {t: ., h: LS(DOT)}
   - {t: /, h: LS(SLASH)}
   - 'app switcher'
-  - 'sticky NUM TD esc'
+  - 'sticky NUM td RET'
   - {t: SPC, h: nav}
   - nav
-  - 'sticky Shift TD ret'
+  - 'sticky Shift td RET'
   - {t: fun, h: sticky}
   exp: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', nav, nav, '', '']
   nav:
@@ -84,17 +84,17 @@ layers:
   - UP
   - END
   - INS
-  - '&fifteen_stars'
-  - '&td_ae_to_L_BASE'
-  - '&td_ue_to_L_QWERTY'
-  - '&td_ss_to_L_EXP'
-  - '&td_oe_boot'
+  - '15_stars'
+  - 'ä td BASE'
+  - 'ü td QWERTY'
+  - 'ß td EXP'
+  - 'ö td boot'
   - PG DN
   - LEFT
   - DOWN
   - RIGHT
   - '&caps_word'
-  - '&todo_macro'
+  - 'TODO'
   - LSHFT
   - LCTRL
   - LALT
@@ -104,11 +104,11 @@ layers:
   - VOL UP
   - BSPC
   - DEL
-  - '&ellipsis'
-  - '&dqt_macro'
-  - '&paren_macro'
-  - '&bkt_macro'
-  - '&brc_macro'
+  - '...'
+  - '""'
+  - '()'
+  - '[]'
+  - '{}'
   - APP
   - RET
   - {type: held}

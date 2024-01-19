@@ -55,25 +55,6 @@
       bindings = <&kp>, <&kp>;
     };
 
-    lts: slow_layer_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "SLOW_LAYER_TAP";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <350>;
-      require-prior-idle-ms = <200>;
-      bindings = <&mo>, <&kp>;
-    };
-
-    ltm: medium_layer_tap {
-      compatible = "zmk,behavior-hold-tap";
-      label = "MEDIUM_LAYER_TAP";
-      #binding-cells = <2>;
-      flavor = "tap-preferred";
-      tapping-term-ms = <250>;
-      bindings = <&mo>, <&kp>;
-    };
-
     ltf: fast_layer_tap {
       compatible = "zmk,behavior-hold-tap";
       label = "FAST_LAYER_TAP";
