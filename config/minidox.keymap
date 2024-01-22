@@ -237,24 +237,24 @@
 &kp PG_UP   &kp HOME     &kp UP       &kp END     &kp INS          &fifteen_stars &td_ae_to_L_BASE &td_ue_to_L_QWERTY   &td_ss_to_L_EXP &td_oe_boot
 &kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &caps_word       &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI
 &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp BSPC    &kp DEL          &ellipsis      &dqt_macro       &paren_macro         &bkt_macro      &brc_macro
-                           &kp K_APP   &kp RET   &trans          &trans         &kp RET         &kp ESC
+                             &kp K_APP   &kp RET   &trans          &trans         &kp K_APP        &kp ESC
                         >;
                 };
 
                 num_layer {
                       bindings = <
 &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    AS(SEMI)  &kp ESC       AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL  &kp LSHFT &caps_word    AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
+&kp LGUI          &kp LALT            &kp LCTRL  &kp LSHFT AS(SLASH)     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
 WIN_UND           WIN_CUT             WIN_CPY    WIN_PST   &kp DEL       AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
-                                      &kp ESC    &trans    &kp SPC       &kp UNDER  AS(N0)     AS(SLASH)
+                                      &kp ESC    &trans    &kp SPC       &kp UNDER  AS(N0)     &key_repeat
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-&colonq      &colonw      &colonwq     &colonqex    &tabedit       &kp PSCRN        &kp F7   &kp F8   &kp F9   &kp F12
-&none        &none        &none        &none        &none          &kp SLCK         &kp F4   &kp F5   &kp F6   &kp F11
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &out OUT_TOG   &kp PAUSE_BREAK  &kp F1   &kp F2   &kp F3   &kp F10
+&colonq      &colonw      &colonwq     &colonqex    &tabedit       &kp PSCRN  &kp F7   &kp F8   &kp F9   &kp F12
+&none        &none        &none        &none        &none          &none      &kp F4   &kp F5   &kp F6   &kp F11
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &out OUT_TOG   &none      &kp F1   &kp F2   &kp F3   &kp F10
                                       &bt BT_CLR   &none   &none   &none  &none  &trans
                         >;
                 };

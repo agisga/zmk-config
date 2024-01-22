@@ -113,7 +113,7 @@ layers:
   - RET
   - {type: held}
   - {t: ▽, type: trans}
-  - RET
+  - APP
   - ESC
   num:
   - LC(LG(LEFT))
@@ -130,7 +130,7 @@ layers:
   - LALT
   - LCTRL
   - LSHFT
-  - '&caps_word'
+  - {t: /, h: LS(SLASH)}
   - {t: EQL, h: LS(EQL)}
   - {t: '4', h: LS(4)}
   - {t: '5', h: LS(5)}
@@ -151,7 +151,7 @@ layers:
   - SPC
   - _
   - {t: '0', h: LS(0)}
-  - {t: /, h: LS(SLASH)}
+  - '&key_repeat'
   fun:
   - ':q'
   - ':w'
@@ -168,7 +168,7 @@ layers:
   - ''
   - ''
   - ''
-  - SLCK
+  - ''
   - F4
   - F5
   - F6
@@ -178,7 +178,7 @@ layers:
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
   - OUT TOG
-  - PAUSE BREAK
+  - ''
   - F1
   - F2
   - F3
