@@ -199,6 +199,12 @@
         key-positions = <25 26>;
         bindings = <&as LS(SEMI) SEMI>;
     };
+
+    combo_cbspc {
+        timeout-ms = <30>;
+        key-positions = <26 27 28>;
+        bindings = <&kp LC(BSPC)>;
+    };
   };
 
 
@@ -210,7 +216,7 @@
 &kp Q          &kp W        &kp F           &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y          AS(SQT)
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
 &kp Z          &kp X        &kp C           &kp D           &kp V          &kp K   &kp H           &kp BSPC     AS(DOT)        AS(COMMA)
-                          &app_sw     &td_num_ret   &ltf L_NAV SPC        &mo  L_NAV       &td_shift_ret  &sl L_FUN
+                          &app_sw     &td_num_ret   &ltf L_NAV SPC        &sl  L_NAV       &td_shift_ret  &sl L_FUN
                         >;
                 };
 
@@ -219,7 +225,7 @@
 &kp Q          &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
 &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SQT
 &kp Z          &kp X          &kp C        &kp V           &kp B          &kp N          &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)
-                        &app_sw     &td_num_ret    &ltf L_NAV SPC        &mo  L_NAV       &td_shift_ret  &sl L_FUN
+                        &app_sw     &td_num_ret    &ltf L_NAV SPC        &sl  L_NAV       &td_shift_ret  &sl L_FUN
                         >;
                 };
 
