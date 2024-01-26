@@ -241,7 +241,7 @@
                 nav_layer {
                       bindings = <
 &kp PG_UP   &kp HOME     &kp UP       &kp END     &kp INS          &fifteen_stars &td_ae_to_L_BASE &td_ue_to_L_QWERTY   &td_ss_to_L_EXP &td_oe_boot
-&kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &caps_word       &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI
+&kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &kp CAPS         &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI
 &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp BSPC    &kp DEL          &ellipsis      &dqt_macro       &paren_macro         &bkt_macro      &brc_macro
                              &kp K_APP   &kp RET   &trans          &trans         &kp K_APP        &kp ESC
                         >;

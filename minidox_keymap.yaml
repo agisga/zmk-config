@@ -93,7 +93,7 @@ layers:
   - LEFT
   - DOWN
   - RIGHT
-  - '&caps_word'
+  - CAPS
   - 'TODO'
   - LSHFT
   - LCTRL
