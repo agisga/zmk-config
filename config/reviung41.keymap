@@ -179,9 +179,9 @@
 
                 base_layer {
                       bindings = <
-&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y           AS(SQT)          &kp DEL
-&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I      &hm LGUI O       &kp RET
-AS(SLASH)      &kp Z          &kp X        &kp C        &kp D           &kp V          &kp K   &kp H           &kp BSPC     AS(DOT)         AS(COMMA)        AS(SEMI)
+&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y           AS(SEMI)         &kp BSPC
+&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I      &hm LGUI O       AS(SQT)
+&kp DEL        &kp Z          &kp X        &kp C        &kp V           &kp B          &kp K   &kp M           AS(COMMA)    AS(DOT)         AS(SLASH)        &kp RET
                                                     &app_sw  &td_num_ret  &ltf L_NAV SPC  &td_shift_ret &sl L_FUN
                         >;
                 };
@@ -189,18 +189,18 @@ AS(SLASH)      &kp Z          &kp X        &kp C        &kp D           &kp V   
                 qwerty_layer {
                       bindings = <
 &kp TAB      &kp Q           &kp W          &kp E        &kp R           &kp T    &kp Y    &kp U           &kp I            &kp O           &kp P          &kp BSPC
-&kp ESC      &hm LGUI A      &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SQT   &kp RET
-AS(SEMI)     &kp Z           &kp X          &kp C        &kp V           &kp B    &kp N    &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)      &kp DEL
+&kp ESC      &hm LGUI A      &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G    &kp H    &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI  AS(SQT)
+&kp DEL      &kp Z           &kp X          &kp C        &kp V           &kp B    &kp N    &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)      &kp RET
                                                     &app_sw  &td_num_ret  &ltf L_NAV SPC  &td_shift_ret  &sl L_FUN
                         >;
                 };
 
                 exp_layer {
                       bindings = <
-&none   &none   &none  &none  &none  &none &none  &none  &none  &none  &none  &none
-&none   &none   &none  &none  &none  &none &none  &none  &none  &none  &none  &none
-&none   &none   &none  &none  &none  &none &none  &none  &none  &none  &none  &none
-              &none  &none &mo L_NAV &none &none
+&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y           AS(SQT)          &kp DEL
+&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I      &hm LGUI O       &kp RET
+AS(SLASH)      &kp Z          &kp X        &kp C        &kp D           &kp V          &kp K   &kp H           &kp BSPC     AS(DOT)         AS(COMMA)        AS(SEMI)
+                                                    &app_sw  &td_num_ret  &ltf L_NAV SPC  &td_shift_ret &sl L_FUN
                         >;
                 };
 
