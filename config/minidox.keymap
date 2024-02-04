@@ -61,60 +61,12 @@
       bindings = <&mo>, <&kp>;
     };
 
-    td_shift_ret: sticky_shift_return { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "STICKY_SHIFT_RETURN"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&skq LSHFT>, <&kp RET>; \
-    }; \
-
-    td_num_ret: sticky_num_return { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "STICKY_NUM_RETURN"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&sl L_NUM>, <&kp RET>; \
-    }; \
-
     app_sw: app_switcher { \
       compatible = "zmk,behavior-tap-dance"; \
       label = "APP_SWITCHER"; \
       #binding-cells = <0>; \
       tapping-term-ms = <200>; \
       bindings = <&kp LA(TAB)>, <&kp LG(TAB)>; \
-    }; \
-
-    td_oe_boot: td_oe_bootloader { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "TD_BOOTLOADER"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&kp RA(P)>, <&none>, <&bootloader>; \
-    }; \
-
-    td_ae_to_L_BASE: td_ae_to_layer_base { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_L_BASE"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&kp RA(Q)>, <&none>, <&to L_BASE>; \
-    }; \
-
-    td_ue_to_L_QWERTY: td_ue_to_layer_qwerty { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_L_QWERTY"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&kp RA(Y)>, <&none>, <&to L_QWERTY>; \
-    }; \
-
-    td_ss_to_L_EXP: td_ss_to_layer_exp { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "DOUBLE_TAP_TO_L_EXP"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&kp RA(S)>, <&none>, <&to L_EXP>; \
     }; \
   }; \
 
@@ -216,7 +168,7 @@
 &kp Q          &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          AS(SEMI)
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
 &kp Z          &kp X        &kp C           &kp V           &kp B          &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
-                          &app_sw     &td_num_ret   &ltf L_NAV SPC        &ltf L_NAV SQT      &td_shift_ret  &sl L_FUN
+                          &app_sw     &sl L_NUM   &ltf L_NAV SPC        &ltf L_NAV SQT      &skq LSHFT  &sl L_FUN
                         >;
                 };
 
@@ -225,7 +177,7 @@
 &kp Q          &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
 &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
 &kp Z          &kp X          &kp C        &kp V           &kp B          &kp N          &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)
-                        &app_sw     &td_num_ret    &ltf L_NAV SPC        &ltf L_NAV SQT    &td_shift_ret  &sl L_FUN
+                        &app_sw     &sl L_NUM    &ltf L_NAV SPC        &ltf L_NAV SQT    &skq LSHFT  &sl L_FUN
                         >;
                 };
 
@@ -234,13 +186,13 @@
 &kp Q          &kp W        &kp F           &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y          AS(SQT)
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
 &kp Z          &kp X        &kp C           &kp D           &kp V          &kp K   &kp H           &kp BSPC     AS(DOT)        AS(COMMA)
-                          &app_sw     &td_num_ret   &ltf L_NAV SPC        &sl  L_NAV       &td_shift_ret  &sl L_FUN
+                          &app_sw     &sl L_NUM   &ltf L_NAV SPC        &sl  L_NAV       &skq LSHFT  &sl L_FUN
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME     &kp UP       &kp END     &kp INS          &fifteen_stars &td_ae_to_L_BASE &td_ue_to_L_QWERTY   &td_ss_to_L_EXP &td_oe_boot
+&kp PG_UP   &kp HOME     &kp UP       &kp END     &kp INS          &fifteen_stars &kp RA(Q)        &kp RA(Y)            &kp RA(S)       &kp RA(P)
 &kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &kp CAPS         &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI
 &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp BSPC    &kp DEL          &ellipsis      &dqt_macro       &paren_macro         &bkt_macro      &brc_macro
                              &kp K_APP   &kp RET   &trans          &trans         &kp K_APP        &kp ESC
