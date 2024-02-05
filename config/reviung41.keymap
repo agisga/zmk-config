@@ -8,10 +8,9 @@
 
 #define L_BASE   0
 #define L_QWERTY 1
-#define L_EXP    2
-#define L_NAV    3
-#define L_NUM    4
-#define L_FUN    5
+#define L_NAV    2
+#define L_NUM    3
+#define L_FUN    4
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -124,6 +123,12 @@
         key-positions = <31 32 33>;
         bindings = <&kp LC(BSPC)>;
     };
+
+    combo_qwerty {
+        timeout-ms = <30>;
+        key-positions = <25 26 27 28>;
+        bindings = <&to L_QWERTY>;
+    };
   };
 
   keymap {
@@ -147,30 +152,21 @@
                         >;
                 };
 
-                exp_layer {
-                      bindings = <
-&kp TAB        &kp Q          &kp W        &kp F        &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y           AS(SQT)          &kp DEL
-&kp ESC        &hm LGUI A     &hm LALT R   &hm LCTRL S  &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I      &hm LGUI O       &kp RET
-AS(SLASH)      &kp Z          &kp X        &kp C        &kp D           &kp V          &kp K   &kp H           &kp BSPC     AS(DOT)         AS(COMMA)        AS(SEMI)
-                                                    &app_sw  &sl L_NUM  &ltf L_NAV SPC  &skq LSHFT &sl L_FUN
-                        >;
-                };
-
                 nav_layer {
                       bindings = <
 &none  &kp PG_UP   &kp HOME     &kp UP       &kp END     &kp INS          &fifteen_stars &kp RA(Q)        &kp RA(Y)            &kp RA(S)       &kp RA(P) &none
-&none  &kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &kp CAPS         &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI    &none
-&none  &kp C_MUTE  &kp C_VOL_DN &kp C_VOL_UP &kp BSPC    &kp DEL          &ellipsis      &dqt_macro       &paren_macro         &bkt_macro      &brc_macro  &none
-                                            &kp K_APP  &kp RET  &trans  &kp K_APP  &kp ESC
+&none  &kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &kp TAB          &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI    &none
+&none  &none       &kp C_VOL_DN &kp C_VOL_UP &kp BSPC    &kp DEL          &ellipsis      &dqt_macro       &paren_macro         &bkt_macro      &brc_macro  &none
+                                            &kp K_APP  &kp RET   &trans   &kp C_MUTE  &kp ESC
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&none &kp LC(LG(LEFT))  &kp LC(LG(RIGHT)) &kp TAB    AS(SEMI)  &kp ESC      AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)   &none
-&none &kp LGUI          &kp LALT          &kp LCTRL  &kp LSHFT AS(SLASH)    AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)  &none
+&none &kp LC(LG(LEFT))  &kp LC(LG(RIGHT)) &kp TAB    &kp K_APP &kp ESC      AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)   &none
+&none &kp LGUI          &kp LALT          &kp LCTRL  &kp LSHFT &kp CAPS     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)  &none
 &none WIN_UND           WIN_CUT           WIN_CPY    WIN_PST   &kp DEL      AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)  &none
-                                                    &kp ESC  &trans  AS(UNDER)  AS(N0)  &key_repeat
+                                                     &none  &trans  AS(UNDER)  AS(N0)  &key_repeat
                         >;
                 };
 
