@@ -127,7 +127,7 @@
     combo_qwerty {
         timeout-ms = <30>;
         key-positions = <25 26 27 28>;
-        bindings = <&to L_QWERTY>;
+        bindings = <&tog L_QWERTY>;
     };
   };
 
