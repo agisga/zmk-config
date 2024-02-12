@@ -60,14 +60,6 @@
       tapping-term-ms = <200>;
       bindings = <&mo>, <&kp>;
     };
-
-    app_sw: app_switcher { \
-      compatible = "zmk,behavior-tap-dance"; \
-      label = "APP_SWITCHER"; \
-      #binding-cells = <0>; \
-      tapping-term-ms = <200>; \
-      bindings = <&kp LA(TAB)>, <&kp LG(TAB)>; \
-    }; \
   }; \
 
   macros {
@@ -109,6 +101,14 @@
             = <&macro_press &kp LSHFT>
             , <&macro_tap &kp T &kp O &kp D &kp O &kp SPC>
             , <&macro_release &kp LSHFT>
+            ;
+    )
+    ZMK_MACRO(app_sw,
+        bindings
+            = <&macro_press &kp LALT &mo L_NAV>
+            , <&macro_tap &kp TAB>
+            , <&macro_pause_for_release>
+            , <&macro_release &kp LALT &mo L_NAV>
             ;
     )
   };
