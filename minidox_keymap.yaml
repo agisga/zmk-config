@@ -97,9 +97,9 @@ layers:
   - LCTRL
   - LALT
   - LGUI
-  - ''
-  - VOL DN
-  - VOL UP
+  - ESC
+  - APP
+  - LC(BSPC)
   - BSPC
   - DEL
   - '...'
@@ -107,18 +107,18 @@ layers:
   - '()'
   - '[]'
   - '{}'
-  - APP
+  - ''
   - RET
   - {type: held}
   - {t: ▽, type: trans}
-  - MUTE
-  - ESC
+  - ''
+  - ''
   num:
   - LC(LG(LEFT))
   - LC(LG(RIGHT))
-  - TAB
-  - APP
-  - ESC
+  - VOL DN
+  - VOL UP
+  - MUTE
   - {t: '[', h: LS(LBKT)}
   - {t: '7', h: LS(7)}
   - {t: '8', h: LS(8)}
@@ -144,12 +144,12 @@ layers:
   - {t: '2', h: LS(2)}
   - {t: '3', h: LS(3)}
   - {t: '`', h: LS(GRAVE)}
-  - ''
+  - '&key_repeat'
   - {type: held}
   - SPC
   - _
   - {t: '0', h: LS(0)}
-  - l'&key_repeat'
+  - '&key_repeat'
   fun:
   - ':q'
   - ':w'

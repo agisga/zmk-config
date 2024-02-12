@@ -177,19 +177,19 @@
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME     &kp UP       &kp END     &kp INS          &fifteen_stars &kp RA(Q)        &kp RA(Y)            &kp RA(S)       &kp RA(P)
-&kp PG_DN   &kp LEFT     &kp DOWN     &kp RIGHT   &kp TAB          &todo_macro    &kp LSHFT        &kp LCTRL            &kp LALT        &kp LGUI
-&none       &kp C_VOL_DN &kp C_VOL_UP &kp BSPC    &kp DEL          &ellipsis      &dqt_macro       &paren_macro         &bkt_macro      &brc_macro
-                             &kp K_APP   &kp RET   &trans          &trans         &kp C_MUTE       &kp ESC
+&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &fifteen_stars &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
+&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &todo_macro    &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
+&kp ESC     &kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &ellipsis      &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
+                      &none         &kp RET     &trans      &trans         &none        &none
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp TAB    &kp K_APP &kp ESC       AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL  &kp LSHFT &kp CAPS      AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
-WIN_UND           WIN_CUT             WIN_CPY    WIN_PST   &kp DEL       AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
-                                      &none      &trans    &kp SPC       &kp UNDER  AS(N0)     &key_repeat
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
+&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &kp CAPS    AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
+WIN_UND           WIN_CUT             WIN_CPY       WIN_PST      &kp DEL     AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
+                                      &key_repeat   &trans       &kp SPC     &kp UNDER  AS(N0)     &key_repeat
                         >;
                 };
 
