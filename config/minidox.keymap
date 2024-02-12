@@ -116,36 +116,6 @@
   combos {
     compatible = "zmk,combos";
 
-    combo_tab {
-        timeout-ms = <30>;
-        key-positions = <3 4>;
-        bindings = <&kp TAB>;
-    };
-
-    combo_esc {
-        timeout-ms = <30>;
-        key-positions = <13 14>;
-        bindings = <&kp ESC>;
-    };
-
-    combo_ret {
-        timeout-ms = <30>;
-        key-positions = <21 22 23>;
-        bindings = <&kp RET>;
-    };
-
-    combo_bspc {
-        timeout-ms = <30>;
-        key-positions = <5 6>;
-        bindings = <&kp BSPC>;
-    };
-
-    combo_cbspc {
-        timeout-ms = <30>;
-        key-positions = <26 27 28>;
-        bindings = <&kp LC(BSPC)>;
-    };
-
     combo_qwerty {
         timeout-ms = <30>;
         key-positions = <20 21 22 23>;
