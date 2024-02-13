@@ -11,7 +11,6 @@
 - I was relying on many combos for a long time, but eventually I found them less comfortable compared to other alternatives. Now my 6 column keyboards have only 1-2 or no combos, and my 5 column keyboards move the 6th column keys to (mostly) horizontal combos of the inner-most two columns.
 - The visualization was produced using <https://caksoylar.github.io/keymap-drawer>.
 - My QMK keymaps are available [here](https://github.com/agisga/qmk_userspace). In addition to what is shown below, in QMK I have:
-    * RGB stuff on the `fun` layer (left middle row).
     * [Dynamic macros](https://github.com/qmk/qmk_firmware/blob/master/docs/feature_dynamic_macros.md) on the `fun` layer. (very useful at times!)
     * A `mouse` layer.
 

@@ -109,8 +109,8 @@ layers:
   - '{}'
   - ''
   - RET
-  - {type: held}
   - {t: ▽, type: trans}
+  - {type: held}
   - ''
   - ''
   num:
@@ -119,36 +119,36 @@ layers:
   - VOL DN
   - VOL UP
   - MUTE
-  - {t: '[', h: LS(LBKT)}
-  - {t: '7', h: LS(7)}
-  - {t: '8', h: LS(8)}
-  - {t: '9', h: LS(9)}
-  - {t: ']', h: LS(RBKT)}
+  - {t: '[', h: '{'}
+  - {t: '7', h: '&'}
+  - {t: '8', h: '*'}
+  - {t: '9', h: '('}
+  - {t: ']', h: '}'}
   - LGUI
   - LALT
   - LCTRL
   - LSHFT
   - CAPS
-  - {t: EQL, h: LS(EQL)}
-  - {t: '4', h: LS(4)}
-  - {t: '5', h: LS(5)}
-  - {t: '6', h: LS(6)}
-  - {t: '-', h: LS(MINUS)}
+  - {t: '=', h: '+'}
+  - {t: '4', h: '$'}
+  - {t: '5', h: '%'}
+  - {t: '6', h: '^'}
+  - {t: '-', h: '_'}
   - LC(Z)
   - LC(X)
   - LC(C)
   - LC(V)
   - DEL
-  - {t: \, h: LS(BSLH)}
-  - {t: '1', h: LS(1)}
-  - {t: '2', h: LS(2)}
-  - {t: '3', h: LS(3)}
-  - {t: '`', h: LS(GRAVE)}
+  - {t: \, h: '|'}
+  - {t: '1', h: '!'}
+  - {t: '2', h: '@'}
+  - {t: '3', h: '#'}
+  - {t: '`', h: '~'}
   - '&key_repeat'
   - {type: held}
   - SPC
   - _
-  - {t: '0', h: LS(0)}
+  - {t: '0', h: ')'}
   - '&key_repeat'
   fun:
   - ':q'
@@ -161,11 +161,11 @@ layers:
   - F8
   - F9
   - F12
+  - 'EP_TOG'
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - 'RGB_EFR'
+  - 'RGB_EFF'
+  - 'RGB_TOG'
   - ''
   - F4
   - F5
