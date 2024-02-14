@@ -12,7 +12,7 @@ layers:
   - L
   - U
   - Y
-  - {t: ;, h: LS(SEMI)}
+  - {t: ;, h: ':'}
   - {t: A, h: LGUI}
   - {t: R, h: LALT}
   - {t: S, h: LCTRL}
@@ -30,9 +30,9 @@ layers:
   - B
   - K
   - M
-  - {t: ',', h: LS(COMMA)}
-  - {t: ., h: LS(DOT)}
-  - {t: /, h: LS(SLASH)}
+  - {t: ',', h: '<'}
+  - {t: ., h: '>'}
+  - {t: /, h: '?'}
   - 'app switcher'
   - {t: num, h: sticky}
   - {t: SPC, h: nav}
@@ -67,9 +67,9 @@ layers:
   - B
   - N
   - M
-  - {t: ',', h: LS(COMMA)}
-  - {t: ., h: LS(DOT)}
-  - {t: /, h: LS(SLASH)}
+  - {t: ',', h: '<'}
+  - {t: ., h: '>'}
+  - {t: /, h: '?'}
   - 'app switcher'
   - {t: num, h: sticky}
   - {t: SPC, h: nav}

@@ -7,6 +7,7 @@
 - Heavy reliance on sticky/one-shot keys, because I was experiencies thumb pain due to holding keys for layers, and, besides, I find one-shot Shift very enjoyable to use (gets rid of any delays due to capitalization in the flow of typing).
     * Numbers are accessed from a one-shot NUM layer (left thumb).
     * Symbols that usually require Shift are accessed by: one-shot shift (right thumb) -> one-shot NUM layer (left thumb) -> a right hand finger position on the NUM layer (for example, 5 gives %, 7 gives &, etc).
+- I also use [Autoshift](https://docs.qmk.fm/#/feature_auto_shift) on numbers and symbols. For example, to get "?" I can either tap Shift-"/" or press and hold "/".
 - Many custom macros for the type of typing I do on the FUN and NAV layers.
 - In the past I was heavily relying on many arbitrary [key combos](https://zmk.dev/docs/features/combos), but eventually I found them less comfortable compared to other alternatives. Now my keyboards have 1-2 or no combos.
 - The visualization was produced using <https://caksoylar.github.io/keymap-drawer>.
