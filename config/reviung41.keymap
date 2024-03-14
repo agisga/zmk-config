@@ -1,4 +1,7 @@
+// ************************************* 
+// *************** FIXME ***************
 // 2023-02-12: Outdated. See minidox.keymap
+// *************************************
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>

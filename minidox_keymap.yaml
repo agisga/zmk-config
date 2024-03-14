@@ -33,12 +33,12 @@ layers:
   - {t: ',', h: '<'}
   - {t: ., h: '>'}
   - {t: /, h: '?'}
-  - 'app switcher'
+  - {t: 'app switcher', type: ghost}
   - {t: num, h: sticky}
   - {t: SPC, h: nav}
   - {t: '''', h: nav}
   - {t: LSHFT, h: sticky}
-  - {t: fun, h: sticky}
+  - {t: '&key_repeat', type: ghost}
   qwerty:
   - Q
   - W
@@ -70,12 +70,12 @@ layers:
   - {t: ',', h: '<'}
   - {t: ., h: '>'}
   - {t: /, h: '?'}
-  - 'app switcher'
+  - {t: 'app switcher', type: ghost}
   - {t: num, h: sticky}
   - {t: SPC, h: nav}
   - {t: '''', h: nav}
   - {t: LSHFT, h: sticky}
-  - {t: fun, h: sticky}
+  - {t: '&key_repeat', type: ghost}
   nav:
   - PG UP
   - HOME
@@ -107,12 +107,12 @@ layers:
   - '()'
   - '[]'
   - '{}'
-  - ''
+  - {t: '', type: ghost}
   - RET
   - {t: ▽, type: trans}
   - {type: held}
-  - ''
-  - ''
+  - 'fun'
+  - {t: '', type: ghost}
   num:
   - LC(LG(LEFT))
   - LC(LG(RIGHT))
@@ -144,12 +144,12 @@ layers:
   - {t: '2', h: '@'}
   - {t: '3', h: '#'}
   - {t: '`', h: '~'}
-  - '&key_repeat'
+  - {t: '', type: ghost}
   - {type: held}
   - SPC
   - _
   - {t: '0', h: ')'}
-  - '&key_repeat'
+  - {t: '&key_repeat', type: ghost}
   fun:
   - ':q'
   - ':w'
@@ -166,7 +166,7 @@ layers:
   - 'RGB_EFR'
   - 'RGB_EFF'
   - 'RGB_TOG'
-  - ''
+  - 'Alt(F4)'
   - F4
   - F5
   - F6
@@ -181,13 +181,14 @@ layers:
   - F2
   - F3
   - F10
+  - {t: BT CLR, type: ghost}
   - BT CLR
   - ''
   - ''
-  - ''
-  - ''
   - {type: held}
+  - {t: '', type: ghost}
 combos:
+- p: [1, 2]
+  k: {t: 'app switcher', h: ''}
 - p: [20, 21, 22, 23]
   k: {t: qwerty, h: toggle}
-
