@@ -16,3 +16,5 @@
     * A `mouse` layer.
 
 ![Minidox keymap SVG](./minidox.svg)
+
+_*: Dynamic macros and mouse layer only in the QMK version of this keymap:_ <https://github.com/agisga/qmk_userspace>

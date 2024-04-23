@@ -151,11 +151,11 @@ layers:
   - {t: '0', h: ')'}
   - {t: '&key_repeat', type: ghost}
   fun:
-  - ':q'
-  - ':w'
-  - ':wq'
-  - ':q!'
-  - ':tabedit'
+  - 'dyn rec1 start*'
+  - 'dyn rec1 play*'
+  - 'dyn rec2 start*'
+  - 'dyn rec2 play*'
+  - 'dyn rec stop*'
   - PSCRN
   - F7
   - F8
@@ -192,3 +192,5 @@ combos:
   k: {t: 'app switcher', h: ''}
 - p: [20, 21, 22, 23]
   k: {t: qwerty, h: toggle}
+- p: [26, 27, 28, 29]
+  k: {t: mouse*, h: toggle}
