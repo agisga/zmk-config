@@ -64,9 +64,6 @@
   }; \
 
   macros {
-    ZMK_MACRO(ellipsis,
-        bindings = <&kp DOT &kp DOT &kp DOT>;
-    )
     ZMK_MACRO(paren_macro,
         bindings = <&kp LPAR &kp RPAR &kp LEFT>;
     )
@@ -159,7 +156,7 @@
                       bindings = <
 &kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &fifteen_stars &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
 &kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &todo_macro    &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
-&kp ESC     &kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     AS(SEMI)       &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
+&kp ESC     &kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp DQT        &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
                       &none         &kp RET     &trans      &trans         &mo L_FUN    &none
                         >;
                 };
