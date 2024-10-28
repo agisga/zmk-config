@@ -40,7 +40,7 @@ layers:
   - {t: LSHFT, h: sticky}
   - {t: '&key_repeat', type: ghost}
   qwerty:
-  - Q
+  - {t: Q, h: '"'}
   - W
   - E
   - R
@@ -102,17 +102,17 @@ layers:
   - BSPC
   - DEL
   - ESC
-  - '"'
+  - ''
   - '""'
   - '()'
   - '[]'
   - '{}'
-  - {t: '', type: ghost}
+  - {t: 'fun', type: ghost}
   - RET
   - {t: ▽, type: trans}
   - {type: held}
   - 'fun'
-  - {t: '', type: ghost}
+  - {t: 'fun', type: ghost}
   num:
   - LC(LG(LEFT))
   - LC(LG(RIGHT))
@@ -138,7 +138,7 @@ layers:
   - LC(X)
   - LC(C)
   - LC(V)
-  - DEL
+  - ''
   - {t: \, h: '|'}
   - {t: '1', h: '!'}
   - {t: '2', h: '@'}
@@ -156,17 +156,17 @@ layers:
   - 'dyn rec2 start*'
   - 'dyn rec2 play*'
   - 'dyn rec stop*'
-  - PSCRN
+  - 'Alt(F4)'
   - F7
   - F8
   - F9
   - F12
-  - 'EP_TOG'
-  - ''
+  - 'RGB_TOG'
   - 'RGB_EFR'
   - 'RGB_EFF'
-  - 'RGB_TOG'
-  - 'Alt(F4)'
+  - OUT TOG
+  - 'reset'
+  - 'reset'
   - F4
   - F5
   - F6
@@ -175,13 +175,13 @@ layers:
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
-  - OUT TOG
-  - ''
+  - 'boot'
+  - 'boot'
   - F1
   - F2
   - F3
   - F10
-  - {t: BT CLR, type: ghost}
+  - {t: '', type: ghost}
   - BT CLR
   - ''
   - ''
