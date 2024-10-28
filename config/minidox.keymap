@@ -30,7 +30,6 @@
         quick_tap_ms = <0>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <35>;    // <--- always produce the tap behavior if hold is interrupted by any key except the bottom right key
     };
 
     // Note: quick-release fixes the issue of sticky shift producing multiple upper case letters (see https://github.com/zmkfirmware/zmk/issues/903#issuecomment-909209198).
@@ -120,7 +119,7 @@
     combo_xc {
         timeout-ms = <30>;
         key-positions = <21 22>;
-        bindings = <&kp TAB>;
+        bindings = <&kp RET>;
     };
 
     combo_commadot {
@@ -136,7 +135,7 @@
 
                 base_layer {
                       bindings = <
-&kp Q          &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
+&as SQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
 &kp Z          &kp X        &kp C           &kp V           &kp B          &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
                             &mkp LCLK       &sl L_NUM   &ltf L_NAV SPC     &ltf L_NAV SQT   &skq LSHFT  &key_repeat
@@ -145,7 +144,7 @@
 
                 qwerty_layer {
                       bindings = <
-&kp Q          &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
+&as SQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
 &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
 &kp Z          &kp X          &kp C        &kp V           &kp B          &kp N          &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)
                         &mkp LCLK     &sl L_NUM    &ltf L_NAV SPC        &ltf L_NAV SQT    &skq LSHFT  &key_repeat
@@ -156,7 +155,7 @@
                       bindings = <
 &kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &fifteen_stars &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
 &kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &todo_macro    &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
-&kp ESC     &kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp DQT        &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
+&kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp ESC     &kp DQT        &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
                       &none         &kp RET     &trans      &trans         &mo L_FUN    &none
                         >;
                 };
