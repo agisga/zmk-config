@@ -116,6 +116,12 @@
         bindings = <&kp COLON>;
     };
 
+    combo_rs {
+        timeout-ms = <20>;
+        key-positions = <11 12>;
+        bindings = <&kp TAB>;
+    };
+
     combo_xc {
         timeout-ms = <30>;
         key-positions = <21 22>;
@@ -137,7 +143,7 @@
                       bindings = <
 &as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
-&kp Z          &kp X        &kp C           &kp V           &kp B          &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
+&as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
                             &mkp LCLK       &sl L_NUM   &ltf L_NAV SPC     &ltf L_NAV SQT   &skq LSHFT  &key_repeat
                         >;
                 };
