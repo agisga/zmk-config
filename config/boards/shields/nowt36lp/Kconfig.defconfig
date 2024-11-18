@@ -2,6 +2,6 @@ if SHIELD_NOWT36LP
 
 # Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
-    default "nowt36lp keyboard"
+    default "nowt36lp"
 
 endif
