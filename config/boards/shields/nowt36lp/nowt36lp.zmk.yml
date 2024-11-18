@@ -1,0 +1,8 @@
+file_format: "1"
+id: nowt36lp
+name: nowt36lp
+type: shield
+url: https://github.com/tamago324/nowt36lp
+requires: [pro_micro]
+features:
+  - keys
