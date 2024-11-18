@@ -1,0 +1,8 @@
+file_format: "1"
+id: minidox
+name: minidox
+type: shield
+url: https://github.com/That-Canadian/MiniDox_PCB
+requires: [pro_micro]
+features:
+  - keys
