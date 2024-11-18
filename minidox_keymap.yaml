@@ -23,11 +23,11 @@ layers:
   - {t: E, h: LCTRL}
   - {t: I, h: LALT}
   - {t: O, h: LGUI}
-  - Z
+  - {t: Z, h: '('}
   - X
   - C
   - V
-  - B
+  - {t: B, h: ')'}
   - K
   - M
   - {t: ',', h: '<'}
@@ -200,3 +200,5 @@ combos:
   k: {t: ':', h: ''}
 - p: [27, 28]
   k: {t: ';', h: ''}
+- p: [11, 12]
+  k: {t: TAB, h: ''}

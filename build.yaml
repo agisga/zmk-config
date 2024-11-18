@@ -21,3 +21,5 @@ include:
     shield: minidox_left
   - board: nice_nano_v2
     shield: minidox_right
+  - board: nice_nano_v2
+    shield: nowt36lp
