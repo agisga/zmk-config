@@ -1,0 +1,187 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/mouse.h>
+
+
+#define L_BASE   0
+#define L_QWERTY 1
+#define L_NAV    2
+#define L_NUM    3
+#define L_FUN    4
+
+#define AS(keycode) &as LS(keycode) keycode
+
+#define WIN_UND &kp LC(Z)
+#define WIN_CUT &kp LC(X)
+#define WIN_CPY &kp LC(C)
+#define WIN_PST &kp LC(V)
+
+
+/ {
+  behaviors {
+    // auto shift behavior copied from: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap#L23-L36
+    as: auto_shift {
+        compatible = "zmk,behavior-hold-tap";
+        label = "AUTO_SHIFT";
+        #binding-cells = <2>;
+        tapping_term_ms = <200>;
+        quick_tap_ms = <0>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
+
+    // Note: quick-release fixes the issue of sticky shift producing multiple upper case letters (see https://github.com/zmkfirmware/zmk/issues/903#issuecomment-909209198).
+    skq: sticky_key_quick_release {
+      compatible = "zmk,behavior-sticky-key";
+      label = "STICKY_KEY_QUICK_RELEASE";
+      #binding-cells = <1>;
+      bindings = <&kp>;
+      release-after-ms = <1000>;
+      quick-release;
+    };
+
+    hm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      label = "HOMEROW_MODS";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <250>;
+      require-prior-idle-ms = <200>;
+      bindings = <&kp>, <&kp>;
+    };
+
+    ltf: fast_layer_tap {
+      compatible = "zmk,behavior-hold-tap";
+      label = "FAST_LAYER_TAP";
+      #binding-cells = <2>;
+      flavor = "tap-preferred";
+      tapping-term-ms = <200>;
+      bindings = <&mo>, <&kp>;
+    };
+  }; \
+
+  macros {
+    ZMK_MACRO(paren_macro,
+        bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+    )
+    ZMK_MACRO(bkt_macro,
+        bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+    )
+    ZMK_MACRO(brc_macro,
+        bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+    )
+    ZMK_MACRO(dqt_macro,
+        bindings = <&kp DQT &kp DQT &kp LEFT>;
+    )
+    ZMK_MACRO(fifteen_stars,
+        bindings = <&kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp ASTRK &kp SPC>;
+    )
+    ZMK_MACRO(todo_macro,
+        bindings
+            = <&macro_press &kp LSHFT>
+            , <&macro_tap &kp T &kp O &kp D &kp O &kp SPC>
+            , <&macro_release &kp LSHFT>
+            ;
+    )
+    ZMK_MACRO(app_sw,
+        bindings
+            = <&macro_press &kp LALT &mo L_NAV>
+            , <&macro_tap &kp TAB>
+            , <&macro_pause_for_release>
+            , <&macro_release &kp LALT &mo L_NAV>
+            ;
+    )
+  };
+
+  combos {
+    compatible = "zmk,combos";
+
+    combo_qwerty {
+        timeout-ms = <30>;
+        key-positions = <20 21 22 23>;
+        bindings = <&tog L_QWERTY>;
+    };
+
+    combo_wf {
+        timeout-ms = <30>;
+        key-positions = <1 2>;
+        bindings = <&app_sw>;
+    };
+
+    combo_uy {
+        timeout-ms = <30>;
+        key-positions = <7 8>;
+        bindings = <&kp COLON>;
+    };
+
+    combo_rs {
+        timeout-ms = <20>;
+        key-positions = <11 12>;
+        bindings = <&hm LC(LALT) TAB>;  // for consistency of TAB combo with homerow mods
+    };
+
+    combo_xc {
+        timeout-ms = <30>;
+        key-positions = <21 22>;
+        bindings = <&kp RET>;
+    };
+
+    combo_commadot {
+        timeout-ms = <30>;
+        key-positions = <27 28>;
+        bindings = <&kp SEMI>;
+    };
+  };
+
+
+  keymap {
+    compatible = "zmk,keymap";
+
+                base_layer {
+                      bindings = <
+&as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
+&hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
+&as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
+                            &mkp LCLK       &sl L_NUM   &ltf L_NAV SPC     &ltf L_NAV SQT   &skq LSHFT  &key_repeat
+                        >;
+                };
+
+                qwerty_layer {
+                      bindings = <
+&as DQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
+&hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
+&kp Z          &kp X          &kp C        &kp V           &kp B          &kp N          &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)
+                        &mkp LCLK     &sl L_NUM    &ltf L_NAV SPC        &ltf L_NAV SQT    &skq LSHFT  &key_repeat
+                        >;
+                };
+
+                nav_layer {
+                      bindings = <
+&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &fifteen_stars &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
+&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &todo_macro    &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
+&kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp ESC     &none          &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
+                      &mo L_FUN     &kp RET     &trans      &trans         &mo L_FUN    &mo L_FUN
+                        >;
+                };
+
+                num_layer {
+                      bindings = <
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
+&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &kp CAPS    AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
+WIN_UND           WIN_CUT             WIN_CPY       WIN_PST      &none       AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
+                                      &none         &trans       &kp SPC     &kp UNDER  AS(N0)     AS(SEMI)
+                        >;
+                };
+
+                fun_layer {
+                      bindings = <
+&none        &none        &none        &none         &none         &kp LA(F4)  &kp F7   &kp F8   &kp F9   &kp F12
+&none        &none        &none        &out OUT_TOG  &sys_reset    &sys_reset  &kp F4   &kp F5   &kp F6   &kp F11
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bootloader   &bootloader &kp F1   &kp F2   &kp F3   &kp F10
+                                      &none   &bt BT_CLR   &none   &none  &none  &none
+                        >;
+                };
+        };
+};
