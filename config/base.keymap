@@ -2,14 +2,15 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/pointing.h>
 
 
 #define L_BASE   0
 #define L_QWERTY 1
 #define L_NAV    2
-#define L_NUM    3
-#define L_FUN    4
+#define L_MOUSE  3
+#define L_NUM    4
+#define L_FUN    5
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -144,7 +145,7 @@
 &as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
 &as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
-                            &mkp LCLK       &sl L_NUM   &ltf L_NAV SPC     &ltf L_NAV SQT   &skq LSHFT  &key_repeat
+                            &mkp LCLK       &sl L_NUM   &ltf L_MOUSE SPC   &ltf L_NAV SQT   &skq LSHFT  &key_repeat
                         >;
                 };
 
@@ -153,16 +154,25 @@
 &as DQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
 &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
 &kp Z          &kp X          &kp C        &kp V           &kp B          &kp N          &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)
-                        &mkp LCLK     &sl L_NUM    &ltf L_NAV SPC        &ltf L_NAV SQT    &skq LSHFT  &key_repeat
+                        &mkp LCLK     &sl L_NUM    &ltf L_MOUSE  SPC      &ltf L_NAV SQT    &skq LSHFT  &key_repeat
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &fifteen_stars &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
-&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &todo_macro    &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
-&kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp ESC     &none          &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
-                      &mo L_FUN     &kp RET     &trans      &trans         &mo L_FUN    &mo L_FUN
+&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &none   &none        &none         &none       &none
+&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &none   &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
+&kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp ESC     &none   &none        &none         &none       &none
+                      &mo L_FUN     &kp RET     &kp RET     &trans  &mo L_FUN    &mo L_FUN
+                        >;
+                };
+
+                mouse_layer {
+                      bindings = <
+&msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &none       &fifteen_stars &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
+&msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &todo_macro    &none        &none         &none       &none
+&mkp RCLK       &mkp MCLK       &kp BSPC        &kp DEL           &kp ESC     &none          &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
+                                  &mo L_FUN     &kp RET           &trans      &mkp LCLK      &mo L_FUN    &mo L_FUN
                         >;
                 };
 
