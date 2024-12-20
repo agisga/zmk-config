@@ -87,6 +87,7 @@
             ;
     )
     ZMK_MACRO(app_sw,
+    // currently unused
         bindings
             = <&macro_press &kp LALT &mo L_NAV>
             , <&macro_tap &kp TAB>
@@ -108,19 +109,13 @@
     combo_wf {
         timeout-ms = <30>;
         key-positions = <1 2>;
-        bindings = <&app_sw>;
+        bindings = <&kp Q>;
     };
 
     combo_uy {
         timeout-ms = <30>;
         key-positions = <7 8>;
         bindings = <&kp COLON>;
-    };
-
-    combo_rs {
-        timeout-ms = <20>;
-        key-positions = <11 12>;
-        bindings = <&hm LC(LALT) TAB>;  // for consistency of TAB combo with homerow mods
     };
 
     combo_xc {
@@ -142,7 +137,7 @@
 
                 base_layer {
                       bindings = <
-&as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
+&as DQT TAB    &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
 &as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
                             &mkp LCLK       &sl L_NUM   &ltf L_MOUSE SPC   &ltf L_NAV SQT   &skq LSHFT  &key_repeat
@@ -169,8 +164,8 @@
 
                 mouse_layer {
                       bindings = <
-&msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &none       &fifteen_stars &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
-&msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &todo_macro    &none        &none         &none       &none
+&msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &none       &none          &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
+&msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &none          &none        &none         &none       &none
 &mkp RCLK       &mkp MCLK       &kp BSPC        &kp DEL           &kp ESC     &none          &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
                                   &mo L_FUN     &kp RET           &trans      &mkp LCLK      &mo L_FUN    &mo L_FUN
                         >;
