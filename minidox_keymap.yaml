@@ -3,7 +3,7 @@ layout:
   qmk_layout: LAYOUT_split_3x5_3
 layers:
   base:
-  - {t: Q, h: '"'}
+  - {t: TAB, h: '"'}
   - W
   - F
   - P
@@ -35,7 +35,7 @@ layers:
   - {t: /, h: '?'}
   - {t: 'mouse click', type: ghost}
   - {t: num, h: sticky}
-  - {t: SPC, h: nav}
+  - {t: SPC, h: mouse}
   - {t: '''', h: nav}
   - {t: LSHFT, h: sticky}
   - {t: '&key_repeat', type: ghost}
@@ -72,47 +72,10 @@ layers:
   - {t: /, h: '?'}
   - {t: 'mouse click', type: ghost}
   - {t: num, h: sticky}
-  - {t: SPC, h: nav}
+  - {t: SPC, h: mouse}
   - {t: '''', h: nav}
   - {t: LSHFT, h: sticky}
   - {t: '&key_repeat', type: ghost}
-  nav:
-  - PG UP
-  - HOME
-  - UP
-  - END
-  - INS
-  - '15_stars'
-  - 'ä'
-  - 'ü'
-  - 'ß'
-  - 'ö'
-  - PG DN
-  - LEFT
-  - DOWN
-  - RIGHT
-  - TAB
-  - 'TODO'
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
-  - APP
-  - LC(BSPC)
-  - BSPC
-  - DEL
-  - ESC
-  - ''
-  - '""'
-  - '()'
-  - '[]'
-  - '{}'
-  - {t: 'fun', type: ghost}
-  - RET
-  - {t: ▽, type: trans}
-  - {type: held}
-  - 'fun'
-  - {t: 'fun', type: ghost}
   num:
   - LC(LG(LEFT))
   - LC(LG(RIGHT))
@@ -150,6 +113,80 @@ layers:
   - _
   - {t: '0', h: ')'}
   - {t: ';', h: ':', type: ghost}
+  nav:
+  - PG UP
+  - HOME
+  - UP
+  - END
+  - INS
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - PG DN
+  - LEFT
+  - DOWN
+  - RIGHT
+  - TAB
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - APP
+  - LC(BSPC)
+  - BSPC
+  - DEL
+  - ESC
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: 'fun', type: ghost}
+  - RET
+  - RET
+  - {type: held}
+  - 'fun'
+  - {t: 'fun', type: ghost}
+  mouse:
+  - 'scroll up'
+  - 'scroll left'
+  - 'mouse up'
+  - 'scroll right'
+  - ''
+  - ''
+  - 'ä'
+  - 'ü'
+  - 'ß'
+  - 'ö'
+  - 'scroll down'
+  - 'mouse left'
+  - 'mouse down'
+  - 'mouse right'
+  - TAB
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - 'mouse right click'
+  - 'mouse middle click'
+  - BSPC
+  - DEL
+  - ESC
+  - ''
+  - '""'
+  - '()'
+  - '[]'
+  - '{}'
+  - {t: 'fun', type: ghost}
+  - RET
+  - {type: held}
+  - 'mouse left click'
+  - 'fun'
+  - {t: 'fun', type: ghost}
   fun:
   - 'dyn rec1 start*'
   - 'dyn rec1 play*'
@@ -189,16 +226,12 @@ layers:
   - {t: '', type: ghost}
 combos:
 - p: [1, 2]
-  k: {t: 'app switcher', h: ''}
+  k: {t: Q, h: ''}
 - p: [21, 22]
   k: {t: RET, h: ''}
-- p: [20, 21, 22, 23]
-  k: {t: qwerty, h: toggle}
-- p: [0, 1, 2, 3]
-  k: {t: mouse*, h: toggle}
 - p: [7, 8]
   k: {t: ':', h: ''}
 - p: [27, 28]
   k: {t: ';', h: ''}
-- p: [11, 12]
-  k: {t: TAB, h: ''}
+- p: [20, 21, 22, 23]
+  k: {t: qwerty, h: toggle}
