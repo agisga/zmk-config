@@ -87,7 +87,6 @@
             ;
     )
     ZMK_MACRO(app_sw,
-    // currently unused
         bindings
             = <&macro_press &kp LALT &mo L_NAV>
             , <&macro_tap &kp TAB>
@@ -105,11 +104,18 @@
         key-positions = <20 21 22 23>;
         bindings = <&tog L_QWERTY>;
     };
-
+    
     combo_wf {
         timeout-ms = <30>;
         key-positions = <1 2>;
-        bindings = <&kp Q>;
+        bindings = <&kp TAB>;
+    };
+
+    combo_td {
+        timeout-ms = <30>;
+        key-positions = <13 14>;
+        bindings = <&app_sw>;
+        slow-release;  // to keep alt from the macro held with one finger while repeatedly hitting tab with the other finger
     };
 
     combo_uy {
@@ -137,7 +143,7 @@
 
                 base_layer {
                       bindings = <
-&as DQT TAB    &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
+&as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
 &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
 &as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
                             &mkp LCLK       &sl L_NUM   &ltf L_MOUSE SPC   &ltf L_NAV SQT   &skq LSHFT  &key_repeat
