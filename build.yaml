@@ -25,5 +25,3 @@ include:
     shield: nowt36lp
   - board: nice_nano_v2
     shield: settings_reset
-  - board: boardsource_blok
-    shield: reviung41
