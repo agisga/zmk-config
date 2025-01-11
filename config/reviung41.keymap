@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
@@ -91,38 +92,38 @@
 
     combo_qwerty {
         timeout-ms = <30>;
-        key-positions = <20 21 22 23>;
+        key-positions = <25 26 27 28>;
         bindings = <&tog L_QWERTY>;
     };
 
     combo_wf {
         timeout-ms = <30>;
-        key-positions = <1 2>;
+        key-positions = <2 3>;
         bindings = <&kp TAB>;
     };
 
     combo_td {
         timeout-ms = <30>;
-        key-positions = <13 14>;
+        key-positions = <16 17>;
         bindings = <&app_sw>;
         slow-release;  // to keep alt from the macro held with one finger while repeatedly hitting tab with the other finger
     };
 
     combo_uy {
         timeout-ms = <30>;
-        key-positions = <7 8>;
+        key-positions = <8 9>;
         bindings = <&kp COLON>;
     };
 
     combo_xc {
         timeout-ms = <30>;
-        key-positions = <21 22>;
+        key-positions = <26 27>;
         bindings = <&kp RET>;
     };
 
     combo_commadot {
         timeout-ms = <30>;
-        key-positions = <27 28>;
+        key-positions = <32 33>;
         bindings = <&kp SEMI>;
     };
   };
@@ -133,55 +134,55 @@
 
                 base_layer {
                       bindings = <
-&as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
-&hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
-&as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
-                            &mkp LCLK       &sl L_NUM   &ltf L_MOUSE SPC   &ltf L_NAV SQT   &skq LSHFT  &key_repeat
+&kp TAB      &as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC    &kp BSPC
+&app_sw      &hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O  AS(SQT)
+&mo L_MOUSE  &as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)   AS(SEMI)
+                                                  &mkp LCLK       &sl L_NUM   &ltf L_NAV SPC   &skq LSHFT  &key_repeat
                         >;
                 };
 
                 qwerty_layer {
                       bindings = <
-&as DQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
-&hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
-&kp Z          &kp X          &kp C        &kp V           &kp B          &kp N          &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)
-                        &mkp LCLK     &sl L_NUM    &ltf L_MOUSE  SPC      &ltf L_NAV SQT    &skq LSHFT  &key_repeat
+&kp TAB      &as DQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P          &kp BSPC
+&app_sw      &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI  AS(SQT)
+&mo L_MOUSE  &kp Z          &kp X          &kp C        &kp V           &kp B          &kp N          &kp M           AS(COMMA)        AS(DOT)         AS(SLASH)      AS(SEMI)
+                                                &mkp LCLK     &sl L_NUM    &ltf L_NAV  SPC    &skq LSHFT  &key_repeat
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &none   &none        &none         &none       &none
-&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &none   &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
-&kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp ESC     &none   &none        &none         &none       &none
-                      &mo L_FUN     &kp RET     &kp RET     &trans  &mo L_FUN    &mo L_FUN
+&trans  &kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &none   &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)   &none
+&trans  &kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &none   &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI    &none
+&none   &kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp ESC     &none   &dqt_macro   &paren_macro  &bkt_macro  &brc_macro  &none
+                                    &mo L_FUN     &kp RET     &trans   &mo L_FUN    &mo L_FUN
                         >;
                 };
 
                 mouse_layer {
                       bindings = <
-&msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &none       &none          &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
-&msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &none          &none        &none         &none       &none
-&mkp RCLK       &mkp MCLK       &kp BSPC        &kp DEL           &kp ESC     &none          &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
-                                  &mo L_FUN     &kp RET           &trans      &mkp LCLK      &mo L_FUN    &mo L_FUN
+&none   &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &none       &none          &none        &none         &none       &none       &none
+&none   &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &none          &none        &none         &none       &none       &none
+&trans  &mkp RCLK       &mkp MCLK       &kp BSPC        &kp DEL           &kp ESC     &none          &none        &none         &none       &none       &studio_unlock
+                                                    &mo L_FUN     &kp RET      &mkp LCLK      &mo L_FUN    &mo L_FUN
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &kp CAPS    AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
-WIN_UND           WIN_CUT             WIN_CPY       WIN_PST      &none       AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
-                                      &none         &trans       &kp SPC     &kp UNDER  AS(N0)     AS(SEMI)
+&none   &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)   &none
+&none   &kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &kp CAPS    AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)  &none
+&none   WIN_UND           WIN_CUT             WIN_CPY       WIN_PST      &none       AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)  &none
+                                                      &none         &trans    &kp UNDER   AS(N0)     AS(SEMI)
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-&none        &none        &none        &none         &none         &kp LA(F4)  &kp F7   &kp F8   &kp F9   &kp F12
-&none        &none        &none        &out OUT_TOG  &sys_reset    &sys_reset  &kp F4   &kp F5   &kp F6   &kp F11
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bootloader   &bootloader &kp F1   &kp F2   &kp F3   &kp F10
-                                      &none   &bt BT_CLR   &none   &none  &none  &none
+&none   &none            &none            &none            &none         &none         &kp LA(F4)  &kp F7   &kp F8   &kp F9   &kp F12  &none
+&none   &rgb_ug RGB_TOG  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF  &out OUT_TOG  &sys_reset    &sys_reset  &kp F4   &kp F5   &kp F6   &kp F11  &none
+&none   &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3  &bootloader   &bootloader &kp F1   &kp F2   &kp F3   &kp F10  &none
+                                                              &none   &bt BT_CLR   &none  &none  &none
                         >;
                 };
         };
