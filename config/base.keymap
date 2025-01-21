@@ -65,6 +65,8 @@
 
   macros {
     ZMK_MACRO(th,
+        wait-ms = <1>;
+        tap-ms = <5>;
         bindings = <&kp T &kp H>;
     )
     ZMK_MACRO(paren_macro,
