@@ -64,11 +64,6 @@
   }; \
 
   macros {
-    ZMK_MACRO(th,
-        wait-ms = <1>;
-        tap-ms = <5>;
-        bindings = <&kp T &kp H>;
-    )
     ZMK_MACRO(paren_macro,
         bindings = <&kp LPAR &kp RPAR &kp LEFT>;
     )
@@ -130,18 +125,6 @@
         key-positions = <27 28>;
         bindings = <&kp SEMI>;
     };
-
-    combo_cv {
-        timeout-ms = <30>;
-        key-positions = <22 23>;
-        bindings = <&th>;
-    };
-
-    combo_mcomma {
-        timeout-ms = <30>;
-        key-positions = <26 27>;
-        bindings = <&th>;
-    };
   };
 
 
@@ -150,9 +133,9 @@
 
                 base_layer {
                       bindings = <
-&as DQT Q      &kp W        &kp F           &kp P           &kp G          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
-&hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp D          &kp H   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
-&as LPAR Z     &kp X        &kp C           &kp V           &as RPAR B     &kp K   &kp M           AS(COMMA)    AS(DOT)        AS(SLASH)
+&as DQT Q      &kp W        &kp F           &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
+&hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
+&as LPAR Z     &kp X        &kp C           &kp D           &as RPAR V     &kp K   &kp H           AS(COMMA)    AS(DOT)        AS(SLASH)
                             &mkp LCLK       &sl L_NUM   &ltf L_MOUSE SPC   &ltf L_NAV SQT   &skq LSHFT  &key_repeat
                         >;
                 };
