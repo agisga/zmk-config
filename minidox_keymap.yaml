@@ -3,11 +3,11 @@ layout:
   qmk_layout: LAYOUT_split_3x5_3
 layers:
   base:
-  - {t: TAB, h: '"'}
+  - {t: Q, h: '"'}
   - W
   - F
   - P
-  - G
+  - B
   - J
   - L
   - U
@@ -17,8 +17,8 @@ layers:
   - {t: R, h: LALT}
   - {t: S, h: LCTRL}
   - {t: T, h: LSHFT}
-  - D
-  - H
+  - G
+  - M
   - {t: N, h: LSHFT}
   - {t: E, h: LCTRL}
   - {t: I, h: LALT}
@@ -26,10 +26,10 @@ layers:
   - {t: Z, h: '('}
   - X
   - C
-  - V
-  - {t: B, h: ')'}
+  - D
+  - {t: V, h: ')'}
   - K
-  - M
+  - H
   - {t: ',', h: '<'}
   - {t: ., h: '>'}
   - {t: /, h: '?'}
@@ -91,7 +91,7 @@ layers:
   - LALT
   - LCTRL
   - LSHFT
-  - CAPS
+  - 'Caps word'
   - {t: '=', h: '+'}
   - {t: '4', h: '$'}
   - {t: '5', h: '%'}
@@ -101,7 +101,7 @@ layers:
   - LC(X)
   - LC(C)
   - LC(V)
-  - ''
+  - CAPS
   - {t: \, h: '|'}
   - {t: '1', h: '!'}
   - {t: '2', h: '@'}
@@ -155,7 +155,7 @@ layers:
   - 'scroll left'
   - 'mouse up'
   - 'scroll right'
-  - ''
+  - 'mouse left click'
   - ''
   - 'ä'
   - 'ü'
@@ -226,12 +226,14 @@ layers:
   - {t: '', type: ghost}
 combos:
 - p: [1, 2]
-  k: {t: Q, h: ''}
+  k: {t: TAB, h: ''}
 - p: [21, 22]
   k: {t: RET, h: ''}
 - p: [7, 8]
   k: {t: ':', h: ''}
 - p: [27, 28]
   k: {t: ';', h: ''}
+- p: [13, 14]
+  k: {t: app_switch, h: ''}
 - p: [20, 21, 22, 23]
   k: {t: qwerty, h: toggle}
