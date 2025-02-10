@@ -160,7 +160,7 @@
 
                 mouse_layer {
                       bindings = <
-&msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &none       &none          &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
+&msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &mkp LCLK   &none          &kp RA(Q)    &kp RA(Y)     &kp RA(S)   &kp RA(P)
 &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &none          &none        &none         &none       &none
 &mkp RCLK       &mkp MCLK       &kp BSPC        &kp DEL           &kp ESC     &none          &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
                                   &mo L_FUN     &kp RET           &trans      &mkp LCLK      &mo L_FUN    &mo L_FUN
@@ -170,8 +170,8 @@
                 num_layer {
                       bindings = <
 &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &kp CAPS    AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
-WIN_UND           WIN_CUT             WIN_CPY       WIN_PST      &none       AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
+&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &caps_word  AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
+WIN_UND           WIN_CUT             WIN_CPY       WIN_PST      &kp CAPS    AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
                                       &none         &trans       &kp SPC     &kp UNDER  AS(N0)     AS(SEMI)
                         >;
                 };
