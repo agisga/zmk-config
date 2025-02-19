@@ -64,6 +64,10 @@
   }; \
 
   macros {
+    ZMK_MACRO(cw_macro,
+        // invoke K_CANCEL first to exit sticky layer
+        bindings = <&kp K_CANCEL &caps_word>;
+    )
     ZMK_MACRO(paren_macro,
         bindings = <&kp LPAR &kp RPAR &kp LEFT>;
     )
@@ -170,7 +174,7 @@
                 num_layer {
                       bindings = <
 &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &caps_word  AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
+&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    &cw_macro   AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
 WIN_UND           WIN_CUT             WIN_CPY       WIN_PST      &kp CAPS    AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
                                       &none         &trans       &kp SPC     &kp UNDER  AS(N0)     AS(SEMI)
                         >;
