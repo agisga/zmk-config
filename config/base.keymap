@@ -66,7 +66,12 @@
   macros {
     ZMK_MACRO(cw_macro,
         // invoke K_CANCEL first to exit sticky layer
-        bindings = <&kp K_CANCEL &caps_word>;
+        bindings
+            = <&macro_tap &kp K_CANCEL>
+            , <&macro_press &caps_word>
+            , <&macro_pause_for_release>
+            , <&macro_release &caps_word>
+            ;
     )
     ZMK_MACRO(paren_macro,
         bindings = <&kp LPAR &kp RPAR &kp LEFT>;
