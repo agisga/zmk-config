@@ -73,13 +73,13 @@
 // |  ESC  |  F1 |  F2 |  F3  |  F4  |  F5  |                   |   F6 |  F7   |  F8   |  F9    |  F10  |  F11  |
 // | BTCLR | BT1 | BT2 |  BT3 |  BT4 |  BT5 |                   | home |  pg dn| pf up |  end   | PSCRN |  F12  |
 // |OUT_TOG|     |     |      |      |      |                   |  <-  |   v   |  ^    |  ->    | INSERT|       |
-// | studio|mute |V dn |V up  |      |      |                   |      |       |       |        | MENU  |  L2   |
+// | studio|mute |V dn |V up  |      |      |                   |      |       |       |        | MENU  |       |
 //                     |      |      |      |        |  |       |      |       |       |
       bindings = <
 &kp ESC        &kp F1         &kp F2            &kp F3        &kp F4       &kp F5                             &kp F6       &kp F7        &kp F8        &kp F9        &kp F10     &kp F11
 &bt BT_CLR     &bt BT_SEL 0   &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3 &bt BT_SEL 4                       &kp HOME     &kp PG_DN     &kp PG_UP     &kp END       &kp PSCRN   &kp F12
 &out OUT_TOG   &trans         &trans            &trans        &trans       &trans                             &kp LEFT     &kp DOWN      &kp UP        &kp RIGHT     &kp INSERT  &trans
-&studio_unlock &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP  &trans       &trans      &trans       &trans    &trans       &trans        &trans        &trans        &kp K_CMENU &to 1
+&studio_unlock &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP  &trans       &trans      &trans       &trans    &trans       &trans        &trans        &trans        &kp K_CMENU &trans
                                                 &trans        &trans       &trans      &trans       &trans    &trans       &trans        &trans
       >;
     };
