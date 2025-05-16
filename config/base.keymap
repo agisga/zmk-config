@@ -111,7 +111,7 @@
   combos {
     compatible = "zmk,combos";
 
-    combo_qwerty {
+    combo_colemak {
         timeout-ms = <30>;
         key-positions = <21 22 23 24>;
         bindings = <&tog L_COLEMAK>;
@@ -133,7 +133,7 @@
     combo_io {
         timeout-ms = <30>;
         key-positions = <7 8>;
-        bindings = <&kp B>;
+        bindings = <&kp COLON>;
     };
 
     combo_zx {
@@ -145,7 +145,7 @@
     combo_commadot {
         timeout-ms = <30>;
         key-positions = <27 28>;
-        bindings = <&kp Z>;
+        bindings = <&kp SEMI>;
     };
   };
 
@@ -155,9 +155,9 @@
 
                 base_layer {
                       bindings = <
-&kp Q          &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
-&hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
-&skq LSHFT     &kp X          &kp BSPC     &kp C           &kp V          AS(MINUS)      AS(SQT)         AS(COMMA)        AS(DOT)         AS(SLASH)
+&as DQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
+&hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SQT
+&skq LSHFT     &as LPAR Z     &kp X        &kp C           &as RPAR V     &kp B          &kp BSPC        AS(COMMA)        AS(DOT)         AS(SLASH)
                         &mkp LCLK     &sl L_NUM    &ltf L_MOUSE  SPC      &ltf L_NAV N   &lts L_FUN M    &key_repeat
                         >;
                 };
@@ -192,9 +192,9 @@
                 num_layer {
                       bindings = <
 &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    WIN_UND     &kp LPAR   AS(N4)     AS(N5)  AS(N6)  &kp RPAR
-&kp Z             WIN_CUT             WIN_CPY       WIN_PST      &kp B       AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
-                                      &none         &trans       &kp SPC     AS(EQL)    AS(N0)     &none
+&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    WIN_UND     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
+&kp LC(LS(TAB))   &kp LC(TAB)         WIN_CUT       WIN_CPY      WIN_PST     AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
+                                      &none         &trans       &kp SPC     &kp UNDER  AS(N0)     AS(SEMI)
                         >;
                 };
 
