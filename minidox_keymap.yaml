@@ -1,8 +1,45 @@
 layout:
   qmk_keyboard: corne_rotated
-  qmk_layout: LAYOUT_split_3x5_3
+  layout_name: LAYOUT_split_3x5_3
 layers:
   base:
+  - {t: Q, h: '"'}
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: LGUI}
+  - {t: S, h: LALT}
+  - {t: D, h: LCTRL}
+  - {t: F, h: LSHFT}
+  - G
+  - H
+  - {t: J, h: LSHFT}
+  - {t: K, h: LCTRL}
+  - {t: L, h: LALT}
+  - {t: '''', h: LGUI}
+  - {t: LSHFT, h: sticky}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - BSPC
+  - {t: ',', h: '<'}
+  - {t: ., h: '>'}
+  - {t: /, h: '?'}
+  - {t: 'mouse click', type: ghost}
+  - {t: num, h: sticky}
+  - {t: SPC, h: mouse}
+  - {t: N, h: nav}
+  - {t: M, h: fun}
+  - {t: '&key_repeat', type: ghost}
+  colemak:
   - {t: Q, h: '"'}
   - W
   - F
@@ -39,43 +76,6 @@ layers:
   - {t: '''', h: nav}
   - {t: LSHFT, h: sticky}
   - {t: '&key_repeat', type: ghost}
-  qwerty:
-  - {t: Q, h: '"'}
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - {t: A, h: LGUI}
-  - {t: S, h: LALT}
-  - {t: D, h: LCTRL}
-  - {t: F, h: LSHFT}
-  - G
-  - H
-  - {t: J, h: LSHFT}
-  - {t: K, h: LCTRL}
-  - {t: L, h: LALT}
-  - {t: ;, h: LGUI}
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - {t: ',', h: '<'}
-  - {t: ., h: '>'}
-  - {t: /, h: '?'}
-  - {t: 'mouse click', type: ghost}
-  - {t: num, h: sticky}
-  - {t: SPC, h: mouse}
-  - {t: '''', h: nav}
-  - {t: LSHFT, h: sticky}
-  - {t: '&key_repeat', type: ghost}
   num:
   - LC(LG(LEFT))
   - LC(LG(RIGHT))
@@ -91,17 +91,17 @@ layers:
   - LALT
   - LCTRL
   - LSHFT
-  - 'Caps word'
+  - LC(Z)
   - {t: '=', h: '+'}
   - {t: '4', h: '$'}
   - {t: '5', h: '%'}
   - {t: '6', h: '^'}
   - {t: '-', h: '_'}
-  - LC(Z)
+  - LC(LS(TAB))
+  - LC(TAB)
   - LC(X)
   - LC(C)
   - LC(V)
-  - CAPS
   - {t: \, h: '|'}
   - {t: '1', h: '!'}
   - {t: '2', h: '@'}
@@ -148,7 +148,7 @@ layers:
   - RET
   - RET
   - {type: held}
-  - 'fun'
+  - RET
   - {t: 'fun', type: ghost}
   mouse:
   - 'scroll up'
@@ -157,10 +157,10 @@ layers:
   - 'scroll right'
   - 'mouse left click'
   - ''
-  - 'ä'
   - 'ü'
   - 'ß'
   - 'ö'
+  - 'ä'
   - 'scroll down'
   - 'mouse left'
   - 'mouse down'
@@ -176,7 +176,7 @@ layers:
   - BSPC
   - DEL
   - ESC
-  - ''
+  - '<-'
   - '""'
   - '()'
   - '[]'
@@ -184,8 +184,8 @@ layers:
   - {t: 'fun', type: ghost}
   - RET
   - {type: held}
-  - 'mouse left click'
-  - 'fun'
+  - 'caps word'
+  - CAPS
   - {t: 'fun', type: ghost}
   fun:
   - 'dyn rec1 start*'
@@ -193,7 +193,7 @@ layers:
   - 'dyn rec2 start*'
   - 'dyn rec2 play*'
   - 'dyn rec stop*'
-  - 'Alt(F4)'
+  - ''
   - F7
   - F8
   - F9
@@ -235,5 +235,5 @@ combos:
   k: {t: ';', h: ''}
 - p: [13, 14]
   k: {t: app_switch, h: ''}
-- p: [20, 21, 22, 23]
-  k: {t: qwerty, h: toggle}
+- p: [21, 22, 23, 24]
+  k: {t: colemak, h: toggle}
