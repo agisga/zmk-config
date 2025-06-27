@@ -133,7 +133,7 @@
     combo_io {
         timeout-ms = <30>;
         key-positions = <7 8>;
-        bindings = <&kp COLON>;
+        bindings = <&kp BSPC>;
     };
 
     combo_zx {
@@ -145,7 +145,7 @@
     combo_commadot {
         timeout-ms = <30>;
         key-positions = <27 28>;
-        bindings = <&kp SEMI>;
+        bindings = <&kp LC(BSPC)>;
     };
   };
 
@@ -157,7 +157,7 @@
                       bindings = <
 &as DQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
 &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SQT
-&skq LSHFT     &as LPAR Z     &kp X        &kp C           &as RPAR V     &kp B          &kp BSPC        AS(COMMA)        AS(DOT)         AS(SLASH)
+&skq LSHFT     &as LPAR Z     &kp X        &kp C           &as RPAR V     &kp B          AS(SEMI)        AS(COMMA)        AS(DOT)         AS(SLASH)
                         &mkp LCLK     &sl L_NUM    &ltf L_MOUSE  SPC      &ltf L_NAV N   &lts L_FUN M    &key_repeat
                         >;
                 };
