@@ -117,12 +117,6 @@
         bindings = <&tog L_COLEMAK>;
     };
 
-    combo_we {
-        timeout-ms = <30>;
-        key-positions = <1 2>;
-        bindings = <&kp TAB>;
-    };
-
     combo_fg {
         timeout-ms = <30>;
         key-positions = <13 14>;
@@ -130,22 +124,10 @@
         slow-release;  // to keep alt from the macro held with one finger while repeatedly hitting tab with the other finger
     };
 
-    combo_io {
+    combo_jkl {
         timeout-ms = <30>;
-        key-positions = <7 8>;
-        bindings = <&kp LS(SEMI)>;
-    };
-
-    combo_zx {
-        timeout-ms = <30>;
-        key-positions = <21 22>;
+        key-positions = <16 17 18>;
         bindings = <&kp RET>;
-    };
-
-    combo_commadot {
-        timeout-ms = <30>;
-        key-positions = <27 28>;
-        bindings = <&kp SEMI>;
     };
   };
 
@@ -155,9 +137,9 @@
 
                 base_layer {
                       bindings = <
-&as DQT Q      &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
-&hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SQT
-&skq LSHFT     &as LPAR Z     &kp X        &kp C           &as RPAR V     &kp B          AS(COMMA)       &kp BSPC         AS(DOT)         AS(SLASH)
+&as EXCL Q     &as AT W       &as HASH E   &as DOLLAR R    &as PERCENT T    &as DQT Y    &as SEMI U      &as COLON I      &as PLUS O      &as MINUS P
+&hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &as CARET G      &as EQUAL H  &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SQT
+&skq LSHFT     &as LPAR Z     &as STAR X   &as AMPERSAND C &as RPAR V       &as GRAVE B  AS(COMMA)       &kp BSPC         AS(DOT)         AS(SLASH)
                         &mkp LCLK     &sl L_NUM    &ltf L_MOUSE  SPC      &ltf L_NAV N   &lts L_FUN M    &key_repeat
                         >;
                 };
@@ -173,10 +155,10 @@
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &none   &none        &none         &none       &none
-&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &none   &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
-&kp K_APP &kp LC(BSPC)  &kp BSPC    &kp DEL     &kp ESC     &none   &none        &none         &none       &none
-                      &mo L_FUN     &kp RET     &kp SPC     &trans  &kp RET      &mo L_FUN
+&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &kp C_VOL_UP  &none        &none         &none       &none
+&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &kp C_MUTE    &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
+&kp RET     &kp K_APP &kp BSPC      &kp DEL     &kp ESC     &kp C_VOL_DN  &none        &none         &none       &none
+                      &mo L_FUN     &none       &kp SPC     &trans        &kp RET      &mo L_FUN
                         >;
                 };
 
@@ -184,17 +166,17 @@
                       bindings = <
 &msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &mkp LCLK   &none          &kp RA(Y)    &kp RA(S)     &kp RA(P)   &kp RA(Q)
 &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &none          &none        &none         &none       &none
-&mkp RCLK       &mkp MCLK       &kp BSPC        &kp DEL           &kp ESC     &rassign_macro &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
+&kp RET         &mkp RCLK       &kp BSPC        &kp DEL           &kp ESC     &rassign_macro &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
                                   &mo L_FUN     &kp RET           &trans      &cw_macro      &kp CAPS     &mo L_FUN
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN  &kp C_VOL_UP &kp C_MUTE  AS(LBKT)   AS(N7)     AS(N8)  AS(N9)  AS(RBKT)
-&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    WIN_UND     AS(EQL)    AS(N4)     AS(N5)  AS(N6)  AS(MINUS)
-&kp LC(LS(TAB))   &kp LC(TAB)         WIN_CUT       WIN_CPY      WIN_PST     AS(BSLH)   AS(N1)     AS(N2)  AS(N3)  AS(GRAVE)
-                                      &none         &trans       &kp SPC     &kp UNDER  AS(N0)     AS(SEMI)
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp STAR      &kp PLUS     &kp DOT     &kp LBKT   &kp N7    &kp N8    &kp N9   &kp RBKT
+&kp LGUI          &kp LALT            &kp LCTRL     &kp LSHFT    WIN_UND     &kp EQUAL  &kp N4    &kp N5    &kp N6   &kp MINUS
+&kp LC(LS(TAB))   &kp LC(TAB)         WIN_CUT       WIN_CPY      WIN_PST     &kp GRAVE  &kp N1    &kp N2    &kp N3   &kp BACKSLASH
+                                      &none         &trans       &kp SPC     &kp UNDER  &kp N0    &kp SEMI
                         >;
                 };
 
