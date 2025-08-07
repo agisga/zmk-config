@@ -41,6 +41,7 @@
       bindings = <&kp>;
       release-after-ms = <2000>;
       quick-release;
+      ignore-modifiers;
     };
 
     hm: homerow_mods {
