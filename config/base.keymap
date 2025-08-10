@@ -26,8 +26,8 @@
         compatible = "zmk,behavior-hold-tap";
         label = "AUTO_SHIFT";
         #binding-cells = <2>;
-        tapping_term_ms = <200>;
-        quick_tap_ms = <0>;
+        tapping_term_ms = <250>;
+        quick_tap_ms = <120>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
@@ -131,10 +131,10 @@
 
                 nav_layer {
                       bindings = <
-&msc SCRL_LEFT &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none         &kp INS       &kp END     &kp UP        &kp HOME      &kp PG_UP
-&kp LGUI       &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB       &kp K_APP     &kp LEFT    &kp DOWN      &kp RIGHT     &kp PG_DN
+&msc SCRL_LEFT &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none         &kp HOME      &kp PG_DN   &kp PG_UP     &kp END       &kp INS
+&kp LGUI       &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB       &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT     &kp K_APP
 &kp RET        &kp LC(BSPC)  &kp BSPC        &kp DEL          &kp ESC       &kp ESC       &kp DEL     &kp BSPC      &kp LC(BSPC)  &kp RET
-                             &mo L_FUN       &none            &trans        &kp TAB       &kp UNDER     &mo L_FUN
+                             &mo L_FUN       &none            &trans        &kp TAB       &caps_word  &mo L_FUN
 
                         >;
                 };
@@ -144,7 +144,7 @@
 &kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &mkp LCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
 &kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &mkp RCLK  &kp LSHFT       &kp LCTRL      &kp LALT     &kp LGUI
 &kp BACKSLASH &kp N1    &kp N2    &kp N3    &kp GRAVE      &none      &kp COMMA       &none          &kp DOT      &kp SLASH
-                        &kp SEMI  &kp N0    &kp CAPS       &trans     &none       &none
+                        &kp SEMI  &kp N0    &kp UNDER      &trans     &none       &none
                         >;
                 };
 
@@ -154,7 +154,7 @@
 &kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_UP  &kp C_VOL_DN &kp C_MUTE  &none          &kp RA(Y)    &kp RA(S)     &kp RA(P)   &kp RA(Q)
 &skq LGUI         &skq LALT           &skq LCTRL    &skq LSHFT   WIN_UND     &kp K_CANCEL   &skq LSHFT   &skq LCTRL    &skq LALT   &skq LGUI
 &kp LC(LS(TAB))   &kp LC(TAB)         WIN_CUT       WIN_CPY      WIN_PST     &rassign_macro &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
-                                      &none         &trans       &kp SPC     &kp UNDER  &kp N0    &kp SEMI
+                                      &none         &trans       &none       &none    &none    &none
                         >;
                 };
 
