@@ -6,11 +6,10 @@
 
 
 #define L_BASE    0
-#define L_COLEMAK 1
-#define L_NAV     2
-#define L_MOUSE   3
-#define L_NUM     4
-#define L_FUN     5
+#define L_NAV     1
+#define L_NUM     2
+#define L_MACRO   3
+#define L_FUN     4
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -103,12 +102,6 @@
   combos {
     compatible = "zmk,combos";
 
-    combo_colemak {
-        timeout-ms = <30>;
-        key-positions = <21 22 23 24>;
-        bindings = <&tog L_COLEMAK>;
-    };
-
     combo_fg {
         timeout-ms = <30>;
         key-positions = <13 14>;
@@ -132,42 +125,35 @@
 &as GRAVE Q    &as TILDE W    &as STAR E   &as AMPERSAND R   &as CARET T        &as LBRC Y       &as LBKT U      &as COLON I      &as RBKT O     &as RBRC P
 &as EXCL A     &as AT S       &as HASH D   &as DOLLAR F      &as PERCENT G      &as EQUAL H      &as UNDER J     &as MINUS K      &as PLUS L     &as DQT SQT
 &skq LSHFT     &as LPAR Z     &as RPAR X   &as SEMI C        &as PIPE V         &as BACKSLASH B  AS(COMMA)       &kp BSPC         AS(DOT)         AS(SLASH)
-                        &mkp LCLK     &sl L_NUM    &ltf L_MOUSE  SPC            &ltf L_NAV N   &lts L_FUN M    &key_repeat
-                        >;
-                };
-
-                colemak_layer {
-                      bindings = <
-&as DQT Q      &kp W        &kp F           &kp P           &kp B          &kp J   &kp L           &kp U        &kp Y          &kp BSPC
-&hm LGUI A     &hm LALT R   &hm LCTRL S     &hm LSHFT T     &kp G          &kp M   &hm LSHFT N     &hm LCTRL E  &hm LALT I     &hm LGUI O
-&as LPAR Z     &kp X        &kp C           &kp D           &as RPAR V     &kp K   &kp H           AS(COMMA)    AS(DOT)        AS(SLASH)
-                            &mkp LCLK       &sl L_NUM   &ltf L_MOUSE SPC   &ltf L_NAV SQT   &skq LSHFT  &key_repeat
+                          &mkp LCLK     &sl L_MACRO    &ltf L_NAV  SPC          &ltf L_NUM N   &lts L_FUN M    &key_repeat
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&kp PG_UP   &kp HOME  &kp UP        &kp END     &kp INS     &kp C_VOL_UP  &none        &none         &none       &none
-&kp PG_DN   &kp LEFT  &kp DOWN      &kp RIGHT   &kp TAB     &kp C_MUTE    &kp LSHFT    &kp LCTRL     &kp LALT    &kp LGUI
-&kp RET     &kp K_APP &kp BSPC      &kp DEL     &kp ESC     &kp C_VOL_DN  &none        &none         &none       &none
-                      &mo L_FUN     &none       &kp CAPS    &trans        &kp RET      &mo L_FUN
-                        >;
-                };
+&msc SCRL_LEFT &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none         &kp INS       &kp END     &kp UP        &kp HOME      &kp PG_UP
+&kp LGUI       &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB       &kp K_APP     &kp LEFT    &kp DOWN      &kp RIGHT     &kp PG_DN
+&kp RET        &kp LC(BSPC)  &kp BSPC        &kp DEL          &kp ESC       &kp ESC       &kp DEL     &kp BSPC      &kp LC(BSPC)  &kp RET
+                             &mo L_FUN       &none            &trans        &kp TAB       &kp UNDER     &mo L_FUN
 
-                mouse_layer {
-                      bindings = <
-&msc SCRL_UP    &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT   &mkp LCLK   &none          &kp RA(Y)    &kp RA(S)     &kp RA(P)   &kp RA(Q)
-&msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT   &kp TAB     &none          &none        &none         &none       &none
-&kp RET         &mkp RCLK       &kp BSPC        &kp DEL           &kp ESC     &rassign_macro &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
-                                  &mo L_FUN     &kp RET           &trans      &none          &none        &mo L_FUN
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp STAR      &kp PLUS     &kp DOT     &kp LBKT   &kp N7    &kp N8    &kp N9   &kp RBKT
-&skq LGUI         &skq LALT           &skq LCTRL    &skq LSHFT   WIN_UND     &kp EQUAL  &kp N4    &kp N5    &kp N6   &kp MINUS
-&kp LC(LS(TAB))   &kp LC(TAB)         WIN_CUT       WIN_CPY      WIN_PST     &kp GRAVE  &kp N1    &kp N2    &kp N3   &kp BACKSLASH
+&kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &mkp LCLK  &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &mkp RCLK  &kp LSHFT       &kp LCTRL      &kp LALT     &kp LGUI
+&kp BACKSLASH &kp N1    &kp N2    &kp N3    &kp GRAVE      &none      &kp COMMA       &none          &kp DOT      &kp SLASH
+                        &kp SEMI  &kp N0    &kp CAPS       &trans     &none       &none
+                        >;
+                };
+
+
+                macro_layer {
+                      bindings = <
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_UP  &kp C_VOL_DN &kp C_MUTE  &none          &kp RA(Y)    &kp RA(S)     &kp RA(P)   &kp RA(Q)
+&skq LGUI         &skq LALT           &skq LCTRL    &skq LSHFT   WIN_UND     &kp K_CANCEL   &skq LSHFT   &skq LCTRL    &skq LALT   &skq LGUI
+&kp LC(LS(TAB))   &kp LC(TAB)         WIN_CUT       WIN_CPY      WIN_PST     &rassign_macro &dqt_macro   &paren_macro  &bkt_macro  &brc_macro
                                       &none         &trans       &kp SPC     &kp UNDER  &kp N0    &kp SEMI
                         >;
                 };
