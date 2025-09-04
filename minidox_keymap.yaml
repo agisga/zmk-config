@@ -3,7 +3,7 @@ layout:
   layout_name: LAYOUT_split_3x5_3
 layers:
   base:
-  - {t: Q, h: '"'}
+  - Q
   - W
   - E
   - R
@@ -29,164 +29,127 @@ layers:
   - C
   - V
   - B
+  - ','
   - BSPC
-  - {t: ',', h: '<'}
-  - {t: ., h: '>'}
-  - {t: /, h: '?'}
-  - {t: 'mouse click', type: ghost}
-  - {t: num, h: sticky}
-  - {t: SPC, h: mouse}
-  - {t: N, h: nav}
+  - .
+  - /
+  - '&mkp LCLK'
+  - {t: macro, h: sticky}
+  - {t: SPC, h: nav}
+  - {t: N, h: num}
   - {t: M, h: fun}
-  - {t: '&key_repeat', type: ghost}
-  colemak:
-  - {t: Q, h: '"'}
-  - W
-  - F
-  - P
-  - B
-  - J
-  - L
-  - U
-  - Y
+  - RET
+  nav:
+  - 'SCRL LEFT'
+  - 'SCRL UP'
+  - 'SCRL DOWN'
+  - 'SCRL RIGHT'
+  - ''
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - INS
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - TAB
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - APP
+  - RET
+  - Ctl+BSPC
   - BSPC
-  - {t: A, h: LGUI}
-  - {t: R, h: LALT}
-  - {t: S, h: LCTRL}
-  - {t: T, h: LSHFT}
-  - G
-  - M
-  - {t: N, h: LSHFT}
-  - {t: E, h: LCTRL}
-  - {t: I, h: LALT}
-  - {t: O, h: LGUI}
-  - {t: Z, h: '('}
-  - X
-  - C
-  - D
-  - {t: V, h: ')'}
-  - K
-  - H
-  - {t: ',', h: '<'}
-  - {t: ., h: '>'}
-  - {t: /, h: '?'}
-  - {t: 'mouse click', type: ghost}
-  - {t: num, h: sticky}
-  - {t: SPC, h: mouse}
-  - {t: '''', h: nav}
-  - {t: LSHFT, h: sticky}
-  - {t: '&key_repeat', type: ghost}
+  - DEL
+  - ESC
+  - ESC
+  - DEL
+  - BSPC
+  - Ctl+BSPC
+  - RET
+  - fun
+  - ''
+  - {type: held}
+  - TAB
+  - 'caps word'
+  - fun
   num:
-  - LC(LG(LEFT))
-  - LC(LG(RIGHT))
+  - '['
+  - '7'
+  - '8'
+  - '9'
+  - ']'
+  - '{'
+  - '&'
+  - '*'
+  - (
+  - '}'
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - '='
+  - +
+  - {t: $, h: LSHFT}
+  - {t: '%', h: LCTRL}
+  - {t: ^, h: LALT}
+  - {t: ), h: LGUI}
+  - ;
+  - '1'
+  - '2'
+  - '3'
+  - ':'
+  - '`'
+  - '!'
+  - '@'
+  - '#'
+  - \
+  - '~'
+  - '0'
+  - _
+  - {type: held}
+  - .
+  - '|'
+  macro:
+  - Ctl+Gui+LEFT
+  - Ctl+Gui+RIGHT
   - VOL DN
   - VOL UP
   - MUTE
-  - {t: '[', h: '{'}
-  - {t: '7', h: '&'}
-  - {t: '8', h: '*'}
-  - {t: '9', h: '('}
-  - {t: ']', h: '}'}
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
-  - LC(Z)
-  - {t: '=', h: '+'}
-  - {t: '4', h: '$'}
-  - {t: '5', h: '%'}
-  - {t: '6', h: '^'}
-  - {t: '-', h: '_'}
-  - LC(LS(TAB))
-  - LC(TAB)
-  - LC(X)
-  - LC(C)
-  - LC(V)
-  - {t: \, h: '|'}
-  - {t: '1', h: '!'}
-  - {t: '2', h: '@'}
-  - {t: '3', h: '#'}
-  - {t: '`', h: '~'}
-  - {t: '', type: ghost}
-  - {type: held}
-  - SPC
-  - _
-  - {t: '0', h: ')'}
-  - {t: ';', h: ':', type: ghost}
-  nav:
-  - PG UP
-  - HOME
-  - UP
-  - END
-  - INS
   - ''
+  - AltGr+Y
   - ''
+  - AltGr+P
   - ''
+  - AltGr+Q
+  - AltGr+S
+  - Ctl+Sft+TAB
+  - Ctl+TAB
+  - Gui+TAB
+  - Sft+Gui+LEFT
+  - Sft+Gui+DOWN
+  - Sft+Gui+UP
+  - Sft+Gui+RIGHT
   - ''
-  - ''
-  - PG DN
-  - LEFT
-  - DOWN
-  - RIGHT
-  - TAB
-  - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
-  - APP
-  - LC(BSPC)
-  - BSPC
-  - DEL
-  - ESC
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: 'fun', type: ghost}
-  - RET
-  - RET
-  - {type: held}
-  - RET
-  - {t: 'fun', type: ghost}
-  mouse:
-  - 'scroll up'
-  - 'scroll left'
-  - 'mouse up'
-  - 'scroll right'
-  - 'mouse left click'
-  - ''
-  - 'ü'
-  - 'ß'
-  - 'ö'
-  - 'ä'
-  - 'scroll down'
-  - 'mouse left'
-  - 'mouse down'
-  - 'mouse right'
-  - TAB
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - 'mouse right click'
-  - 'mouse middle click'
-  - BSPC
-  - DEL
-  - ESC
+  - Alt+LEFT
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
   - '<-'
   - '""'
   - '()'
   - '[]'
   - '{}'
-  - {t: 'fun', type: ghost}
-  - RET
+  - {t: ▽, type: trans}
   - {type: held}
-  - 'caps word'
-  - CAPS
-  - {t: 'fun', type: ghost}
+  - {t: ▽, type: trans}
+  - Ctl+Gui+F7
+  - Alt+Gui+SPC
+  - {t: ▽, type: trans}
   fun:
   - 'dyn rec1 start*'
   - 'dyn rec1 play*'
@@ -225,15 +188,7 @@ layers:
   - {type: held}
   - {t: '', type: ghost}
 combos:
-- p: [1, 2]
-  k: {t: TAB, h: ''}
-- p: [21, 22]
-  k: {t: RET, h: ''}
-- p: [7, 8]
-  k: {t: ':', h: ''}
-- p: [27, 28]
-  k: {t: ';', h: ''}
 - p: [13, 14]
-  k: {t: app_switch, h: ''}
-- p: [21, 22, 23, 24]
-  k: {t: colemak, h: toggle}
+  k: '&app_sw'
+- p: [16, 17, 18]
+  k: RET
