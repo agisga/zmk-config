@@ -133,7 +133,7 @@
                       bindings = <
 &msc SCRL_LEFT &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none         &kp HOME      &kp PG_DN   &kp PG_UP     &kp END       &kp INS
 &kp LGUI       &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB       &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT     &kp K_APP
-&kp RET        &kp LC(BSPC)  &kp BSPC        &kp DEL          &kp ESC       &kp ESC       &kp DEL     &kp BSPC      &kp LC(BSPC)  &kp RET
+&kp RET        &kp LC(BSPC)  &kp BSPC        &kp DEL          &kp ESC       &kp ESC       &kp DEL     &kp BSPC      &kp UNDER     &kp RET
                              &mo L_FUN       &none            &trans        &kp TAB       &caps_word  &mo L_FUN
 
                         >;
@@ -144,16 +144,16 @@
 &kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &kp LBRC   &kp AMPERSAND    &kp STAR          &kp LPAR        &kp RBRC
 &kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &kp PLUS   &hm LSHFT DOLLAR &hm LCTRL PERCENT &hm LALT CARET  &hm LGUI RPAR
 &kp GRAVE     &kp N1    &kp N2    &kp N3    &kp TILDE      &kp PIPE   &kp EXCL         &kp AT            &kp HASH        &kp BACKSLASH
-                        &kp SQT   &kp N0    &kp UNDER      &trans     &kp DOT          &kp COMMA
+                        &kp SQT   &kp N0    &kp SPC        &trans     &kp DOT          &kp COMMA
                         >;
                 };
 
                 macro_layer {
                       bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN      &kp C_VOL_UP &kp C_MUTE        &none             &kp RA(Y)        &kp LPAR        &kp RA(P)         &none
-&kp RA(Q)         &kp RA(S)           &kp LC(LS(TAB))   &kp LC(TAB)  &kp LA(LG(SPC))   &kp LS(LG(LEFT))  &none            &kp RPAR        &kp LS(LA(RIGHT)) &none
+&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN      &kp C_VOL_UP &kp C_MUTE        &none             &kp RA(Y)        &none           &kp RA(P)         &none
+&kp RA(Q)         &kp RA(S)           &kp LC(LS(TAB))   &kp LC(TAB)  &kp LA(LG(SPC))   &kp LS(LG(LEFT))  &kp DQT          &none           &kp LS(LA(RIGHT)) &kp SQT
 &kp LA(LEFT)      WIN_UND             WIN_CUT           WIN_CPY      WIN_PST           &rassign_macro    &dqt_macro       &paren_macro    &bkt_macro        &brc_macro
-                                      &trans            &trans       &trans            &kp SQT    &kp DQT   &kp LG(N2)
+                                      &trans            &trans       &trans            &kp LPAR   &kp RPAR  &kp LG(N2)
                         >;
                 };
 
