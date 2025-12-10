@@ -23,10 +23,9 @@
     // auto shift behavior copied from: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap#L23-L36
     as: auto_shift {
         compatible = "zmk,behavior-hold-tap";
-        label = "AUTO_SHIFT";
         #binding-cells = <2>;
-        tapping_term_ms = <250>;
-        quick_tap_ms = <150>;
+        tapping-term-ms = <250>;
+        quick-tap-ms = <150>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
@@ -34,7 +33,6 @@
     // Note: quick-release fixes the issue of sticky shift producing multiple upper case letters (see https://github.com/zmkfirmware/zmk/issues/903#issuecomment-909209198).
     skq: sticky_key_quick_release {
       compatible = "zmk,behavior-sticky-key";
-      label = "STICKY_KEY_QUICK_RELEASE";
       #binding-cells = <1>;
       bindings = <&kp>;
       release-after-ms = <2000>;
@@ -44,18 +42,16 @@
 
     hm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
-      label = "HOMEROW_MODS";
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <250>;
       require-prior-idle-ms = <200>;
-      quick_tap_ms = <150>;
+      quick-tap-ms = <150>;
       bindings = <&kp>, <&kp>;
     };
 
     ltf: fast_layer_tap {
       compatible = "zmk,behavior-hold-tap";
-      label = "FAST_LAYER_TAP";
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <200>;
@@ -64,7 +60,6 @@
 
     lts: slow_layer_tap {
       compatible = "zmk,behavior-hold-tap";
-      label = "SLOW_LAYER_TAP";
       #binding-cells = <2>;
       flavor = "tap-preferred";
       tapping-term-ms = <300>;
@@ -150,7 +145,7 @@
     combo_pars {
       timeout-ms = <30>;
       key-positions = <26 27 28>;
-      binding = <&paren2_macro>;
+      bindings = <&paren2_macro>;
     };
   };
 
