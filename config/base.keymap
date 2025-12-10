@@ -8,8 +8,7 @@
 #define L_BASE    0
 #define L_NAV     1
 #define L_NUM     2
-#define L_MACRO   3
-#define L_FUN     4
+#define L_FUN     3
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -77,6 +76,9 @@
     ZMK_MACRO(paren_macro,
         bindings = <&kp LPAR &kp RPAR &kp LEFT>;
     )
+    ZMK_MACRO(paren2_macro,
+        bindings = <&kp LPAR &kp RPAR>;
+    )
     ZMK_MACRO(bkt_macro,
         bindings = <&kp LBKT &kp RBKT &kp LEFT>;
     )
@@ -109,10 +111,46 @@
         slow-release;  // to keep alt from the macro held with one finger while repeatedly hitting tab with the other finger
     };
 
+    combo_hj {
+        timeout-ms = <30>;
+        key-positions = <15 16>;
+        bindings = <&kp MINUS>;
+    };
+
     combo_jkl {
         timeout-ms = <30>;
         key-positions = <16 17 18>;
         bindings = <&kp RET>;
+    };
+
+    combo_zx {
+        timeout-ms = <30>;
+        key-positions = <21 22>;
+        bindings = <&kp UNDER>;
+    };
+
+    combo_xc {
+        timeout-ms = <30>;
+        key-positions = <22 23>;
+        bindings = <&kp UNDER>;
+    };
+
+    combo_lpar {
+        timeout-ms = <30>;
+        key-positions = <26 27>;
+        bindings = <&kp LPAR>;
+    };
+
+    combo_rpar {
+        timeout-ms = <30>;
+        key-positions = <27 28>;
+        bindings = <&kp RPAR>;
+    };
+
+    combo_pars {
+      timeout-ms = <30>;
+      key-positions = <26 27 28>;
+      binding = <&paren2_macro>;
     };
   };
 
@@ -125,16 +163,16 @@
 &kp Q          &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
 &hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
 &skq LSHFT     &kp Z          &kp X        &kp C           &kp V          &kp B          &kp COMMA       &kp BSPC         &kp DOT         &kp SLASH
-                          &mkp LCLK     &sl L_MACRO    &ltf L_NAV  SPC    &ltf L_NUM N   &lts L_FUN M    &key_repeat
+                          &mkp LCLK     &ltf L_NAV  SQT    &ltf L_NAV  SPC    &ltf L_NUM N   &lts L_FUN M    &key_repeat
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&msc SCRL_LEFT &msc SCRL_UP  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none         &kp HOME      &kp PG_DN   &kp PG_UP     &kp END       &kp INS
-&kp LGUI       &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB       &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT     &kp K_APP
-&kp RET        &kp LC(BSPC)  &kp BSPC        &kp DEL          &kp ESC       &kp ESC       &kp DEL     &kp BSPC      &kp UNDER     &kp RET
-                             &mo L_FUN       &none            &trans        &kp TAB       &caps_word  &mo L_FUN
+&kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp LC(LS(TAB)) &kp LC(TAB) &kp LS(LC(A)) &kp HOME      &kp PG_DN   &kp PG_UP     &kp END          &kp INS
+&kp LGUI       &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp K_APP
+&kp RET        WIN_UND       WIN_CUT         WIN_CPY          WIN_PST        &kp ESC       &kp DEL     &kp BSPC      &kp LA(LG(SPC))  &kp RET
+                             &mo L_FUN       &trans           &trans         &kp TAB       &caps_word  &mo L_FUN
 
                         >;
                 };
@@ -144,25 +182,16 @@
 &kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &kp LBRC   &kp AMPERSAND    &kp STAR          &kp LPAR        &kp RBRC
 &kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &kp PLUS   &hm LSHFT DOLLAR &hm LCTRL PERCENT &hm LALT CARET  &hm LGUI RPAR
 &kp GRAVE     &kp N1    &kp N2    &kp N3    &kp TILDE      &kp PIPE   &kp EXCL         &kp AT            &kp HASH        &kp BACKSLASH
-                        &kp SQT   &kp N0    &kp SPC        &trans     &kp DOT          &kp COMMA
-                        >;
-                };
-
-                macro_layer {
-                      bindings = <
-&kp LC(LG(LEFT))  &kp LC(LG(RIGHT))   &kp C_VOL_DN      &kp C_VOL_UP &kp C_MUTE        &none             &kp RA(Y)        &none           &kp RA(P)         &none
-&kp RA(Q)         &kp RA(S)           &kp LC(LS(TAB))   &kp LC(TAB)  &kp LA(LG(SPC))   &kp LS(LG(LEFT))  &kp DQT          &none           &kp LS(LA(RIGHT)) &kp SQT
-&kp LA(LEFT)      WIN_UND             WIN_CUT           WIN_CPY      WIN_PST           &rassign_macro    &dqt_macro       &paren_macro    &bkt_macro        &brc_macro
-                                      &trans            &trans       &trans            &kp LPAR   &kp RPAR  &kp LG(N2)
+                        &kp UNDER   &kp N0    &kp SPC        &trans     &kp DOT          &kp COMMA
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-&none        &none        &none        &none         &none         &none       &kp F7   &kp F8   &kp F9   &kp F12
+&brc_macro   &bkt_macro   &paren_macro &dqt_macro   &rassign_macro &kp C_MUTE  &kp F7   &kp F8   &kp F9   &kp F12
 &none        &none        &none        &out OUT_TOG  &sys_reset    &sys_reset  &kp F4   &kp F5   &kp F6   &kp F11
 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bootloader   &bootloader &kp F1   &kp F2   &kp F3   &kp F10
-                                      &none   &bt BT_CLR   &none   &none  &none  &none
+                                      &none   &bt BT_CLR   &none   &kp C_VOL_UP  &trans  &kp C_VOL_DN
                         >;
                 };
         };
