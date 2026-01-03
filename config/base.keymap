@@ -182,8 +182,8 @@
 
                 num_layer {
                       bindings = <
-&kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &kp LBRC   &kp AMPERSAND    &kp STAR      &kp BACKSLASH   &kp RBRC
-&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &kp PLUS   &hm LSHFT EXCL   &hm LCTRL AT  &hm LALT HASH   &hm LGUI RPAR
+&kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &kp LBRC   &kp AMPERSAND    &hm LGUI STAR &kp BACKSLASH   &kp RBRC
+&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &kp PLUS   &hm LSHFT EXCL   &hm LCTRL AT  &hm LALT HASH   &trans
 &kp GRAVE     &kp N1    &kp N2    &kp N3    &kp SEMI       &kp COLON  &kp DOLLAR       &kp PERCENT   &kp CARET       &kp TILDE
                         &kp DOT   &kp N0    &kp UNDER      &kp LPAR   &kp RPAR         &kp PIPE
                         >;

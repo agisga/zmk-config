@@ -5,15 +5,15 @@ layers:
   base:
   - Q
   - W
-  - E
+  - {t: E, h: LGUI}
   - R
   - T
   - Y
   - U
-  - I
+  - {t: I, h: LGUI}
   - O
   - P
-  - {t: A, h: LGUI}
+  - {t: A, h: Ctl+Gui+Alt}
   - {t: S, h: LALT}
   - {t: D, h: LCTRL}
   - {t: F, h: LSHFT}
@@ -22,7 +22,7 @@ layers:
   - {t: J, h: LSHFT}
   - {t: K, h: LCTRL}
   - {t: L, h: LALT}
-  - {t: '''', h: LGUI}
+  - {t: num, h: sticky}
   - {t: LSHFT, h: sticky}
   - Z
   - X
@@ -34,23 +34,23 @@ layers:
   - .
   - /
   - '&mkp LCLK'
-  - {t: macro, h: sticky}
+  - {t: '''', h: nav}
   - {t: SPC, h: nav}
   - {t: N, h: num}
   - {t: M, h: fun}
-  - RET
+  - 'key repeat'
   nav:
-  - 'SCRL LEFT'
-  - 'SCRL UP'
-  - 'SCRL DOWN'
-  - 'SCRL RIGHT'
-  - ''
+  - Ctl+Gui+LEFT
+  - Ctl+Gui+RIGHT
+  - LGUI
+  - Ctl+Sft+TAB
+  - Ctl+TAB
   - HOME
   - PG DN
   - PG UP
   - END
   - INS
-  - LGUI
+  - RET
   - LALT
   - LCTRL
   - LSHFT
@@ -59,20 +59,20 @@ layers:
   - DOWN
   - UP
   - RIGHT
+  - RET
+  - LSHFT
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - ESC
+  - DEL
+  - BSPC
+  - 'select line'
   - APP
-  - RET
-  - Ctl+BSPC
-  - BSPC
-  - DEL
-  - ESC
-  - ESC
-  - DEL
-  - BSPC
-  - Ctl+BSPC
-  - RET
   - fun
-  - ''
-  - {type: held}
+  - '&mkp LCLK'
+  - {t: ▽, type: trans}
   - TAB
   - 'caps word'
   - fun
@@ -84,8 +84,8 @@ layers:
   - ']'
   - '{'
   - '&'
-  - '*'
-  - (
+  - {t: '*', h: LGUI}
+  - \
   - '}'
   - '-'
   - '4'
@@ -93,80 +93,43 @@ layers:
   - '6'
   - '='
   - +
-  - {t: $, h: LSHFT}
-  - {t: '%', h: LCTRL}
-  - {t: ^, h: LALT}
-  - {t: ), h: LGUI}
-  - ;
+  - {t: '!', h: LSHFT}
+  - {t: '@', h: LCTRL}
+  - {t: '#', h: LALT}
+  - ''
+  - '`'
   - '1'
   - '2'
   - '3'
+  - ;
   - ':'
-  - '`'
-  - '!'
-  - '@'
-  - '#'
-  - \
+  - $
+  - '%'
+  - ^
   - '~'
+  - .
   - '0'
   - _
-  - {type: held}
-  - .
+  - (
+  - )
   - '|'
-  macro:
-  - Ctl+Gui+LEFT
-  - Ctl+Gui+RIGHT
-  - VOL DN
-  - VOL UP
-  - MUTE
-  - ''
-  - AltGr+Y
-  - ''
-  - AltGr+P
-  - ''
-  - AltGr+Q
-  - AltGr+S
-  - Ctl+Sft+TAB
-  - Ctl+TAB
-  - Gui+TAB
-  - Sft+Gui+LEFT
-  - Sft+Gui+DOWN
-  - Sft+Gui+UP
-  - Sft+Gui+RIGHT
-  - ''
-  - Alt+LEFT
-  - Ctl+Z
-  - Ctl+X
-  - Ctl+C
-  - Ctl+V
-  - '<-'
-  - '""'
-  - '()'
-  - '[]'
-  - '{}'
-  - {t: ▽, type: trans}
-  - {type: held}
-  - {t: ▽, type: trans}
-  - Ctl+Gui+F7
-  - Alt+Gui+SPC
-  - {t: ▽, type: trans}
   fun:
-  - 'dyn rec1 start*'
-  - 'dyn rec1 play*'
-  - 'dyn rec2 start*'
-  - 'dyn rec2 play*'
-  - 'dyn rec stop*'
   - ''
+  - ''
+  - ''
+  - OUT TOG
+  - '&msc SCRL_UP'
+  - VOL UP
   - F7
   - F8
   - F9
   - F12
-  - 'RGB_TOG'
-  - 'RGB_EFR'
-  - 'RGB_EFF'
-  - OUT TOG
-  - 'reset'
-  - 'reset'
+  - 'Ä'
+  - 'ß'
+  - 'Ü'
+  - 'Ö'
+  - '&msc SCRL_DOWN'
+  - VOL DN
   - F4
   - F5
   - F6
@@ -181,14 +144,26 @@ layers:
   - F2
   - F3
   - F10
-  - {t: '', type: ghost}
+  - ''
   - BT CLR
   - ''
-  - ''
+  - MUTE
   - {type: held}
-  - {t: '', type: ghost}
+  - ''
 combos:
 - p: [13, 14]
-  k: '&app_sw'
+  k: 'app switch'
+- p: [15, 16]
+  k: '<-'
 - p: [16, 17, 18]
   k: RET
+- p: [21, 22]
+  k: '[|]'
+- p: [22, 23]
+  k: '{|}'
+- p: [26, 27]
+  k: '"|"'
+- p: [27, 28]
+  k: '(|)'
+- p: [26, 27, 28]
+  k: '()|'
