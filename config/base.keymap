@@ -86,6 +86,14 @@
     ZMK_MACRO(rassign_macro,
         bindings = <&kp LT &kp MINUS>;
     )
+    ZMK_MACRO(select_line,
+        bindings
+            = <&macro_tap &kp HOME>
+            , <&macro_press &kp LSHFT>
+            , <&macro_tap &kp END>
+            , <&macro_release &kp LSHFT>
+            ;
+    )
     ZMK_MACRO(app_sw,
         bindings
             = <&macro_press &kp LALT &mo L_NAV>
@@ -109,7 +117,7 @@
     combo_hj {
         timeout-ms = <30>;
         key-positions = <15 16>;
-        bindings = <&kp MINUS>;
+        bindings = <&rassign_macro>;
     };
 
     combo_jkl {
@@ -121,25 +129,25 @@
     combo_zx {
         timeout-ms = <30>;
         key-positions = <21 22>;
-        bindings = <&kp UNDER>;
+        bindings = <&bkt_macro>;
     };
 
     combo_xc {
         timeout-ms = <30>;
         key-positions = <22 23>;
-        bindings = <&kp UNDER>;
+        bindings = <&brc_macro>;
     };
 
     combo_lpar {
         timeout-ms = <30>;
         key-positions = <26 27>;
-        bindings = <&kp LPAR>;
+        bindings = <&dqt_macro>;
     };
 
     combo_rpar {
         timeout-ms = <30>;
         key-positions = <27 28>;
-        bindings = <&kp RPAR>;
+        bindings = <&paren_macro>;
     };
 
     combo_pars {
@@ -155,38 +163,38 @@
 
                 base_layer {
                       bindings = <
-&kp Q          &kp W          &kp E        &kp R           &kp T          &kp Y          &kp U           &kp I            &kp O           &kp P
-&hm LGUI A     &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &hm LGUI SEMI
-&skq LSHFT     &kp Z          &kp X        &kp C           &kp V          &kp B          &kp COMMA       &kp BSPC         &kp DOT         &kp SLASH
+&kp Q                &kp W          &hm LGUI E   &kp R           &kp T          &kp Y          &kp U           &hm LGUI I       &kp O           &kp P
+&hm LC(LG(LALT)) A   &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &sl L_NUM
+&skq LSHFT           &kp Z          &kp X        &kp C           &kp V          &kp B          &kp COMMA       &kp BSPC         &kp DOT         &kp SLASH
                           &mkp LCLK     &ltf L_NAV  SQT    &ltf L_NAV  SPC    &ltf L_NUM N   &lts L_FUN M    &key_repeat
                         >;
                 };
 
                 nav_layer {
                       bindings = <
-&kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp LC(LS(TAB)) &kp LC(TAB) &kp LS(LC(A)) &kp HOME      &kp PG_DN   &kp PG_UP     &kp END          &kp INS
-&kp LGUI       &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp K_APP
-&kp RET        WIN_UND       WIN_CUT         WIN_CPY          WIN_PST        &kp ESC       &kp DEL     &kp BSPC      &kp LA(LG(SPC))  &kp RET
-                             &mo L_FUN       &trans           &trans         &kp TAB       &caps_word  &mo L_FUN
+&kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp LGUI  &kp LC(LS(TAB)) &kp LC(TAB)     &kp HOME      &kp PG_DN   &kp PG_UP     &kp END          &kp INS
+&kp RET        &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp RET
+&kp LSHFT      WIN_UND       WIN_CUT         WIN_CPY          WIN_PST        &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
+                             &mo L_FUN       &mkp LCLK        &trans         &kp TAB       &caps_word  &mo L_FUN
 
                         >;
                 };
 
                 num_layer {
                       bindings = <
-&kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &kp LBRC   &kp AMPERSAND    &kp STAR          &kp LPAR        &kp RBRC
-&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &kp PLUS   &hm LSHFT DOLLAR &hm LCTRL PERCENT &hm LALT CARET  &hm LGUI RPAR
-&kp GRAVE     &kp N1    &kp N2    &kp N3    &kp TILDE      &kp PIPE   &kp EXCL         &kp AT            &kp HASH        &kp BACKSLASH
-                        &kp UNDER   &kp N0    &kp SPC        &trans     &kp DOT          &kp COMMA
+&kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT       &kp LBRC   &kp AMPERSAND    &kp STAR      &kp BACKSLASH   &kp RBRC
+&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL      &kp PLUS   &hm LSHFT EXCL   &hm LCTRL AT  &hm LALT HASH   &hm LGUI RPAR
+&kp GRAVE     &kp N1    &kp N2    &kp N3    &kp SEMI       &kp COLON  &kp DOLLAR       &kp PERCENT   &kp CARET       &kp TILDE
+                        &kp DOT   &kp N0    &kp UNDER      &kp LPAR   &kp RPAR         &kp PIPE
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-&brc_macro   &bkt_macro   &paren_macro &dqt_macro   &rassign_macro &kp C_MUTE  &kp F7   &kp F8   &kp F9   &kp F12
-&none        &none        &none        &out OUT_TOG  &sys_reset    &sys_reset  &kp F4   &kp F5   &kp F6   &kp F11
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bootloader   &bootloader &kp F1   &kp F2   &kp F3   &kp F10
-                                      &none   &bt BT_CLR   &none   &kp C_VOL_UP  &trans  &kp C_VOL_DN
+&none        &none        &none        &out OUT_TOG  &msc SCRL_UP    &kp C_VOL_UP &kp F7   &kp F8   &kp F9   &kp F12
+&kp RA(Q)    &kp RA(S)    &kp RA(Y)    &kp RA(P)     &msc SCRL_DOWN  &kp C_VOL_DN &kp F4   &kp F5   &kp F6   &kp F11
+&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bootloader     &bootloader  &kp F1   &kp F2   &kp F3   &kp F10
+                                      &none   &bt BT_CLR   &none     &kp C_MUTE  &trans  &none
                         >;
                 };
         };
