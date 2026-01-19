@@ -65,6 +65,48 @@
       tapping-term-ms = <300>;
       bindings = <&mo>, <&kp>;
     };
+
+    bt0: tap_dance_0 {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp K_CANCEL>, <&bt BT_SEL 0>;
+    };
+
+    bt1: tap_dance_1 {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp K_CANCEL>, <&bt BT_SEL 1>;
+    };
+
+    bt2: tap_dance_2 {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp K_CANCEL>, <&bt BT_SEL 2>;
+    };
+
+    bt3: tap_dance_3 {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp K_CANCEL>, <&bt BT_SEL 3>;
+    };
+
+    btclr: tap_dance_clr {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&kp K_CANCEL>, <&bt BT_CLR>;
+    };
+
+    rst: tap_dance_reset {
+      compatible = "zmk,behavior-tap-dance";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&sys_reset>, <&bootloader>;
+    };
   }; \
 
   macros {
@@ -193,8 +235,8 @@
                       bindings = <
 &none        &none        &none        &out OUT_TOG  &msc SCRL_UP    &kp C_VOL_UP &kp F7   &kp F8   &kp F9   &kp F12
 &kp RA(Q)    &kp RA(S)    &kp RA(Y)    &kp RA(P)     &msc SCRL_DOWN  &kp C_VOL_DN &kp F4   &kp F5   &kp F6   &kp F11
-&bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3  &bootloader     &bootloader  &kp F1   &kp F2   &kp F3   &kp F10
-                                      &none   &bt BT_CLR   &none     &kp C_MUTE  &trans  &none
+&bt0         &bt1         &bt2         &bt3          &rst            &rst         &kp F1   &kp F2   &kp F3   &kp F10
+                                           &none     &btclr  &none   &kp C_MUTE  &trans  &none
                         >;
                 };
         };
