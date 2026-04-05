@@ -6,9 +6,11 @@
 
 
 #define L_BASE    0
-#define L_NAV     1
-#define L_NUM     2
-#define L_FUN     3
+#define L_QWERTY  1
+#define L_MOD     2
+#define L_NAV     3
+#define L_NUM     4
+#define L_FUN     5
 
 #define AS(keycode) &as LS(keycode) keycode
 
@@ -16,6 +18,7 @@
 #define WIN_CUT &kp LC(X)
 #define WIN_CPY &kp LC(C)
 #define WIN_PST &kp LC(V)
+#define WIN_PST2 &kp LC(LG(LA(V)))
 
 
 / {
@@ -126,7 +129,28 @@
         bindings = <&kp DQT &kp DQT &kp LEFT>;
     )
     ZMK_MACRO(rassign_macro,
-        bindings = <&kp LT &kp MINUS>;
+        bindings = <&kp SPC &kp LT &kp MINUS &kp SPC>;
+    )
+    ZMK_MACRO(equal_macro,
+        bindings = <&kp SPC &kp EQUAL &kp SPC>;
+    )
+    ZMK_MACRO(excl_macro,
+        bindings = <&kp EXCL &kp SPC>;
+    )
+    ZMK_MACRO(qmark_macro,
+        bindings = <&kp QMARK &kp SPC>;
+    )
+    ZMK_MACRO(dot_macro,
+        bindings = <&kp DOT &kp SPC>;
+    )
+    ZMK_MACRO(comma_macro,
+        bindings = <&kp COMMA &kp SPC>;
+    )
+    ZMK_MACRO(semi_macro,
+        bindings = <&kp SEMI &kp SPC>;
+    )
+    ZMK_MACRO(colon_macro,
+        bindings = <&kp COLON &kp SPC>;
     )
     ZMK_MACRO(select_line,
         bindings
@@ -197,6 +221,12 @@
       key-positions = <26 27 28>;
       bindings = <&paren2_macro>;
     };
+
+    combo_qwerty {
+        timeout-ms = <30>;
+        key-positions = <20 21 22 23>;
+        bindings = <&tog L_QWERTY>;
+    };
   };
 
 
@@ -205,6 +235,15 @@
 
                 base_layer {
                       bindings = <
+&kp Q     &kp W   &kp F     &kp P     &kp B          &kp J   &kp L  &kp U     &kp Y     &kp SQT
+&kp A     &kp R   &kp S     &kp T     &kp G          &kp M   &kp N  &kp E     &kp I     &kp O
+&kp Z     &kp X   &kp C     &kp D     &kp V          &kp K   &kp H  &kp BSPC  &kp DOT   &kp COMMA
+       &mkp LCLK  &sl L_MOD  &ltf L_NAV SPC          &sl L_NUM  &skq LSHIFT  &key_repeat
+                        >;
+                };
+
+                qwerty_layer {
+                      bindings = <
 &kp Q                &kp W          &hm LGUI E   &kp R           &kp T          &kp Y          &kp U           &hm LGUI I       &kp O           &kp P
 &hm LC(LG(LALT)) A   &hm LALT S     &hm LCTRL D  &hm LSHFT F     &kp G          &kp H          &hm LSHFT J     &hm LCTRL K      &hm LALT L      &sl L_NUM
 &skq LSHFT           &kp Z          &kp X        &kp C           &kp V          &kp B          &kp COMMA       &kp BSPC         &kp DOT         &kp SLASH
@@ -212,22 +251,35 @@
                         >;
                 };
 
+                mod_layer {
+                      bindings = <
+&none               &none      &skq LGUI   &none       &none        &none          &none       &colon_macro &semi_macro &none
+&skq LG(LA(LCTRL))  &skq LALT  &skq LCTRL  &skq LSHFT  &equal_macro &rassign_macro &excl_macro &comma_macro &dot_macro  &qmark_macro
+&none               &none      &none       &none       &none        &none          &none       &none        &none       &none
+                                &kp K_CANCEL &trans &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL
+                        >;
+                };
+
                 nav_layer {
                       bindings = <
 &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp LGUI  &kp LC(LS(TAB)) &kp LC(TAB)     &kp HOME      &kp PG_DN   &kp PG_UP     &kp END          &kp INS
 &kp RET        &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp RET
-&kp LSHFT      WIN_UND       WIN_CUT         WIN_CPY          WIN_PST        &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
+WIN_UND        WIN_CUT       WIN_CPY         WIN_PST          WIN_PST2       &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
                              &mo L_FUN       &mkp LCLK        &trans       &lts L_FUN TAB  &caps_word  &key_repeat
 
                         >;
                 };
 
+// ( 7 8 9 )    { [ * ] }
+// - 4 5 6 =    & ! @ # |
+// / 1 2 3 +    ` $ % ^ \
+//     ; 0 _    h ~ FUN
                 num_layer {
                       bindings = <
-&kp LBKT      &kp N7    &kp N8    &kp N9    &kp RBKT              &kp LBRC   &kp AMPERSAND    &hm LGUI STAR &kp BACKSLASH   &kp RBRC
-&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL             &kp PLUS   &hm LSHFT EXCL   &hm LCTRL AT  &hm LALT HASH   &trans
-&kp GRAVE     &kp N1    &kp N2    &kp N3    &kp SEMI              &kp COLON  &kp DOLLAR       &kp PERCENT   &kp CARET       &kp TILDE
-                        &kp PIPE  &kp N0    &lts L_FUN UNDER      &kp LPAR   &kp RPAR         &mo L_FUN
+&kp LPAR      &kp N7    &kp N8    &kp N9    &kp RPAR              &kp LBRC       &kp LBKT        &hm LGUI STAR &kp RBKT        &kp RBRC
+&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL             &kp AMPERSAND  &hm LSHFT EXCL  &hm LCTRL AT  &hm LALT HASH   &kp PIPE
+&kp SLASH     &kp N1    &kp N2    &kp N3    &kp PLUS              &kp GRAVE      &kp DOLLAR      &kp PERCENT   &kp CARET       &kp BACKSLASH
+                        &kp SEMI  &kp N0    &lts L_FUN UNDER      &trans         &kp TILDE       &mo L_FUN
                         >;
                 };
 
