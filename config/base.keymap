@@ -140,17 +140,14 @@
     ZMK_MACRO(qmark_macro,
         bindings = <&kp QMARK &kp SPC>;
     )
-    ZMK_MACRO(dot_macro,
-        bindings = <&kp DOT &kp SPC>;
-    )
-    ZMK_MACRO(comma_macro,
-        bindings = <&kp COMMA &kp SPC>;
-    )
     ZMK_MACRO(semi_macro,
         bindings = <&kp SEMI &kp SPC>;
     )
     ZMK_MACRO(colon_macro,
         bindings = <&kp COLON &kp SPC>;
+    )
+    ZMK_MACRO(unstick_macro,
+        bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
     )
     ZMK_MACRO(select_line,
         bindings
@@ -183,7 +180,7 @@
     combo_hj {
         timeout-ms = <30>;
         key-positions = <15 16>;
-        bindings = <&rassign_macro>;
+        bindings = <&kp LC(BSPC)>;
     };
 
     combo_jkl {
@@ -253,9 +250,9 @@
 
                 mod_layer {
                       bindings = <
-&none               &none      &skq LGUI   &none       &none        &none          &none       &colon_macro &semi_macro &none
-&skq LG(LA(LCTRL))  &skq LALT  &skq LCTRL  &skq LSHFT  &equal_macro &rassign_macro &excl_macro &comma_macro &dot_macro  &qmark_macro
-&none               &none      &none       &none       &none        &none          &none       &none        &none       &none
+&unstick_macro &skq LG(LA(LCTRL))  &skq LGUI   &skq LG(LSHFT) &none     &none          &none       &kp SEMI     &kp COLON     &none
+&skq LG(LA(LC(LSHFT)))  &skq LALT  &skq LCTRL  &skq LSHFT  &equal_macro &rassign_macro &excl_macro &semi_macro  &colon_macro  &qmark_macro
+&none                   &none      &none       &none       &none        &none          &none       &none        &none         &none
                                 &kp K_CANCEL &trans &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL
                         >;
                 };
@@ -264,7 +261,7 @@
                       bindings = <
 &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp LGUI  &kp LC(LS(TAB)) &kp LC(TAB)     &kp HOME      &kp PG_DN   &kp PG_UP     &kp END          &kp INS
 &kp RET        &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp RET
-WIN_UND        WIN_CUT       WIN_CPY         WIN_PST          WIN_PST2       &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
+WIN_UND        WIN_CUT       WIN_CPY         WIN_PST          &none          &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
                              &mo L_FUN       &mkp LCLK        &trans       &lts L_FUN TAB  &caps_word  &key_repeat
 
                         >;
