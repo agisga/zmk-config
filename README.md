@@ -1,4 +1,4 @@
-# Some ZMK config files
+<!-- # Some ZMK config files
 
 ## Layout diagram for my Minidox keymap
 
@@ -10,4 +10,4 @@
 
 ![Minidox keymap SVG](./minidox.svg)
 
-_*: Dynamic macros only in the QMK version of this keymap:_ <https://github.com/agisga/qmk_userspace>
+_*: Dynamic macros only in the QMK version of this keymap:_ <https://github.com/agisga/qmk_userspace> -->

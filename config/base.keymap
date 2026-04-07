@@ -18,7 +18,7 @@
 #define WIN_CUT &kp LC(X)
 #define WIN_CPY &kp LC(C)
 #define WIN_PST &kp LC(V)
-#define WIN_PST2 &kp LC(LG(LA(V)))
+#define WIN_PST2 &kp LG(LS(B))
 
 
 / {
@@ -250,9 +250,9 @@
 
                 mod_layer {
                       bindings = <
-&unstick_macro &sk LG(LA(LCTRL))  &sk LGUI   &sk LG(LSHFT) &none     &none          &none       &kp SEMI     &kp COLON     &none
-&sk LG(LA(LC(LSHFT)))  &sk LALT   &sk LCTRL  &sk LSHFT  &equal_macro &rassign_macro &excl_macro &semi_macro  &colon_macro  &qmark_macro
-&none                   &none      &none       &none       &none        &none          &none       &none        &none         &none
+&unstick_macro     &sk LG(LA(LCTRL))  &sk LGUI      &sk LG(LC(LSHFT)) &none        &none          &none       &kp SEMI     &kp COLON     &none
+&sk LG(LA(LC(LSHFT)))  &sk LALT       &sk LCTRL     &sk LSHFT         &equal_macro &rassign_macro &excl_macro &semi_macro  &colon_macro  &qmark_macro
+&none                  &sk LG(LALT)   &sk LG(LCTRL) &sk LG(LSHFT)     &none        &none          &none       &none        &none         &none
                                 &kp K_CANCEL &trans &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL
                         >;
                 };
@@ -261,7 +261,7 @@
                       bindings = <
 &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp LGUI  &kp LC(LS(TAB)) &kp LC(TAB)     &kp HOME      &kp PG_DN   &kp PG_UP     &kp END          &kp INS
 &kp RET        &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp RET
-WIN_UND        WIN_CUT       WIN_CPY         WIN_PST          &none          &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
+WIN_UND        WIN_CUT       WIN_CPY         WIN_PST          WIN_PST2       &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
                              &mo L_FUN       &mkp LCLK        &trans       &lts L_FUN TAB  &caps_word  &key_repeat
 
                         >;
