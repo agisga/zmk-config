@@ -250,9 +250,9 @@
 
                 mod_layer {
                       bindings = <
-&unstick_macro     &sk LG(LA(LCTRL))  &sk LGUI      &sk LG(LC(LSHFT)) &none        &none          &none       &kp SEMI     &kp COLON     &none
-&sk LG(LA(LC(LSHFT)))  &sk LALT       &sk LCTRL     &sk LSHFT         &equal_macro &rassign_macro &excl_macro &semi_macro  &colon_macro  &qmark_macro
-&none                  &sk LG(LALT)   &sk LG(LCTRL) &sk LG(LSHFT)     &none        &none          &none       &none        &none         &none
+&unstick_macro     &sk LG(LA(LCTRL))  &sk LGUI      &sk LG(LC(LSHFT)) &sk LG(LALT)   &none          &none       &kp SEMI     &kp COLON     &kp QMARK
+&sk LG(LA(LC(LSHFT)))  &sk LALT       &sk LCTRL     &sk LSHFT         &sk LG(LCTRL)  &equal_macro  &excl_macro &semi_macro  &colon_macro  &qmark_macro
+&none                  &sk LC(LALT) &sk LA(LS(LCTRL)) &sk LC(LSHFT)   &sk LG(LSHFT)  &none          &none       &none        &none        &rassign_macro
                                 &kp K_CANCEL &trans &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL
                         >;
                 };
