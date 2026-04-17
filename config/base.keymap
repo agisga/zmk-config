@@ -180,7 +180,7 @@
     combo_hj {
         timeout-ms = <30>;
         key-positions = <15 16>;
-        bindings = <&kp LC(BSPC)>;
+        bindings = <&dqt_macro>;
     };
 
     combo_jkl {
@@ -204,7 +204,7 @@
     combo_lpar {
         timeout-ms = <30>;
         key-positions = <26 27>;
-        bindings = <&dqt_macro>;
+        bindings = <&kp LC(BSPC)>;
     };
 
     combo_rpar {
@@ -250,9 +250,9 @@
 
                 mod_layer {
                       bindings = <
-&unstick_macro     &sk LG(LA(LCTRL))  &sk LGUI      &sk LG(LC(LSHFT)) &sk LG(LALT)   &none          &none       &kp SEMI     &kp COLON     &kp QMARK
-&sk LG(LA(LC(LSHFT)))  &sk LALT       &sk LCTRL     &sk LSHFT         &sk LG(LCTRL)  &equal_macro  &excl_macro &semi_macro  &colon_macro  &qmark_macro
-&none                  &sk LC(LALT) &sk LA(LS(LCTRL)) &sk LC(LSHFT)   &sk LG(LSHFT)  &none          &none       &none        &none        &rassign_macro
+&unstick_macro     &sk LG(LA(LCTRL))  &sk LGUI      &sk LG(LC(LSHFT)) &none          &none          &none       &kp SEMI     &kp COLON     &kp QMARK
+&sk LG(LA(LC(LSHFT)))  &sk LALT       &sk LCTRL     &sk LSHFT         &none          &equal_macro  &excl_macro &semi_macro  &colon_macro  &qmark_macro
+&sk LG(LSHFT)          &sk LC(LALT) &sk LA(LS(LCTRL)) &sk LC(LSHFT)   &sk LA(LSHFT)  &none          &none       &none        &none        &rassign_macro
                                 &kp K_CANCEL &trans &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL
                         >;
                 };
@@ -270,13 +270,13 @@ WIN_UND        WIN_CUT       WIN_CPY         WIN_PST          WIN_PST2       &kp
 // ( 7 8 9 )    { [ * ] }
 // - 4 5 6 =    & ! @ # |
 // / 1 2 3 +    ` $ % ^ \
-//     ; 0 _    h ~ FUN
+//     . 0 _    h ~ FUN
                 num_layer {
                       bindings = <
 &kp LPAR      &kp N7    &kp N8    &kp N9    &kp RPAR              &kp LBRC       &kp LBKT        &hm LGUI STAR &kp RBKT        &kp RBRC
 &kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL             &kp AMPERSAND  &hm LSHFT EXCL  &hm LCTRL AT  &hm LALT HASH   &kp PIPE
 &kp SLASH     &kp N1    &kp N2    &kp N3    &kp PLUS              &kp GRAVE      &kp DOLLAR      &kp PERCENT   &kp CARET       &kp BACKSLASH
-                        &kp SEMI  &kp N0    &lts L_FUN UNDER      &trans         &kp TILDE       &mo L_FUN
+                        &kp DOT   &kp N0    &lts L_FUN UNDER      &trans         &kp TILDE       &mo L_FUN
                         >;
                 };
 
