@@ -20,6 +20,10 @@
 #define WIN_PST &kp LC(V)
 #define WIN_PST2 &kp LG(LS(B))
 
+&sk {
+    release-after-ms = <3000>;
+};
+
 
 / {
   behaviors {
@@ -38,7 +42,7 @@
       compatible = "zmk,behavior-sticky-key";
       #binding-cells = <1>;
       bindings = <&kp>;
-      release-after-ms = <2000>;
+      release-after-ms = <3000>;
       quick-release;
       ignore-modifiers;
     };
@@ -134,18 +138,6 @@
     ZMK_MACRO(equal_macro,
         bindings = <&kp SPC &kp EQUAL &kp SPC>;
     )
-    ZMK_MACRO(excl_macro,
-        bindings = <&kp EXCL &kp SPC>;
-    )
-    ZMK_MACRO(qmark_macro,
-        bindings = <&kp QMARK &kp SPC>;
-    )
-    ZMK_MACRO(semi_macro,
-        bindings = <&kp SEMI &kp SPC>;
-    )
-    ZMK_MACRO(colon_macro,
-        bindings = <&kp COLON &kp SPC>;
-    )
     ZMK_MACRO(unstick_macro,
         bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
     )
@@ -235,7 +227,7 @@
 &kp Q     &kp W   &kp F     &kp P     &kp B          &kp J   &kp L  &kp U     &kp Y     &kp SQT
 &kp A     &kp R   &kp S     &kp T     &kp G          &kp M   &kp N  &kp E     &kp I     &kp O
 &kp Z     &kp X   &kp C     &kp D     &kp V          &kp K   &kp H  &kp BSPC  &kp DOT   &kp COMMA
-       &mkp LCLK  &sl L_MOD  &ltf L_NAV SPC          &sl L_NUM  &skq LSHIFT  &key_repeat
+       &mkp LCLK  &ltf L_MOD RET  &ltf L_NAV SPC          &sl L_NUM  &skq LSHIFT  &key_repeat
                         >;
                 };
 
@@ -248,44 +240,47 @@
                         >;
                 };
 
+// {       [    ü     ]      }
+// no      (  ' = '   )      ö
+// ""     ()   []    {}      ()
                 mod_layer {
                       bindings = <
-&unstick_macro     &sk LG(LA(LCTRL))  &sk LGUI      &sk LG(LC(LSHFT)) &none          &rassign_macro &kp EXCL   &kp SEMI     &kp COLON     &kp QMARK
-&sk LG(LA(LC(LSHFT)))  &sk LALT       &sk LCTRL     &sk LSHFT         &none          &equal_macro  &excl_macro &semi_macro  &colon_macro  &qmark_macro
-&sk LG(LSHFT)          &sk LC(LALT) &sk LA(LS(LCTRL)) &sk LC(LSHFT)   &sk LA(LSHFT)  &none         &none       &none        &none        &none
-                                               &kp K_CANCEL &trans &kp SPC           &kp UNDER &kp K_CANCEL &kp K_CANCEL
+&unstick_macro   &kp LC(LS(M))   &sk LGUI       &kp C_MUTE     &kp C_VOL_UP          &kp LBRC       &kp LBKT        &kp RA(Y)     &kp RBKT        &kp RBRC
+&kp RA(Q)        &sk LALT        &sk LCTRL      &sk LSHFT      &kp C_VOL_DN          &none          &kp LPAR        &equal_macro  &kp RPAR        &kp RA(P)
+&kp RA(S)        &msc SCRL_LEFT  &msc SCRL_UP   &msc SCRL_DOWN &msc SCRL_RIGHT       &dqt_macro     &paren_macro    &bkt_macro    &brc_macro      &paren2_macro
+                                               &kp K_CANCEL &trans &kp K_CANCEL    &kp K_CANCEL &kp K_CANCEL &kp K_CANCEL
                         >;
                 };
 
                 nav_layer {
                       bindings = <
 &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &kp LGUI  &kp LC(LS(TAB)) &kp LC(TAB)     &kp HOME      &kp PG_DN   &kp PG_UP     &kp END          &kp INS
-&kp RET        &kp LALT      &kp LCTRL       &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp RET
-WIN_UND        WIN_CUT       WIN_CPY         WIN_PST          WIN_PST2       &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
+&kp LG(LA(SPC))  &kp LALT      &kp LCTRL     &kp LSHFT        &kp TAB        &kp LEFT      &kp DOWN    &kp UP        &kp RIGHT        &kp RET
+WIN_UND          WIN_CUT       WIN_CPY       WIN_PST          WIN_PST2       &kp ESC       &kp DEL     &kp BSPC      &select_line     &kp K_APP
                              &mo L_FUN       &mkp LCLK        &trans       &lts L_FUN TAB  &caps_word  &key_repeat
 
                         >;
                 };
 
-// ( 7 8 9 )        { [ * ] }
-// - 4 5 6 =        < & @ # >
-// / 1 2 3 +        | $ % ^ \
-//     ` 0 SPC   hold ~ FUN
+// = 7 8 9 +        ` & * : ;
+// - 4 5 6 _        < $ % ^ >
+// / 1 2 3 ?        | ! @ # \
+//     ` 0 SPC   OSL ~ FUN
                 num_layer {
                       bindings = <
-&kp LPAR      &kp N7    &kp N8    &kp N9    &kp RPAR              &kp LBRC       &kp LBKT        &hm LGUI STAR   &kp RBKT        &kp RBRC
-&kp MINUS     &kp N4    &kp N5    &kp N6    &kp EQUAL             &kp LS(COMMA)  &hm LSHFT AMPERSAND &hm LCTRL AT  &hm LALT HASH   &kp LS(DOT)
-&kp SLASH     &kp N1    &kp N2    &kp N3    &kp PLUS              &kp PIPE       &kp DOLLAR      &kp PERCENT     &kp CARET       &kp BACKSLASH
+&kp EQUAL     &kp N7    &kp N8    &kp N9    &kp PLUS              &kp GRAVE      &kp AMPERSAND     &hm LGUI STAR      &kp COLON        &kp SEMI
+&kp MINUS     &kp N4    &kp N5    &kp N6    &kp UNDER             &kp LS(COMMA)  &hm LSHFT DOLLAR  &hm LCTRL PERCENT  &hm LALT CARET   &kp LS(DOT)
+&kp SLASH     &kp N1    &kp N2    &kp N3    &kp QMARK             &kp PIPE       &kp EXCL          &kp AT             &kp HASH         &kp BACKSLASH
                         &kp GRAVE &kp N0  &lts L_FUN SPC        &trans         &kp TILDE    &mo L_FUN
                         >;
                 };
 
                 fun_layer {
                       bindings = <
-&none        &none        &none        &out OUT_TOG  &msc SCRL_UP    &kp C_VOL_UP &kp F7   &kp F8   &kp F9   &kp F12
-&kp RA(Q)    &kp RA(S)    &kp RA(Y)    &kp RA(P)     &msc SCRL_DOWN  &kp C_VOL_DN &kp F4   &kp F5   &kp F6   &kp F11
-&bt0         &bt1         &bt2         &bt3          &rst            &rst         &kp F1   &kp F2   &kp F3   &kp F10
-                                           &none     &btclr  &none   &kp C_MUTE  &trans  &none
+&none        &none        &none        &none         &rst            &rst        &kp F7   &kp F8   &kp F9   &kp F12
+&none        &none        &none        &none         &out OUT_TOG    &kp PSCRN   &kp F4   &kp F5   &kp F6   &kp F11
+&bt0         &bt1         &bt2         &bt3          &btclr          &none       &kp F1   &kp F2   &kp F3   &kp F10
+                                           &trans    &none  &trans   &trans  &none  &trans
                         >;
                 };
         };
