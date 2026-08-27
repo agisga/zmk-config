@@ -6,3 +6,6 @@ url: https://github.com/That-Canadian/MiniDox_PCB
 requires: [pro_micro]
 features:
   - keys
+siblings:
+  - minidox_left
+  - minidox_right
