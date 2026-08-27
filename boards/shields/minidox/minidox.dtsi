@@ -9,7 +9,7 @@
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default";
-        transform= <&default_transform>;
+        transform = <&default_transform>;
     };
 
     default_transform: keymap_transform_0 {

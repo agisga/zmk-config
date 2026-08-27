@@ -11,7 +11,7 @@
 #define L_NUM     3
 #define L_FUN     4
 
-#define AS(keycode) &as LS(keycode) keycode
+//#define AS(keycode) &as LS(keycode) keycode
 
 #define WIN_UND &kp LC(Z)
 #define WIN_CUT &kp LC(X)
